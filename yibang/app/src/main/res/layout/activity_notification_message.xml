@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    >
+
+    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+
+    <RelativeLayout
+        android:id="@+id/rl_tzxx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/colorWhite"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="接收新消息通知"
+            android:padding="@dimen/px30dp"
+            android:textSize="@dimen/fontSize15"
+            android:textColor="@color/colorText333333"
+            />
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已关闭"
+            android:padding="@dimen/px30dp"
+            android:textSize="@dimen/fontSize15"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/colorText999999"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_tag1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginRight="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px12dp"
+        android:layout_marginBottom="@dimen/px12dp"
+        android:layout_below="@+id/rl_tzxx"
+        android:text="如果你要关闭或开启蚁帮的新消息通知，请在[设置]-[通知]功能中，找到应用程序[蚁帮]更改。"
+        />
+    <RelativeLayout
+        android:id="@+id/rl_wrms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_tag1"
+        android:background="@color/colorWhite"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电话催单勿扰模式"
+            android:padding="@dimen/px30dp"
+            android:textSize="@dimen/fontSize15"
+            android:textColor="@color/colorText333333"
+            />
+
+        <ImageView
+            android:id="@+id/iv_btn"
+            android:layout_width="@dimen/px102dp"
+            android:layout_height="@dimen/px62dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/px30dp"
+            android:src="@mipmap/wd_btn_onfloat_highlighted"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开启后，在22:00-8:00间不会收到订单的电话通知。"
+        android:layout_below="@+id/rl_wrms"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginRight="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px12dp"
+        android:layout_marginBottom="@dimen/px12dp"
+        />
+
+</RelativeLayout>

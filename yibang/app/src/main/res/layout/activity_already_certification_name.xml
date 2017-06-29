@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    >
+
+    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+    <RelativeLayout
+        android:id="@+id/rl_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/px22dp"
+        android:layout_below="@+id/toolbar"
+        >
+        <TextView
+            android:id="@+id/tv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    真实姓名："
+            android:textColor="@color/colorText999999"
+            android:textSize="@dimen/fontSize17"
+            android:paddingTop="@dimen/px30dp"
+            android:paddingBottom="@dimen/px30dp"
+            android:layout_marginLeft="@dimen/px30dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSize14"
+            android:textColor="@color/colorText333333"
+            android:text="王小二"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/px30dp"
+            android:layout_toRightOf="@id/tv_tag"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_below="@+id/rl_name"
+        >
+        <TextView
+            android:id="@+id/tv_tag2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="身份证号码："
+            android:textColor="@color/colorText999999"
+            android:textSize="@dimen/fontSize17"
+            android:paddingTop="@dimen/px30dp"
+            android:paddingBottom="@dimen/px30dp"
+            android:layout_marginLeft="@dimen/px30dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSize14"
+            android:textColor="@color/colorText333333"
+            android:text="4409*****2345"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_tag2"
+            android:layout_marginLeft="@dimen/px30dp"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>

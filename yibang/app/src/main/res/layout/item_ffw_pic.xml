@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv_pic"
+        android:layout_width="@dimen/px224dp"
+        android:layout_height="@dimen/px224dp"
+        android:background="@mipmap/me_rz"
+        android:layout_centerInParent="true"
+        />
+    <ImageView
+        android:id="@+id/iv_add"
+        android:layout_width="@dimen/px40dp"
+        android:layout_height="@dimen/px40dp"
+        android:layout_marginTop="@dimen/px80dp"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/add"
+        android:visibility="invisible"
+        />
+
+    <TextView
+        android:id="@+id/tv_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加图片"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/iv_add"
+        android:layout_marginTop="@dimen/px30dp"
+        android:visibility="invisible"
+        />
+
+
+</RelativeLayout>

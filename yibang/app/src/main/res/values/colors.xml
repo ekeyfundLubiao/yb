@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gray">#cccccc</color>
+
+    <color name="drop_down_selected">#7B1FA2</color>
+    <color name="drop_down_unselected">#111111</color>
+
+    <color name="mask_color">#88888888</color>
+    <color name="check_bg">#f2f2f2</color>
+    <color name="un_press_color">#9C27B0</color>
+
+    <!--文字颜色-->
+    <color name="colorTextGray">#6d6d6d</color>
+    <color name="colorText999999">#999999</color>
+    <color name="colorText666666">#666666</color>
+    <color name="colorTextYellow">#f08519</color>
+    <color name="colorTextBlack">#333333</color>
+    <color name="colorText333333">#333333</color>
+    <color name="colorTextCCCCCC">#cccccc</color>
+    <color name="colorTexteaeaea">#eaeaea</color>
+    <color name="colorTextRed">#FF7474</color>
+    <color name="colorTextff4400">#ff4400</color>
+
+    <!--背景颜色-->
+    <color name="colorBackgroundYellow">#F08519</color>
+    <color name="colorBackgroundGray">#B2B2B2</color>
+    <color name="colorButtonBackgroundYellow">#F4BB82</color>
+    <color name="colorBttonBackgroundGray">#B2AFAD</color>
+    <color name="colorBackground">#EFEFEF</color>
+    <color name="colorBackgroundTransparent">#e8B2B2B2</color>
+    <color name="colorBackgroundeaeaea">#eaeaea</color>
+    <color name="colorWhite">#fff</color>
+    <color name="coloBlack">#000</color>
+
+    <!--首页标题栏颜色-->
+    <color name="titleColorDeep">#e6000000</color>
+    <color name="tilteColorLight">#1e000000</color>
+
+    <!-- common -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="half_transparent">#8f000000</color>
+
+    <!-- background -->
+    <color name="bg">#FFF5F5F5</color>
+    <color name="bg_pressed">#FFF2F2F2</color>
+
+    <!-- material design black font color -->
+    <color name="font_black_0">#212121</color>
+    <color name="font_black_1">#424242</color>
+    <color name="font_black_2">#616161</color>
+    <color name="font_black_3">#757575</color>
+    <color name="font_black_4">#9e9e9e</color>
+    <color name="font_black_5">#bdbdbd</color>
+    <color name="font_black_6">#e0e0e0</color>
+
+    <!-- divider -->
+    <color name="divider_1">#e2e2e2</color>
+    <color name="divider_2">#e6e6e6</color>
+
+</resources>

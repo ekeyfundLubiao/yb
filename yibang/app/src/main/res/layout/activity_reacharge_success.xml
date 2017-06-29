@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundeaeaea"
+    >
+
+    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+
+    <RelativeLayout
+        android:id="@+id/rl_back"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px724dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginRight="@dimen/px30dp"
+        android:background="@mipmap/me_cz_bg"
+        >
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/px114dp"
+        android:layout_height="@dimen/px114dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/px78dp"
+
+        android:src="@mipmap/me_cz_czcg"
+        />
+
+    <TextView
+        android:id="@+id/tv_czcg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="充值成功"
+        android:textColor="@color/coloBlack"
+        android:textSize="@dimen/fontSize18"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/iv_icon"
+        android:layout_marginTop="@dimen/px44dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_czcg"
+        android:layout_marginTop="@dimen/px44dp"
+        android:background="@drawable/xx"
+        android:layout_marginLeft="@dimen/px54dp"
+        android:layout_marginRight="@dimen/px54dp"
+        android:layerType="software"
+        />
+
+    <TextView
+        android:id="@+id/tv_zffs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="支付方式"
+        android:textSize="@dimen/fontSize12"
+        android:textColor="@color/colorTextGray"
+        android:layout_below="@+id/tv_line1"
+        android:layout_marginLeft="@dimen/px54dp"
+        android:layout_marginTop="@dimen/px26dp"
+        />
+
+ <TextView
+        android:id="@+id/tv_zffs_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="微信支付"
+        android:textSize="@dimen/fontSize12"
+        android:textColor="@color/colorTextGray"
+        android:layout_below="@+id/tv_line1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/px54dp"
+        android:layout_marginTop="@dimen/px26dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_zffs"
+        android:layout_marginTop="@dimen/px26dp"
+        android:background="@drawable/xx"
+        android:layout_marginLeft="@dimen/px54dp"
+        android:layout_marginRight="@dimen/px54dp"
+        android:layerType="software"
+        />
+
+    <TextView
+        android:id="@+id/tv_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="实际支付"
+        android:textColor="@color/colorTextGray"
+        android:textSize="@dimen/fontSize12"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_line2"
+        android:layout_marginTop="@dimen/px64dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_sjzf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¥1200.59"
+        android:textSize="@dimen/fontSize18"
+        android:textColor="@color/colorTextBlack"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_tag"
+        android:layout_marginTop="@dimen/px24dp"
+        android:layout_marginBottom="@dimen/px78dp"
+        />
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btn_comlete"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px100dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/round_button_border_yellow_deep"
+        android:layout_below="@+id/rl_back"
+        android:layout_marginTop="@dimen/px94dp"
+        android:text="完成"
+        android:textSize="18sp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginLeft="@dimen/px60dp"
+        android:layout_marginRight="@dimen/px60dp"
+        />
+
+</RelativeLayout>

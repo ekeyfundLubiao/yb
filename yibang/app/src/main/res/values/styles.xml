@@ -1,0 +1,37 @@
+<resources>
+
+ <!--   &lt;!&ndash; Base application theme. &ndash;&gt;
+    <style name="ActionBarTheme" parent="Theme.AppCompat.NoActionBar">
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        &lt;!&ndash; toolbar（actionbar）颜色 &ndash;&gt;
+        <item name="colorPrimary">@color/colorBackgroundYellow</item>
+        &lt;!&ndash; 窗口的背景颜色 &ndash;&gt;
+        <item name="colorPrimaryDark">@color/colorBackgroundYellow</item>
+    </style>-->
+
+    <!--半透明主题-->
+    <style name="MyTransparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/colorBackgroundTransparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/fade</item>
+
+    </style>
+
+    <!--进入退出动画-->
+    <style name="fade">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_open</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_close</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_open</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_close</item>
+    </style>
+
+    <!-- 解决白屏. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+</resources>

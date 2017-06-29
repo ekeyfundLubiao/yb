@@ -1,0 +1,16 @@
+<ag.yinglingedu.com.xlibrary.widget.DropDownMenu
+    android:id="@+id/dropDownMenu"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:dddividerColor="@color/gray"
+    app:ddmaskColor="@color/mask_color"
+    app:ddmenuBackgroundColor="@color/white"
+    app:ddmenuMenuHeightPercent="0.5"
+    app:ddmenuSelectedIcon="@mipmap/sy_fl_pre"
+    app:ddmenuTextSize="13sp"
+    app:ddmenuUnselectedIcon="@mipmap/home_btn_dropdown_disable"
+    app:ddtextSelectedColor="@color/drop_down_selected"
+    app:ddtextUnselectedColor="@color/drop_down_unselected"
+    app:ddunderlineColor="@color/gray" />

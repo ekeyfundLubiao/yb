@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    xmlns:ratingbar="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/tv_fw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorText999999"
+        android:textSize="@dimen/fontSize15"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px20dp"
+        android:text="游戏陪玩"
+        />
+
+    <TextView
+        android:id="@+id/tv_remarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上赛季钻石，目前黄金2，打游戏找我就OK啦~"
+        android:textSize="@dimen/fontSize12"
+        android:textColor="@color/colorText999999"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_below="@+id/tv_fw"
+        android:layout_marginTop="@dimen/px10dp"
+        />
+    
+    <ImageView
+        android:id="@+id/iv_is_new"
+        android:layout_width="@dimen/px50dp"
+        android:layout_height="@dimen/px30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/px38dp"
+        android:layout_marginRight="@dimen/px30dp"
+        android:src="@mipmap/dt_btn_newred_disable"
+        />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tv_remarks"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginRight="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px10dp"
+        android:layout_marginBottom="@dimen/px10dp"
+        android:background="@color/colorBackground"
+        ></View>
+
+    <TextView
+        android:id="@+id/tv_yssl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[已售1640]"
+        android:textSize="@dimen/fontSize10"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_below="@+id/line"
+        android:textColor="@color/colorTextYellow"
+        android:layout_marginBottom="@dimen/px20dp"
+        />
+    
+    <ag.yinglingedu.com.xlibrary.widget.StarBar
+        android:id="@+id/star_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_yssl"
+        android:layout_alignBottom="@+id/tv_yssl"
+        android:layout_toRightOf="@id/tv_yssl"
+        ratingbar:starEmpty="@drawable/star_empty"
+        ratingbar:starFill="@mipmap/dt_btn_star_disable"
+        ratingbar:starDistance="5dp"
+        ratingbar:starCount="5"
+        ratingbar:starSize="@dimen/px18dp"
+        android:layout_marginLeft="@dimen/px6dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30元/小时"
+        android:textSize="@dimen/fontSize10"
+        android:layout_below="@id/line"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/px30dp"
+        android:textColor="@color/colorTextYellow"
+        />
+
+</RelativeLayout>

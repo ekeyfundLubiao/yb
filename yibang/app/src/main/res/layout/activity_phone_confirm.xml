@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/me_dl_bg"
+    >
+
+    <include layout="@layout/toolbar" android:id="@+id/toolbar"></include>
+
+    <ImageView
+        android:id="@+id/iv_zh"
+        android:layout_width="@dimen/px38dp"
+        android:layout_height="@dimen/px42dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="@dimen/px308dp"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:src="@mipmap/me_dl_zh"
+        />
+
+    <EditText
+        android:id="@+id/et_zh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="手机号码"
+        android:background="@null"
+        android:layout_toRightOf="@+id/iv_zh"
+        android:layout_alignTop="@+id/iv_zh"
+        android:textColorHint="@color/colorWhite"
+        android:layout_marginLeft="@dimen/px24dp"
+        android:layout_marginRight="@dimen/px30dp"
+        android:textSize="17sp"
+        android:inputType="phone"
+        />
+
+    <View
+        android:id="@+id/view_line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorWhite"
+        android:layout_below="@+id/iv_zh"
+        android:layout_marginTop="@dimen/px40dp"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginRight="@dimen/px30dp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_yzm"
+        android:layout_width="@dimen/px38dp"
+        android:layout_height="@dimen/px42dp"
+        android:layout_below="@+id/view_line1"
+        android:layout_marginTop="@dimen/px40dp"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:src="@mipmap/me_dl_yzm"
+        />
+
+    <EditText
+        android:id="@+id/et_yzm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="验证码"
+        android:background="@null"
+        android:layout_toRightOf="@+id/iv_yzm"
+        android:layout_toLeftOf="@+id/tv_yzm"
+        android:layout_alignTop="@+id/iv_yzm"
+        android:textColorHint="@color/colorWhite"
+        android:layout_marginLeft="@dimen/px24dp"
+        android:textSize="17sp"
+        android:maxLength="6"
+        android:inputType="number"
+        />
+
+    <TextView
+        android:id="@+id/tv_yzm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取验证码"
+        android:textColor="@color/colorWhite"
+        android:padding="@dimen/px20dp"
+        android:layout_alignTop="@+id/view_line1"
+        android:layout_marginTop="@dimen/px26dp"
+        android:background="@color/colorButtonBackgroundYellow"
+        android:layout_alignRight="@+id/view_line1"
+        android:layout_alignEnd="@+id/view_line1" />
+
+
+    <View
+        android:id="@+id/view_line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorWhite"
+        android:layout_below="@+id/iv_yzm"
+        android:layout_marginTop="@dimen/px40dp"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginRight="@dimen/px30dp"
+        />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="立即认证"
+        android:textSize="17sp"
+        android:padding="@dimen/px30dp"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginRight="@dimen/px30dp"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/round_button_border_yellow_deep"
+        android:layout_below="@+id/view_line2"
+        android:layout_marginTop="@dimen/px104dp"
+        />
+
+</RelativeLayout>

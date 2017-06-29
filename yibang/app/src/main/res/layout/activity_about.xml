@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    >
+
+    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="@dimen/px180dp"
+        android:layout_height="@dimen/px180dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/px80dp"
+        android:layout_below="@+id/toolbar"
+        android:src="@mipmap/me_dl_logo"
+        />
+
+    <ImageView
+        android:id="@+id/iv_name"
+        android:layout_width="@dimen/px124dp"
+        android:layout_height="@dimen/px52dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/iv_logo"
+        android:src="@mipmap/my_btn_logoword_disable"
+        android:layout_marginTop="@dimen/px30dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你的举手之劳,其实至关重要"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/iv_name"
+        android:layout_marginTop="@dimen/px20dp"
+        android:textSize="@dimen/fontSize14"
+        android:textColor="@color/colorTextCCCCCC"
+        android:layout_marginBottom="@dimen/px20dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_edition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_tag"
+        android:background="@color/colorWhite"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="版本"
+            android:textSize="@dimen/fontSize15"
+            android:textColor="@color/colorText333333"
+            android:layout_marginLeft="@dimen/px30dp"
+            android:layout_marginTop="@dimen/px22dp"
+            android:layout_marginBottom="@dimen/px22dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_edition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.0.1"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/px30dp"
+            android:textSize="@dimen/fontSize14"
+            android:textColor="@color/colorTextGray"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_function"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_edition"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="1dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="功能介绍"
+            android:textSize="@dimen/fontSize15"
+            android:textColor="@color/colorText333333"
+            android:layout_marginLeft="@dimen/px30dp"
+            android:layout_marginTop="@dimen/px22dp"
+            android:layout_marginBottom="@dimen/px22dp"
+            />
+
+        <ImageView
+            android:layout_width="@dimen/px20dp"
+            android:layout_height="@dimen/px36dp"
+            android:src="@mipmap/right_arrow"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/px30dp"
+            />
+    </RelativeLayout>
+<RelativeLayout
+        android:id="@+id/rl_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_function"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="1dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="意见反馈"
+            android:textSize="@dimen/fontSize15"
+            android:textColor="@color/colorText333333"
+            android:layout_marginLeft="@dimen/px30dp"
+            android:layout_marginTop="@dimen/px22dp"
+            android:layout_marginBottom="@dimen/px22dp"
+            />
+
+        <ImageView
+            android:layout_width="@dimen/px20dp"
+            android:layout_height="@dimen/px36dp"
+            android:src="@mipmap/right_arrow"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/px30dp"
+            />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_edition_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="© 2017版权所有"
+        android:textSize="@dimen/fontSize14"
+        android:textColor="@color/colorTextCCCCCC"
+        android:layout_marginBottom="@dimen/px20dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上海卓艾信息技术服务有限公司"
+        android:textSize="@dimen/fontSize14"
+        android:textColor="@color/colorTextCCCCCC"
+        android:layout_above="@+id/tv_edition_tag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/px10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="《蚁帮用户许可及服务协议》"
+        android:textSize="@dimen/fontSize14"
+        android:textColor="@color/colorText333333"
+        android:layout_above="@+id/tv_company"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/px10dp"
+        />
+</RelativeLayout>

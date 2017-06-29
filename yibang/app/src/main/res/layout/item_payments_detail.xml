@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv_headIcon"
+        android:layout_width="@dimen/px88dp"
+        android:layout_height="@dimen/px88dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/px30dp"
+        fresco:roundAsCircle = "true"
+        fresco:progressBarImage="@drawable/loading"
+        fresco:progressBarImageScaleType="centerInside"
+        fresco:failureImageScaleType="centerInside"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/loading"
+        fresco:failureImage="@drawable/error"
+        android:layout_marginTop="@dimen/px34dp"
+        android:layout_marginBottom="@dimen/px34dp"
+        />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/sdv_headIcon"
+            android:layout_toRightOf="@+id/sdv_headIcon"
+            android:layout_marginLeft="@dimen/px24dp"
+            android:text="提现"
+            android:textSize="@dimen/fontSize17"
+            android:textColor="@color/coloBlack"
+            />
+
+        <TextView
+            android:id="@+id/tv_remarks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_type"
+            android:layout_below="@+id/tv_type"
+            android:layout_marginTop="@dimen/px16dp"
+            android:text="提现到支付宝"
+            android:textColor="@color/colorText999999"
+            android:textSize="@dimen/fontSize14"
+            />
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_type"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/px30dp"
+            android:text="-5000.00元"
+            android:textSize="@dimen/fontSize17"
+            android:textColor="@color/coloBlack"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_money"
+            android:layout_alignRight="@+id/tv_money"
+            android:text="04-18 15:51"
+            android:layout_marginTop="@dimen/px22dp"
+            android:textSize="@dimen/fontSize10"
+            android:textColor="@color/colorText999999"
+            />
+</RelativeLayout>

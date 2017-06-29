@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    >
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取消"
+        android:paddingTop="@dimen/px32dp"
+        android:paddingBottom="@dimen/px32dp"
+        android:gravity="center"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorText333333"
+        android:layout_alignParentBottom="true"
+        />
+    <View
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px22dp"
+        android:layout_above="@+id/tv_cancel"
+        android:background="@color/colorBackground"
+        />
+    <TextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="确定"
+        android:paddingTop="@dimen/px32dp"
+        android:paddingBottom="@dimen/px32dp"
+        android:gravity="center"
+        android:background="@color/colorWhite"
+        android:textColor="@color/colorText333333"
+        android:layout_above="@id/back"
+        />
+
+</RelativeLayout>

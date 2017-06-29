@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/px88dp"
+        android:layout_height="@dimen/px88dp"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/home_icon_zbsm_normal"
+        android:layout_marginTop="@dimen/px30dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_icon"
+        android:layout_marginTop="@dimen/px14dp"
+        android:layout_centerHorizontal="true"
+        android:text="占卜算命"
+        android:textSize="@dimen/fontSize12"
+        android:textColor="@color/colorText666666"
+        />
+    
+</RelativeLayout>

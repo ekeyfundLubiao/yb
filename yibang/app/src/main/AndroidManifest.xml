@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ag.yinglingedu.com.ag">
+
+    <!--读取短信-->
+    <uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.READ_SMS"></uses-permission>
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!--用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!--用于获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <!--用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <!--用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <!--用于访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <!--用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!--用于写入缓存数据到扩展存储卡-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!--用于申请调用A-GPS模块-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"></uses-permission>
+    <!--用于申请获取蓝牙信息进行室内定位-->
+    <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
+
+    <application
+        android:name=".APP"
+        android:allowBackup="true"
+        android:icon="@mipmap/me_dl_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/me_dl_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".model.mine.ActivityLogin"
+            android:theme="@style/AppTheme"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.zzti.fengyongge.imagepicker.PhotoSelectorActivity"></activity>//选择图片
+        <activity android:name="com.zzti.fengyongge.imagepicker.PhotoPreviewActivity"></activity>//预览图片
+
+        <!--高德地图-->
+        <meta-data android:name="com.amap.api.v2.apikey"
+            android:value="a04dff587ea07963aaa7258f874ccca5"/>
+
+        <service android:name="com.amap.api.location.APSService"></service>//高德地图
+
+        <!--城市选择-->
+        <activity
+            android:name="com.zaaach.citypicker.CityPickerActivity"
+            android:theme="@style/CityPicker.NoActionBar"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
+
+        <activity android:name=".ActivityMain"></activity><!--主界面-->
+        <activity android:name=".model.publish.ActivityPublish"></activity><!--发布-->
+        <activity android:name=".model.mine.ActivityRegister" android:launchMode="singleTask" android:windowSoftInputMode="stateVisible|adjustResize"></activity><!--注册-->
+        <activity android:name=".model.mine.ActivityPhoneConfirm"></activity><!--手机认证-->
+        <activity android:name=".model.mine.ActivityMyBalance" ></activity><!--我的余额-->
+        <activity android:name=".model.mine.ActivityPaymentsDetail"></activity><!--收支明细-->
+        <activity android:name=".model.mine.ActivityBalanceRecharge"></activity><!--余额充值-->
+        <activity android:name=".model.mine.ActivityRechargeSuccess"></activity><!--充值成功-->
+        <activity android:name=".model.mine.ActivityBalanceWithdraw"></activity><!--余额提现-->
+        <activity android:name=".model.publish.ActivityXSBD_FXQ"></activity><!--新手必读-->
+        <activity android:name=".model.message.ActivityOrderdynamics" /><!--订单动态-->
+        <activity android:name=".model.mine.ActivityServiceOrder"></activity><!--订单详情-->
+        <activity android:name=".model.mine.ActivityWithdrawResult"></activity><!--体现结果-->
+        <activity android:name=".model.mine.ActivityPersonalCertification"></activity><!--个人认证-->
+        <activity android:name=".model.mine.ActivityCertification"></activity><!--实名认证-->
+        <activity android:name=".model.mine.ActivitySkillCertification" android:windowSoftInputMode="adjustPan"></activity><!--技能认证-->
+        <activity android:name=".model.mine.ActivityAlreadyCertificationName"></activity><!--已实名认证-->
+        <activity android:name=".model.mine.ActivitySetting"></activity><!--我的设置-->
+        <activity android:name=".model.mine.ActivityNotificationMessage"></activity><!--通知与消息-->
+        <activity android:name=".model.mine.ActivitySettingConfirm" android:theme="@style/MyTransparent"></activity><!--清除缓存确认-->
+        <activity android:name=".model.mine.ActivityAbout"></activity><!--关于蚁帮-->
+        <activity android:name=".model.mine.ActivityFunctionIntroduction"></activity><!--功能介绍-->
+        <activity android:name=".model.mine.ActivityFeedback"></activity><!--意见反馈-->
+        <activity android:name=".model.mine.ActivityCollectionService" /><!--收藏服务-->
+        <activity android:name=".model.mine.ActivityManagementService" /><!--管理服务-->
+        <activity android:name=".model.mine.ActivityUserManagement" /><!--关注的人-->
+        <activity android:name=".model.publish.ActivityXSBD_FFW" android:windowSoftInputMode="adjustResize"/><!--发服务-->
+        <activity android:name=".model.publish.ActivityPublish_FXQ" /><!--发需求-->
+        <activity android:name=".model.publish.ActivityPublish_FFW" /><!--发服务-->
+        <activity android:name=".model.homepage.ActivityAllKinds" /><!--全部分类-->
+        <activity android:name=".model.homepage.ActivityKindsDetail" /><!--分类详情-->
+        <activity android:name=".model.homepage.ActivityFWXQ" /><!--服务详情-->
+        <activity android:name=".model.homepage.ActivityQRDD" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".model.homepage.ActivityZFDD" />
+        <activity android:name=".model.homepage.ActivityZFXQ" />
+        <activity android:name=".model.homepage.ActivityDDXQ" />
+        <activity android:name=".model.homepage.ActivityPJFW" />
+        <activity android:name=".model.hall.ActivityService" />
+        <activity android:name=".model.hall.ActivityXQXQ" />
+        <activity android:name=".model.homepage.ActivitySearch" /><!--支付订单-->
+
+        <!-- 融云 -->
+        <meta-data
+            android:name="RONG_CLOUD_APP_KEY"
+            android:value="c9kqb3rdcxxcj" />
+
+        <service
+            android:name="io.rong.imlib.ipc.RongService"
+            android:exported="true"
+            android:process=":ipc" />
+
+        <service android:name="io.rong.imlib.ReConnectService"
+            android:exported="true"/>
+
+        <receiver android:name="io.rong.imlib.ConnectChangeReceiver"
+            android:exported="true"/>
+
+        <receiver
+            android:name="io.rong.imlib.HeartbeatReceiver"
+            android:process=":ipc" />
+        <!-- imlib config end -->
+
+
+        <!--必选： SDK 核心功能-->
+        <!--第三方相关,向第三方推送服务请求 token 的服务 -->
+        <service
+            android:name="io.rong.push.core.PushRegistrationService"
+            android:exported="false">
+        </service>
+
+        <!-- 处理 push 消息相关的服务 -->
+        <service
+            android:name="io.rong.push.core.MessageHandleService"
+            android:exported="true">
+        </service>
+
+        <!-- push服务 -->
+        <service
+            android:name="io.rong.push.PushService"
+            android:exported="true"
+            android:process="io.rong.push">  <!-- push进程，可以改名 -->
+        </service>
+        <service android:name=".HeartBeatService" />
+
+        <!-- push 相关事件接收器 -->
+        <receiver
+            android:name="io.rong.push.PushReceiver"
+            android:process="io.rong.push">   <!-- 此处进程可以改名，名称需要和PushService所在进程统一 -->
+            <!-- 心跳事件 -->
+            <intent-filter>
+                <action android:name="io.rong.push.intent.action.HEART_BEAT" />
+            </intent-filter>
+            <!-- 网络变动事件 -->
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- 部分用户事件 -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+
+
+
+    </application>
+
+
+</manifest>

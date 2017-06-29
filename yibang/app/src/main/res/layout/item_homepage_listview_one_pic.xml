@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:ratingbar="http://schemas.android.com/tools"
+    android:background="@color/colorWhite"
+    >
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv_headIcon"
+        android:layout_width="@dimen/myHeadIconDimenHomePage"
+        android:layout_height="@dimen/myHeadIconDimenHomePage"
+        android:layout_marginTop="@dimen/px34dp"
+        android:layout_marginBottom="@dimen/px34dp"
+        android:layout_marginLeft="@dimen/px30dp"
+        fresco:roundAsCircle = "true"
+        fresco:progressBarImage="@drawable/loading"
+        fresco:progressBarImageScaleType="centerInside"
+        fresco:failureImageScaleType="centerInside"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/loading"
+        fresco:failureImage="@drawable/error"
+        />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/sdv_headIcon"
+        android:layout_marginLeft="@dimen/px20dp"
+        android:layout_alignTop="@id/sdv_headIcon"
+        android:layout_alignBottom="@id/sdv_headIcon"
+        android:text="银月塔罗"
+        android:gravity="center"
+        android:textColor="@color/colorText333333"
+        />
+
+    <ImageView
+        android:id="@+id/iv_gz"
+        android:layout_width="@dimen/px88dp"
+        android:layout_height="@dimen/px44dp"
+        android:src="@mipmap/home_pressedbtn_follow_pressed"
+        android:layout_alignBottom="@id/sdv_headIcon"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/px30dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_jl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="相距600.8公里"
+        android:textColor="@color/colorText999999"
+        android:layout_alignRight="@+id/iv_gz"
+        android:layout_above="@+id/iv_gz"
+        android:textSize="@dimen/fontSize8"
+        android:layout_marginBottom="@dimen/px10dp"
+        />
+    
+    <LinearLayout
+        android:id="@+id/ll_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sdv_headIcon"
+        >
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_icon1"
+            android:layout_width="@dimen/px320dp"
+            android:layout_height="@dimen/px220dp"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:viewAspectRatio="1.4"
+            fresco:roundedCornerRadius="8dip"
+            fresco:roundWithOverlayColor="@color/colorWhite"
+            fresco:roundingBorderWidth="2dp"
+            fresco:placeholderImage="@drawable/loading"
+            android:layout_marginLeft="@dimen/px30dp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="塔罗预测各运势、2017年运"
+        android:layout_below="@+id/ll_icon"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px20dp"
+        android:textSize="@dimen/fontSize17"
+        android:textColor="@color/colorText333333"
+        />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="2"
+        android:ellipsize="end"
+        android:layout_below="@+id/tv_name2"
+        android:layout_marginTop="@dimen/px10dp"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:text="师从Spirit Lodge的Allen，从业五年，开塔罗佛牌实体店三年，美国塔罗协会职业塔罗师认证，美国塔罗协会职业塔罗师认证美国塔罗协会职业塔罗师认证"
+        android:layout_marginRight="@dimen/px30dp"
+        android:textSize="@dimen/fontSize12"
+        android:textColor="@color/colorText999999"
+        android:layout_marginBottom="@dimen/px10dp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_like"
+        android:layout_width="@dimen/px22dp"
+        android:layout_height="@dimen/px22dp"
+        android:src="@mipmap/home_btn_like_disable"
+        android:layout_below="@+id/tv_content"
+        android:layout_marginLeft="@dimen/px30dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="230"
+        android:textColor="@color/colorTextYellow"
+        android:textSize="@dimen/fontSize9"
+        android:layout_toRightOf="@id/iv_like"
+        android:layout_below="@id/tv_content"
+        android:layout_marginLeft="@dimen/px4dp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_comment"
+        android:layout_width="@dimen/px22dp"
+        android:layout_height="@dimen/px22dp"
+        android:layout_toRightOf="@id/tv_like"
+        android:layout_below="@+id/tv_content"
+        android:layout_marginLeft="@dimen/px16dp"
+        android:src="@mipmap/home_btn_comment_disable"
+        />
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5310"
+        android:textColor="@color/colorTextYellow"
+        android:textSize="@dimen/fontSize9"
+        android:layout_toRightOf="@id/iv_comment"
+        android:layout_below="@id/tv_content"
+        android:layout_marginLeft="@dimen/px4dp" />
+
+
+    <ImageView
+        android:id="@+id/iv_check"
+        android:layout_width="@dimen/px22dp"
+        android:layout_height="@dimen/px22dp"
+        android:layout_toRightOf="@id/tv_comment"
+        android:layout_below="@+id/tv_content"
+        android:layout_marginLeft="@dimen/px16dp"
+        android:src="@mipmap/home_btn_check_disable" />
+
+    <TextView
+        android:id="@+id/tv_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1190"
+        android:textColor="@color/colorTextYellow"
+        android:textSize="@dimen/fontSize9"
+        android:layout_toRightOf="@id/iv_check"
+        android:layout_below="@id/tv_content"
+        android:layout_marginLeft="@dimen/px4dp" />
+
+    <TextView
+        android:id="@+id/tv_way"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上海浦江智谷"
+        android:layout_below="@+id/tv_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/px30dp"
+        android:textColor="@color/colorTextYellow"
+        android:textSize="@dimen/fontSize9"
+        />
+    <ImageView
+        android:id="@+id/iv_location"
+        android:layout_width="@dimen/px18dp"
+        android:layout_height="@dimen/px18dp"
+        android:layout_toLeftOf="@+id/tv_way"
+        android:layout_below="@+id/tv_content"
+        android:src="@mipmap/home_btn_location_disable"
+        android:layout_marginRight="@dimen/px10dp"
+        />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="@dimen/px30dp"
+        android:layout_below="@id/iv_like"
+        android:background="@color/colorBackground"
+        ></View>
+
+    <TextView
+        android:id="@+id/tv_yssl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[已售1640]"
+        android:textSize="@dimen/fontSize10"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_below="@+id/line"
+        android:textColor="@color/colorTextYellow"
+        android:layout_marginBottom="@dimen/px20dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:layout_toRightOf="@+id/tv_yssl"
+        android:layout_marginLeft="@dimen/px10dp"
+        android:layout_alignTop="@+id/tv_yssl"
+        android:layout_alignBottom="@+id/tv_yssl"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:id="@+id/iv_star1"
+            android:layout_width="@dimen/px18dp"
+            android:layout_height="@dimen/px18dp"
+            android:src="@mipmap/dt_btn_star_disable"
+            />
+        <ImageView
+            android:id="@+id/iv_star2"
+            android:layout_width="@dimen/px18dp"
+            android:layout_height="@dimen/px18dp"
+            android:src="@mipmap/dt_btn_star_disable"
+            android:layout_marginLeft="@dimen/px4dp"
+            />
+        <ImageView
+            android:id="@+id/iv_star3"
+            android:layout_width="@dimen/px18dp"
+            android:layout_height="@dimen/px18dp"
+            android:src="@mipmap/dt_btn_star_disable"
+            android:layout_marginLeft="@dimen/px4dp"
+            />
+        <ImageView
+            android:id="@+id/iv_star4"
+            android:layout_width="@dimen/px18dp"
+            android:layout_height="@dimen/px18dp"
+            android:src="@mipmap/dt_btn_star_disable"
+            android:layout_marginLeft="@dimen/px4dp"
+            />
+        <ImageView
+            android:id="@+id/iv_star5"
+            android:layout_width="@dimen/px18dp"
+            android:layout_height="@dimen/px18dp"
+            android:src="@mipmap/dt_btn_star_disable"
+            android:layout_marginLeft="@dimen/px4dp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_fs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5.0"
+        android:textSize="@dimen/fontSize10"
+        android:layout_below="@id/line"
+       android:layout_toRightOf="@+id/ll_star"
+        android:textColor="@color/colorTextYellow"
+        android:layout_marginLeft="@dimen/px10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30元/小时"
+        android:textSize="@dimen/fontSize10"
+        android:layout_below="@id/line"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/px30dp"
+        android:textColor="@color/colorTextYellow"
+        />
+    
+</RelativeLayout>

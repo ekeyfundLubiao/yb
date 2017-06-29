@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+
+    <ag.yinglingedu.com.xlibrary.widget.VPSwipeRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:id="@+id/ll_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/colorWhite"
+                >
+                <LinearLayout
+                    android:id="@+id/ll_type1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/tv_type1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/height1"
+                            android:text="粉丝"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:textColor="@color/coloBlack"
+                            android:textSize="17sp"
+                            />
+                        <View
+                            android:id="@+id/line1"
+                            android:layout_width="@dimen/px168dp"
+                            android:layout_height="@dimen/px6dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/colorTextYellow"
+                            android:layout_below="@+id/tv_type1"
+                            ></View>
+
+                        <ImageView
+                            android:id="@+id/iv_dd"
+                            android:layout_width="@dimen/px18dp"
+                            android:layout_height="@dimen/px18dp"
+                            android:src="@mipmap/xx_xx_ddr"
+                            android:layout_alignTop="@+id/tv_type1"
+                            android:layout_marginTop="@dimen/px10dp"
+                            android:layout_toRightOf="@id/tv_type1"
+                            />
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_type2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/tv_type2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/height1"
+                        android:text="关注"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:textColor="@color/coloBlack"
+                        android:textSize="17sp"
+                        />
+                    <View
+                        android:id="@+id/line2"
+                        android:layout_width="@dimen/px168dp"
+                        android:layout_height="@dimen/px6dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/colorTextYellow"
+                        android:visibility="invisible"
+                        android:layout_below="@+id/tv_type2"
+                        ></View>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_show"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll_navigation"
+                android:layout_marginTop="1dp"
+                android:background="@color/colorBackgroundeaeaea"
+                android:paddingTop="1dp"
+                ></android.support.v4.view.ViewPager>
+        </RelativeLayout>
+
+    </ag.yinglingedu.com.xlibrary.widget.VPSwipeRefreshLayout>
+
+</RelativeLayout>

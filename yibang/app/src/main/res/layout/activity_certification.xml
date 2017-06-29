@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    >
+
+    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+
+    <TextView
+        android:id="@+id/tv_shz"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px52dp"
+        android:layout_centerHorizontal="true"
+        android:text="审核中"
+        android:layout_below="@+id/toolbar"
+        android:textSize="@dimen/fontSize14"
+        android:textColor="@color/colorText666666"
+        android:gravity="center"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_shz"
+        android:background="@color/colorWhite"
+        >
+        <TextView
+            android:id="@+id/tv_tag1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="真实姓名    "
+            android:textColor="@color/colorText333333"
+            android:layout_marginTop="@dimen/px32dp"
+            android:layout_marginLeft="@dimen/px30dp"
+            android:layout_marginBottom="@dimen/px32dp"
+            android:layout_marginRight="@dimen/px36dp"
+            />
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSize14"
+            android:hint="请输入真实姓名"
+            android:layout_toRightOf="@+id/tv_tag1"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            />
+    </RelativeLayout>
+  <RelativeLayout
+        android:id="@+id/rl_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_name"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="1dp"
+        >
+        <TextView
+            android:id="@+id/tv_tag2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="身份证号码"
+            android:textColor="@color/colorText333333"
+            android:layout_marginTop="@dimen/px32dp"
+            android:layout_marginLeft="@dimen/px30dp"
+            android:layout_marginBottom="@dimen/px32dp"
+            android:layout_marginRight="@dimen/px36dp"
+            />
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSize14"
+            android:hint="请输入身份证号码"
+            android:layout_toRightOf="@+id/tv_tag2"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/id_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_id"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="@dimen/px22dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="身份证照"
+            android:layout_marginLeft="@dimen/px30dp"
+            android:layout_marginTop="@dimen/px30dp"
+            android:layout_marginBottom="@dimen/px32dp"
+            android:textSize="@dimen/fontSize17"
+            android:textColor="@color/colorText333333"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_tag"
+            android:layout_marginBottom="@dimen/px40dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/px182dp"
+                android:layout_weight="1"
+                
+                >
+                <ImageView
+                    android:id="@+id/iv_pic_z"
+                    android:layout_width="@dimen/px326dp"
+                    android:layout_height="@dimen/px182dp"
+                    android:src="@mipmap/me_rz"
+                    android:layout_centerInParent="true"
+                    />
+                <ImageView
+                    android:id="@+id/iv_add_z"
+                    android:layout_width="@dimen/px40dp"
+                    android:layout_height="@dimen/px40dp"
+                    android:layout_marginTop="@dimen/px48dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/add"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_z"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="身份证正面"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/iv_add_z"
+                    android:layout_marginTop="@dimen/px30dp"
+                    />
+
+            </RelativeLayout>
+             <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/px182dp"
+                android:layout_weight="1"
+                
+                >
+                <ImageView
+                    android:id="@+id/iv_pic_f"
+                    android:layout_width="@dimen/px326dp"
+                    android:layout_height="@dimen/px182dp"
+                    android:src="@mipmap/me_rz"
+                    android:layout_centerInParent="true"
+                    />
+
+                 <ImageView
+                     android:id="@+id/iv_add_f"
+                     android:layout_width="@dimen/px40dp"
+                     android:layout_height="@dimen/px40dp"
+                     android:layout_marginTop="@dimen/px48dp"
+                     android:layout_centerHorizontal="true"
+                     android:src="@mipmap/add"
+                     />
+                 <TextView
+                     android:id="@+id/tv_f"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="身份证反面"
+                     android:layout_centerHorizontal="true"
+                     android:layout_below="@+id/iv_add_f"
+                     android:layout_marginTop="@dimen/px30dp"
+                     />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+<RelativeLayout
+        android:id="@+id/id_pic_with_hand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+        android:layout_marginTop="11dp"
+    android:layout_below="@+id/id_pic"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/tv_tag3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手持身份证照"
+            android:layout_marginLeft="@dimen/px30dp"
+            android:layout_marginTop="@dimen/px30dp"
+            android:layout_marginBottom="@dimen/px32dp"
+            android:textSize="@dimen/fontSize17"
+            android:textColor="@color/colorText333333"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_tag3"
+            android:layout_marginBottom="@dimen/px40dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/px182dp"
+                android:layout_weight="1"
+                >
+                <ImageView
+                    android:id="@+id/iv_pic_z_h"
+                    android:layout_width="@dimen/px326dp"
+                    android:layout_height="@dimen/px182dp"
+                    android:src="@mipmap/me_rz"
+                    android:layout_centerInParent="true"
+                    />
+                <ImageView
+                    android:id="@+id/iv_add_z_h"
+                    android:layout_width="@dimen/px40dp"
+                    android:layout_height="@dimen/px40dp"
+                    android:layout_marginTop="@dimen/px48dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/add"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_z_h"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手持身份证正面"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/iv_add_z_h"
+                    android:layout_marginTop="@dimen/px30dp"
+                    />
+
+            </RelativeLayout>
+             <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/px182dp"
+                android:layout_weight="1"
+
+                >
+                <ImageView
+                    android:id="@+id/iv_pic_f_h"
+                    android:layout_width="@dimen/px326dp"
+                    android:layout_height="@dimen/px182dp"
+                    android:src="@mipmap/me_rz"
+                    android:layout_centerInParent="true"
+                    />
+
+                 <ImageView
+                     android:id="@+id/iv_add_f_h"
+                     android:layout_width="@dimen/px40dp"
+                     android:layout_height="@dimen/px40dp"
+                     android:layout_marginTop="@dimen/px48dp"
+                     android:layout_centerHorizontal="true"
+                     android:src="@mipmap/add"
+                     />
+                 <TextView
+                     android:id="@+id/tv_f_h"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="手持身份证反面"
+                     android:layout_centerHorizontal="true"
+                     android:layout_below="@+id/iv_add_f_h"
+                     android:layout_marginTop="@dimen/px30dp"
+                     />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="@dimen/px628dp"
+        android:layout_height="@dimen/px100dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/round_button_border_yellow_deep"
+        android:layout_below="@+id/id_pic_with_hand"
+        android:layout_marginTop="@dimen/px70dp"
+        android:text="提交"
+        android:textSize="18sp"
+        android:textColor="@color/colorWhite"
+        />
+
+</RelativeLayout>

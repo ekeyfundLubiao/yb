@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundeaeaea"
+    >
+
+    =    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+
+    <ag.yinglingedu.com.xlibrary.widget.VPSwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackgroundeaeaea"
+        android:id="@+id/refresh"
+        android:layout_below="@+id/toolbar"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ag.yinglingedu.com.xlibrary.widget.SScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/ll_choose"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rl_type1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+                            <TextView
+                                android:id="@+id/tv_type1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="智能排序"
+                                android:layout_marginTop="@dimen/px24dp"
+                                android:layout_marginBottom="@dimen/px24dp"
+                                android:textSize="@dimen/fontSize14"
+                                android:textColor="@color/colorText666666"
+                                />
+
+                            <ImageView
+                                android:id="@+id/iv_arrow1"
+                                android:layout_width="@dimen/px14dp"
+                                android:layout_height="@dimen/px14dp"
+                                android:layout_toRightOf="@+id/tv_type1"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/px10dp"
+                                android:src="@mipmap/home_btn_dropdown_disable"
+                                />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/rl_type2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+                            <TextView
+                                android:id="@+id/tv_type2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="筛选"
+                                android:layout_marginTop="@dimen/px24dp"
+                                android:layout_marginBottom="@dimen/px24dp"
+                                android:textSize="@dimen/fontSize14"
+                                android:textColor="@color/colorText666666"
+                                />
+
+                            <ImageView
+                                android:id="@+id/iv_arrow2"
+                                android:layout_width="@dimen/px14dp"
+                                android:layout_height="@dimen/px14dp"
+                                android:layout_toRightOf="@+id/tv_type2"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/px10dp"
+                                android:src="@mipmap/home_btn_dropdown_disable"
+                                />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/rl_type3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+                            <TextView
+                                android:id="@+id/tv_type3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="服务方式"
+                                android:layout_marginTop="@dimen/px24dp"
+                                android:layout_marginBottom="@dimen/px24dp"
+                                android:textSize="@dimen/fontSize14"
+                                android:textColor="@color/colorText666666"
+                                />
+
+                            <ImageView
+                                android:id="@+id/iv_arrow3"
+                                android:layout_width="@dimen/px14dp"
+                                android:layout_height="@dimen/px14dp"
+                                android:layout_toRightOf="@+id/tv_type3"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/px10dp"
+                                android:src="@mipmap/home_btn_dropdown_disable"
+                                />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/ll_choose"
+                        android:background="@color/colorBackgroundeaeaea"
+                        ></View>
+
+                    <ag.yinglingedu.com.xlibrary.widget.SListView
+                        android:id="@+id/lv_show"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/line"
+                        android:dividerHeight="@dimen/px30dp"
+                        ></ag.yinglingedu.com.xlibrary.widget.SListView>
+                </RelativeLayout>
+
+            </ag.yinglingedu.com.xlibrary.widget.SScrollView>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_choose_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:layout_alignParentTop="true"
+                >
+                <RelativeLayout
+                    android:id="@+id/rl_top1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:id="@+id/tv_type1_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="全部"
+                        android:layout_marginTop="@dimen/px24dp"
+                        android:layout_marginBottom="@dimen/px24dp"
+                        android:textSize="@dimen/fontSize14"
+                        android:textColor="@color/colorText666666"
+                        />
+
+                    <ImageView
+                        android:id="@+id/iv_arrow1_top"
+                        android:layout_width="@dimen/px14dp"
+                        android:layout_height="@dimen/px14dp"
+                        android:layout_toRightOf="@+id/tv_type1_top"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/px10dp"
+                        android:src="@mipmap/home_btn_dropdown_disable"
+                        />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_top2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:id="@+id/tv_type2_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="智能排序"
+                        android:layout_marginTop="@dimen/px24dp"
+                        android:layout_marginBottom="@dimen/px24dp"
+                        android:textSize="@dimen/fontSize14"
+                        android:textColor="@color/colorText666666"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                    <ImageView
+                        android:id="@+id/iv_arrow2_top"
+                        android:layout_width="@dimen/px14dp"
+                        android:layout_height="@dimen/px14dp"
+                        android:layout_toRightOf="@+id/tv_type2_top"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/px10dp"
+                        android:src="@mipmap/home_btn_dropdown_disable"
+                        />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_top3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:id="@+id/tv_type3_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="智能筛选"
+                        android:layout_marginTop="@dimen/px24dp"
+                        android:layout_marginBottom="@dimen/px24dp"
+                        android:textSize="@dimen/fontSize14"
+                        android:textColor="@color/colorText666666"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                    <ImageView
+                        android:id="@+id/iv_arrow3_top"
+                        android:layout_width="@dimen/px14dp"
+                        android:layout_height="@dimen/px14dp"
+                        android:layout_toRightOf="@+id/tv_type3_top"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/px10dp"
+                        android:src="@mipmap/home_btn_dropdown_disable"
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+            <View
+                android:id="@+id/line_top"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorBackground"
+                android:layout_below="@+id/ll_choose_top"
+                android:visibility="gone"
+                />
+
+
+        </RelativeLayout>
+    </ag.yinglingedu.com.xlibrary.widget.VPSwipeRefreshLayout>
+</RelativeLayout>

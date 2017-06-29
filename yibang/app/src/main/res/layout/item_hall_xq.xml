@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    >
+
+    <TextView
+        android:id="@+id/tv_xq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我想要设计一个签名"
+        android:textSize="@dimen/fontSize15"
+        android:textColor="@color/coloBlack"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px20dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_remarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请帮我设计一个可以用在结婚请贴上的签名，谢谢。"
+        android:layout_below="@+id/tv_xq"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px10dp"
+        android:textSize="@dimen/fontSize12"
+        android:textColor="@color/colorText999999"
+        />
+
+    <TextView
+        android:id="@+id/tv_zt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/tv_xq"
+        android:text="未成交"
+        android:textColor="@color/colorTextGray"
+        android:textSize="@dimen/fontSize12"
+        android:layout_marginRight="@dimen/px30dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_remarks"
+        android:layout_marginTop="@dimen/px20dp"
+        android:layout_marginRight="@dimen/px30dp"
+        android:text="发布时间：2017-05-11 06:30"
+        android:textSize="@dimen/fontSize9"
+        />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tv_time"
+        android:layout_margin="@dimen/px30dp"
+        android:background="@color/colorBackgroundeaeaea"
+        ></View>
+
+    <TextView
+        android:id="@+id/tv_yyrs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/line"
+        android:layout_marginRight="@dimen/px30dp"
+        android:text="已有3位服务者应邀"
+        android:textSize="@dimen/fontSize12"
+        android:textColor="@color/colorTextRed"
+        android:layout_marginBottom="@dimen/px20dp"
+        />
+
+</RelativeLayout>

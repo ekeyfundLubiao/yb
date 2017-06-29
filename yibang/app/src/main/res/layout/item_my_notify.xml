@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/sdv_headIcon"
+        android:layout_width="@dimen/px88dp"
+        android:layout_height="@dimen/px88dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:src="@mipmap/xx_xx_dqr"
+        android:layout_marginTop="@dimen/px36dp"
+        android:layout_marginBottom="@dimen/px36dp"
+        />
+
+    
+    <ImageView
+        android:id="@+id/iv_dd"
+        android:layout_width="@dimen/px18dp"
+        android:layout_height="@dimen/px18dp"
+        android:src="@mipmap/xx_xx_dd"
+        android:layout_alignTop="@+id/sdv_headIcon"
+        android:layout_alignRight="@id/sdv_headIcon"
+        android:layout_marginTop="@dimen/px4dp"
+        android:layout_marginRight="@dimen/px4dp"
+        />
+    
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/sdv_headIcon"
+            android:layout_toRightOf="@+id/sdv_headIcon"
+            android:layout_marginLeft="@dimen/px24dp"
+            android:text="订单动态"
+            android:textSize="@dimen/fontSize17"
+            android:textColor="@color/coloBlack"
+            />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_name"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginTop="@dimen/px16dp"
+            android:text="蚁帮帮评价了你：您好，我需要批采购您好，我需要批采购"
+            android:singleLine="true"
+            android:layout_marginRight="@dimen/px30dp"
+            android:ellipsize="end"
+            android:textColor="@color/colorText999999"
+            android:textSize="@dimen/fontSize14"
+            />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_name"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/px30dp"
+            android:text="上午11:51"
+            android:layout_marginTop="@dimen/px22dp"
+            android:textSize="@dimen/fontSize10"
+            android:textColor="@color/colorText999999"
+            />
+</RelativeLayout>
