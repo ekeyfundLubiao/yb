@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar2"></include>
 
 
     <ImageView
@@ -13,120 +15,114 @@
         android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/px150dp"
-        android:src="@mipmap/me_cz_czcg"
-        />
+        android:src="@mipmap/me_cz_czcg" />
 
     <TextView
         android:id="@+id/tv_tag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorText333333"
-        android:textSize="@dimen/fontSize18"
-        android:text="提现成功，已提交银行"
         android:layout_below="@id/wv_show"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/px42dp"
-        />
+        android:text="提现成功，已提交银行"
+        android:textColor="@color/colorText333333"
+        android:textSize="@dimen/fontSize18" />
 
     <ImageView
         android:id="@+id/iv_center"
         android:layout_width="@dimen/px34dp"
         android:layout_height="@dimen/px34dp"
-        android:src="@mipmap/me_ye_cg"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/tv_tag"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/px100dp"
-        />
-    
+        android:src="@mipmap/me_ye_cg" />
+
     <ImageView
         android:id="@+id/iv_left"
         android:layout_width="@dimen/px186dp"
         android:layout_height="@dimen/px2dp"
-        android:src="@mipmap/me_ye_cgline"
-        android:layout_toLeftOf="@+id/iv_center"
-        android:layout_alignTop="@+id/iv_center"
         android:layout_alignBottom="@+id/iv_center"
-        />
+        android:layout_alignTop="@+id/iv_center"
+        android:layout_toLeftOf="@+id/iv_center"
+        android:src="@mipmap/me_ye_cgline" />
+
     <ImageView
         android:id="@+id/iv_right1"
         android:layout_width="@dimen/px186dp"
         android:layout_height="@dimen/px2dp"
-        android:src="@mipmap/me_ye_cgline"
-        android:layout_toRightOf="@+id/iv_center"
-        android:layout_alignTop="@+id/iv_center"
         android:layout_alignBottom="@+id/iv_center"
-        />
+        android:layout_alignTop="@+id/iv_center"
+        android:layout_toRightOf="@+id/iv_center"
+        android:src="@mipmap/me_ye_cgline" />
 
     <ImageView
         android:id="@+id/iv_left_c"
         android:layout_width="@dimen/px34dp"
         android:layout_height="@dimen/px34dp"
-        android:src="@mipmap/me_ye_cg"
         android:layout_below="@+id/tv_tag"
         android:layout_marginTop="@dimen/px100dp"
         android:layout_toLeftOf="@+id/iv_left"
-        />
+        android:src="@mipmap/me_ye_cg" />
+
     <ImageView
         android:id="@+id/iv_right_c"
         android:layout_width="@dimen/px34dp"
         android:layout_height="@dimen/px34dp"
-        android:src="@mipmap/me_ye_cg"
         android:layout_below="@+id/tv_tag"
         android:layout_marginTop="@dimen/px100dp"
         android:layout_toRightOf="@+id/iv_right1"
-        />
+        android:src="@mipmap/me_ye_cg" />
+
     <LinearLayout
         android:id="@+id/ll_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/iv_center"
-        android:layout_marginTop="@dimen/px34dp"
-        >
+        android:layout_marginTop="@dimen/px34dp">
+
         <TextView
             android:id="@+id/tv_time1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="05-22-15:05"
             android:textColor="@color/colorText999999"
-            android:textSize="@dimen/fontSize10"
-            android:gravity="center"
-            />
+            android:textSize="@dimen/fontSize10" />
+
         <TextView
             android:id="@+id/tv_time2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="05-22-15:05"
             android:textColor="@color/colorText999999"
-            android:textSize="@dimen/fontSize10"
-            android:gravity="center"
-            />
+            android:textSize="@dimen/fontSize10" />
+
         <TextView
             android:id="@+id/tv_time3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="05-22-15:05"
             android:textColor="@color/colorText999999"
-            android:textSize="@dimen/fontSize10"
-            android:gravity="center"
-            />
+            android:textSize="@dimen/fontSize10" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_complete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="完成"
-        android:textColor="@color/colorWhite"
-        android:background="@drawable/right_round_button_yellow"
         android:layout_below="@+id/ll_time"
-        android:layout_marginTop="@dimen/px230dp"
         android:layout_marginLeft="@dimen/px60dp"
         android:layout_marginRight="@dimen/px60dp"
-        android:textSize="@dimen/fontSize18"
-        android:paddingTop="@dimen/px32dp"
+        android:layout_marginTop="@dimen/px230dp"
+        android:background="@drawable/right_round_button_yellow"
         android:paddingBottom="@dimen/px32dp"
-        />
+        android:paddingTop="@dimen/px32dp"
+        android:text="完成"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/fontSize18" />
 </RelativeLayout>

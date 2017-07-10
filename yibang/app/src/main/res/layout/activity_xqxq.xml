@@ -14,8 +14,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
         android:focusable="true"
-        android:focusableInTouchMode="true"
-        >
+        android:focusableInTouchMode="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -210,14 +209,13 @@
                 android:id="@+id/lv_show"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/px30dp"
-                android:paddingLeft="@dimen/px20dp"
-                android:paddingRight="@dimen/px20dp"
                 android:layout_below="@+id/tv_yysl"
+                android:layout_marginTop="@dimen/px30dp"
                 android:background="@color/colorBackgroundeaeaea"
-                android:dividerHeight="@dimen/px30dp"
                 android:divider="@null"
-                ></ag.yinglingedu.com.xlibrary.widget.SListView>
+                android:dividerHeight="@dimen/px30dp"
+                android:paddingLeft="@dimen/px20dp"
+                android:paddingRight="@dimen/px20dp"></ag.yinglingedu.com.xlibrary.widget.SListView>
 
 
         </RelativeLayout>

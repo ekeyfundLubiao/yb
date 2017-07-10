@@ -1,132 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ag.yinglingedu.com.xlibrary.widget.VPSwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackgroundeaeaea"
-    android:id="@+id/refresh"
-    >
+    android:background="@color/colorBackgroundeaeaea">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <ag.yinglingedu.com.xlibrary.widget.SScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <com.youth.banner.Banner
-            android:id="@+id/banner"
+        <ag.yinglingedu.com.xlibrary.widget.SScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/px328dp">
-        </com.youth.banner.Banner>
+            android:layout_height="match_parent">
 
-        <ag.yinglingedu.com.xlibrary.widget.SGridView
-            android:id="@+id/gv_show"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/banner"
-            android:background="@color/colorWhite"
-            android:numColumns="5"
-            android:padding="@dimen/px30dp"
-            android:scrollbars="none"
-            >
-        </ag.yinglingedu.com.xlibrary.widget.SGridView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/sdv_ads"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/px200dp"
-            android:layout_below="@+id/gv_show"
-            android:layout_margin="@dimen/px30dp"
-            />
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px328dp"></com.youth.banner.Banner>
 
-        <include layout="@layout/navigation"
-            android:id="@+id/ll_choose"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_below="@+id/sdv_ads"
-            ></include>
+                <ag.yinglingedu.com.xlibrary.widget.SGridView
+                    android:id="@+id/gv_show"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner"
+                    android:background="@color/colorWhite"
+                    android:numColumns="5"
+                    android:padding="@dimen/px30dp"
+                    android:scrollbars="none"></ag.yinglingedu.com.xlibrary.widget.SGridView>
 
-        <View
-            android:id="@+id/line"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/ll_choose"
-            android:background="@color/colorBackgroundeaeaea"
-            ></View>
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/sdv_ads"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px200dp"
+                    android:layout_below="@+id/gv_show"
+                    android:layout_margin="@dimen/px30dp" />
 
-        <ag.yinglingedu.com.xlibrary.widget.SListView
-            android:id="@+id/lv_show"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/line"
-            android:dividerHeight="@dimen/px30dp"
-            ></ag.yinglingedu.com.xlibrary.widget.SListView>
-    </RelativeLayout>
+                <include
+                    android:id="@+id/ll_choose"
+                    layout="@layout/navigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sdv_ads"></include>
 
-    </ag.yinglingedu.com.xlibrary.widget.SScrollView>
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/ll_choose"
+                    android:background="@color/colorBackgroundeaeaea"></View>
+
+                <ag.yinglingedu.com.xlibrary.widget.SListView
+                    android:id="@+id/lv_show"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/line"
+                    android:dividerHeight="@dimen/px30dp"></ag.yinglingedu.com.xlibrary.widget.SListView>
+            </RelativeLayout>
+
+        </ag.yinglingedu.com.xlibrary.widget.SScrollView>
 
 
         <RelativeLayout
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/title"
-            >
+            android:background="@drawable/title">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/px56dp"
                 android:layout_marginBottom="@dimen/px8dp"
-                >
+                android:layout_marginTop="@dimen/px56dp">
+
                 <TextView
                     android:id="@+id/tv_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="搜索你想找的服务"
-                    android:paddingLeft="@dimen/px58dp"
                     android:layout_marginLeft="@dimen/px16dp"
-                    android:background="@drawable/search_border"
-                    android:textSize="@dimen/fontSize14"
-                    android:textColor="@color/colorText999999"
-                    android:paddingTop="@dimen/px8dp"
-                    android:paddingBottom="@dimen/px8dp"
-                    android:layout_toLeftOf="@+id/tv_location"
                     android:layout_marginRight="@dimen/px16dp"
-                    />
+                    android:layout_toLeftOf="@+id/tv_location"
+                    android:background="@drawable/search_border"
+                    android:paddingBottom="@dimen/px8dp"
+                    android:paddingLeft="@dimen/px58dp"
+                    android:paddingTop="@dimen/px8dp"
+                    android:text="搜索你想找的服务"
+                    android:textColor="@color/colorText999999"
+                    android:textSize="@dimen/fontSize14" />
+
                 <ImageView
                     android:id="@+id/iv_search"
                     android:layout_width="@dimen/px26dp"
                     android:layout_height="@dimen/px26dp"
-                    android:src="@mipmap/home_btn_search_disable"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/px32dp"
-                    />
-                
+                    android:src="@mipmap/home_btn_search_disable" />
+
                 <ImageView
                     android:id="@+id/iv_location"
                     android:layout_width="@dimen/px34dp"
                     android:layout_height="@dimen/px34dp"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/px16dp"
-                    android:src="@mipmap/home_btn_location_disable"
-                    />
+                    android:src="@mipmap/home_btn_location_disable" />
+
                 <TextView
                     android:id="@+id/tv_location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="上海"
-                    android:textSize="17sp"
-                    android:textColor="@color/colorWhite"
                     android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/iv_location"
                     android:layout_marginRight="@dimen/px12dp"
-                    />
+                    android:layout_toLeftOf="@+id/iv_location"
+                    android:text="上海"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="17sp" />
             </RelativeLayout>
 
         </RelativeLayout>
@@ -135,104 +127,100 @@
             android:id="@+id/ll_choose_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
             android:layout_below="@+id/title"
-            android:visibility="gone"
-            >
+            android:background="@color/colorWhite"
+            android:visibility="gone">
+
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                >
+                android:gravity="center">
+
                 <TextView
                     android:id="@+id/tv_type1_top"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="智能排序"
-                    android:layout_marginTop="@dimen/px24dp"
                     android:layout_marginBottom="@dimen/px24dp"
-                    android:textSize="@dimen/fontSize14"
+                    android:layout_marginTop="@dimen/px24dp"
+                    android:text="智能排序"
                     android:textColor="@color/colorText666666"
-                    />
+                    android:textSize="@dimen/fontSize14" />
 
                 <ImageView
                     android:id="@+id/iv_arrow1_top"
                     android:layout_width="@dimen/px14dp"
                     android:layout_height="@dimen/px14dp"
-                    android:layout_toRightOf="@+id/tv_type1_top"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/px10dp"
-                    android:src="@mipmap/home_btn_dropdown_disable"
-                    />
+                    android:layout_toRightOf="@+id/tv_type1_top"
+                    android:src="@mipmap/home_btn_dropdown_disable" />
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                >
+                android:gravity="center">
+
                 <TextView
                     android:id="@+id/tv_type2_top"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="筛选"
-                    android:layout_marginTop="@dimen/px24dp"
-                    android:layout_marginBottom="@dimen/px24dp"
-                    android:textSize="@dimen/fontSize14"
-                    android:textColor="@color/colorText666666"
                     android:layout_centerHorizontal="true"
-                    />
+                    android:layout_marginBottom="@dimen/px24dp"
+                    android:layout_marginTop="@dimen/px24dp"
+                    android:text="筛选"
+                    android:textColor="@color/colorText666666"
+                    android:textSize="@dimen/fontSize14" />
 
                 <ImageView
                     android:id="@+id/iv_arrow2_top"
                     android:layout_width="@dimen/px14dp"
                     android:layout_height="@dimen/px14dp"
-                    android:layout_toRightOf="@+id/tv_type2_top"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/px10dp"
-                    android:src="@mipmap/home_btn_dropdown_disable"
-                    />
+                    android:layout_toRightOf="@+id/tv_type2_top"
+                    android:src="@mipmap/home_btn_dropdown_disable" />
 
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                >
+                android:gravity="center">
+
                 <TextView
                     android:id="@+id/tv_type3_top"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="服务方式"
-                    android:layout_marginTop="@dimen/px24dp"
-                    android:layout_marginBottom="@dimen/px24dp"
-                    android:textSize="@dimen/fontSize14"
-                    android:textColor="@color/colorText666666"
                     android:layout_centerHorizontal="true"
-                    />
+                    android:layout_marginBottom="@dimen/px24dp"
+                    android:layout_marginTop="@dimen/px24dp"
+                    android:text="服务方式"
+                    android:textColor="@color/colorText666666"
+                    android:textSize="@dimen/fontSize14" />
 
                 <ImageView
                     android:id="@+id/iv_arrow3_top"
                     android:layout_width="@dimen/px14dp"
                     android:layout_height="@dimen/px14dp"
-                    android:layout_toRightOf="@+id/tv_type3_top"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/px10dp"
-                    android:src="@mipmap/home_btn_dropdown_disable"
-                    />
+                    android:layout_toRightOf="@+id/tv_type3_top"
+                    android:src="@mipmap/home_btn_dropdown_disable" />
             </RelativeLayout>
         </LinearLayout>
+
         <View
             android:id="@+id/line_top"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/colorBackground"
             android:layout_below="@+id/ll_choose_top"
-            android:visibility="gone"
-            />
+            android:background="@color/colorBackground"
+            android:visibility="gone" />
 
 
     </RelativeLayout>

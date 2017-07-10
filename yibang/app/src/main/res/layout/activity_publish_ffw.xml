@@ -3,16 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
-    android:fitsSystemWindows="true"
-    >
+    android:fitsSystemWindows="true">
 
-    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar2"></include>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
-        >
+        android:layout_below="@+id/toolbar">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -21,42 +22,39 @@
                 android:id="@+id/tv_tag1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/fontSize12"
-                android:text="已选类目"
-                android:textColor="@color/colorText999999"
+                android:layout_marginBottom="@dimen/px20dp"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:layout_marginTop="@dimen/px20dp"
-                android:layout_marginBottom="@dimen/px20dp"
-                />
+                android:text="已选类目"
+                android:textColor="@color/colorText999999"
+                android:textSize="@dimen/fontSize12" />
 
             <RelativeLayout
                 android:id="@+id/rl_yxlm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_tag1"
+                android:layout_marginBottom="@dimen/px20dp"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:layout_marginRight="@dimen/px30dp"
-                android:background="@drawable/round_button_border_gray2"
-                android:layout_marginBottom="@dimen/px20dp"
-                >
+                android:background="@drawable/round_button_border_gray2">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/fontSize12"
-                    android:textColor="@color/colorText333333"
-
                     android:padding="@dimen/px20dp"
                     android:text="教育培训>乐器教学>小提琴教学"
-                    />
+
+                    android:textColor="@color/colorText333333"
+                    android:textSize="@dimen/fontSize12" />
 
                 <ImageView
                     android:layout_width="@dimen/px48dp"
                     android:layout_height="@dimen/px34dp"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/px20dp"
-                    android:src="@mipmap/fb_ffw_bt"
-                    />
+                    android:src="@mipmap/fb_ffw_bt" />
             </RelativeLayout>
 
             <View
@@ -64,65 +62,61 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_below="@+id/rl_yxlm"
-                android:background="@color/colorBackgroundeaeaea"
-                />
+                android:background="@color/colorBackgroundeaeaea" />
 
 
             <TextView
                 android:id="@+id/tv_tag2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/fontSize12"
-                android:text="服务标题"
                 android:layout_below="@+id/line1"
-                android:textColor="@color/colorText999999"
+                android:layout_marginBottom="@dimen/px20dp"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:layout_marginTop="@dimen/px20dp"
-                android:layout_marginBottom="@dimen/px20dp"
-                />
+                android:text="服务标题"
+                android:textColor="@color/colorText999999"
+                android:textSize="@dimen/fontSize12" />
 
             <RelativeLayout
                 android:id="@+id/rl_fwbt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_tag2"
+                android:layout_marginBottom="@dimen/px20dp"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:layout_marginRight="@dimen/px30dp"
-                android:background="@drawable/round_button_border_gray2"
-                android:layout_marginBottom="@dimen/px20dp"
-                >
+                android:background="@drawable/round_button_border_gray2">
+
                 <EditText
                     android:id="@+id/et_fwbt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/fontSize12"
-                    android:textColor="@color/colorText333333"
                     android:background="@null"
-                    android:padding="@dimen/px20dp"
                     android:hint="例如：天才少年的导师，实力派的导师"
                     android:maxLength="20"
-                    />
+                    android:padding="@dimen/px20dp"
+                    android:textColor="@color/colorText333333"
+                    android:textSize="@dimen/fontSize12" />
 
                 <TextView
                     android:id="@+id/tv_total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/px20dp"
-                    android:textSize="@dimen/fontSize12"
-                    android:textColor="@color/colorText999999"
                     android:text="/20"
-                    />
+                    android:textColor="@color/colorText999999"
+                    android:textSize="@dimen/fontSize12" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/tv_total"
-                    android:textSize="@dimen/fontSize12"
-                    android:textColor="@color/colorTextYellow"
                     android:text="0"
-                    />
+                    android:textColor="@color/colorTextYellow"
+                    android:textSize="@dimen/fontSize12" />
             </RelativeLayout>
 
             <ag.yinglingedu.com.xlibrary.widget.SGridView
@@ -130,51 +124,47 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rl_fwbt"
-                android:numColumns="3"
                 android:background="@color/colorBackgroundeaeaea"
-                android:padding="@dimen/px30dp"
-                android:verticalSpacing="5dp"
                 android:horizontalSpacing="5dp"
-                >
-            </ag.yinglingedu.com.xlibrary.widget.SGridView>
+                android:numColumns="3"
+                android:padding="@dimen/px30dp"
+                android:verticalSpacing="5dp"></ag.yinglingedu.com.xlibrary.widget.SGridView>
 
 
             <TextView
                 android:id="@+id/tv_tag3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/fontSize12"
-                android:text="服务介绍"
                 android:layout_below="@+id/gv_show"
-                android:textColor="@color/colorText999999"
+                android:layout_marginBottom="@dimen/px20dp"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:layout_marginTop="@dimen/px20dp"
-                android:layout_marginBottom="@dimen/px20dp"
-                />
+                android:text="服务介绍"
+                android:textColor="@color/colorText999999"
+                android:textSize="@dimen/fontSize12" />
 
             <RelativeLayout
                 android:id="@+id/rl_fwjs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_tag3"
+                android:layout_marginBottom="@dimen/px20dp"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:layout_marginRight="@dimen/px30dp"
-                android:background="@drawable/round_button_border_gray2"
-                android:layout_marginBottom="@dimen/px20dp"
-                >
+                android:background="@drawable/round_button_border_gray2">
+
                 <EditText
                     android:id="@+id/et_fwjs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/fontSize12"
-                    android:textColor="@color/colorText333333"
                     android:background="@null"
-                    android:padding="@dimen/px20dp"
-                    android:hint="例如：天才少年，实力派的导师"
-                    android:maxLength="230"
-                    android:lines="4"
                     android:gravity="top"
-                    />
+                    android:hint="例如：天才少年，实力派的导师"
+                    android:lines="4"
+                    android:maxLength="230"
+                    android:padding="@dimen/px20dp"
+                    android:textColor="@color/colorText333333"
+                    android:textSize="@dimen/fontSize12" />
 
                 <TextView
                     android:id="@+id/tv_total2"
@@ -183,22 +173,21 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="@dimen/px20dp"
-                    android:textSize="@dimen/fontSize12"
-                    android:textColor="@color/colorText999999"
-                    android:text="/20"
                     android:paddingBottom="@dimen/px10dp"
-                    />
+                    android:text="/20"
+                    android:textColor="@color/colorText999999"
+                    android:textSize="@dimen/fontSize12" />
+
                 <TextView
                     android:id="@+id/tv_num2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@+id/tv_total2"
                     android:layout_alignParentBottom="true"
-                    android:textSize="@dimen/fontSize12"
+                    android:layout_toLeftOf="@+id/tv_total2"
                     android:paddingBottom="@dimen/px10dp"
-                    android:textColor="@color/colorTextYellow"
                     android:text="0"
-                    />
+                    android:textColor="@color/colorTextYellow"
+                    android:textSize="@dimen/fontSize12" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -206,165 +195,156 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rl_fwjs"
+                android:layout_marginBottom="@dimen/px20dp"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:layout_marginRight="@dimen/px30dp"
-                android:background="@drawable/round_button_border_gray2"
-                android:layout_marginBottom="@dimen/px20dp"
-                >
+                android:background="@drawable/round_button_border_gray2">
+
                 <EditText
                     android:id="@+id/et_fwjg1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/fontSize12"
-                    android:textColor="@color/colorText333333"
                     android:background="@null"
-                    android:padding="@dimen/px20dp"
                     android:hint="例如：1元/小时"
                     android:maxLength="10"
-                    />
+                    android:padding="@dimen/px20dp"
+                    android:textColor="@color/colorText333333"
+                    android:textSize="@dimen/fontSize12" />
 
                 <TextView
                     android:id="@+id/tv_total3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/px20dp"
-                    android:textSize="@dimen/fontSize12"
-                    android:textColor="@color/colorText999999"
                     android:text="/10"
-                    />
+                    android:textColor="@color/colorText999999"
+                    android:textSize="@dimen/fontSize12" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/tv_total3"
-                    android:textSize="@dimen/fontSize12"
-                    android:textColor="@color/colorTextYellow"
                     android:text="0"
-                    />
+                    android:textColor="@color/colorTextYellow"
+                    android:textSize="@dimen/fontSize12" />
             </RelativeLayout>
 
             <TextView
                 android:id="@+id/tv_tag4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/fontSize12"
-                android:text="服务价格"
                 android:layout_below="@+id/rl_fwjg1"
-                android:textColor="@color/colorText999999"
+                android:layout_marginBottom="@dimen/px20dp"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:layout_marginTop="@dimen/px20dp"
-                android:layout_marginBottom="@dimen/px20dp"
-                />
+                android:text="服务价格"
+                android:textColor="@color/colorText999999"
+                android:textSize="@dimen/fontSize12" />
 
             <RelativeLayout
                 android:id="@+id/rl_fwjg2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_tag4"
+                android:layout_marginBottom="@dimen/px20dp"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:layout_marginRight="@dimen/px30dp"
-                android:background="@drawable/round_button_border_gray2"
-                android:layout_marginBottom="@dimen/px20dp"
-                >
+                android:background="@drawable/round_button_border_gray2">
+
                 <EditText
                     android:id="@+id/et_fwjg2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/fontSize12"
-                    android:textColor="@color/colorText333333"
                     android:background="@null"
-                    android:padding="@dimen/px20dp"
                     android:hint="一口价"
                     android:maxLength="10"
-                    />
+                    android:padding="@dimen/px20dp"
+                    android:textColor="@color/colorText333333"
+                    android:textSize="@dimen/fontSize12" />
 
                 <TextView
                     android:id="@+id/tv_total4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/px20dp"
-                    android:textSize="@dimen/fontSize12"
-                    android:textColor="@color/colorText999999"
                     android:text="/10"
-                    />
+                    android:textColor="@color/colorText999999"
+                    android:textSize="@dimen/fontSize12" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/tv_total4"
-                    android:textSize="@dimen/fontSize12"
-                    android:textColor="@color/colorTextYellow"
                     android:text="0"
-                    />
+                    android:textColor="@color/colorTextYellow"
+                    android:textSize="@dimen/fontSize12" />
             </RelativeLayout>
 
             <TextView
                 android:id="@+id/tv_tag5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/fontSize12"
-                android:text="选择服务方式"
                 android:layout_below="@+id/rl_fwjg2"
-                android:textColor="@color/colorText999999"
+                android:layout_marginBottom="@dimen/px20dp"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:layout_marginTop="@dimen/px20dp"
-                android:layout_marginBottom="@dimen/px20dp"
-                />
+                android:text="选择服务方式"
+                android:textColor="@color/colorText999999"
+                android:textSize="@dimen/fontSize12" />
 
             <TextView
                 android:id="@+id/tv_xsfw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/fontSize12"
-                android:text="线上服务"
-                android:paddingTop="@dimen/px20dp"
-                android:paddingBottom="@dimen/px20dp"
-                android:paddingRight="@dimen/px30dp"
-                android:paddingLeft="@dimen/px30dp"
+                android:layout_below="@+id/tv_tag5"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:background="@drawable/round_button_border_gray2"
-                android:layout_below="@+id/tv_tag5"
-                />
+                android:paddingBottom="@dimen/px20dp"
+                android:paddingLeft="@dimen/px30dp"
+                android:paddingRight="@dimen/px30dp"
+                android:paddingTop="@dimen/px20dp"
+                android:text="线上服务"
+                android:textSize="@dimen/fontSize12" />
+
             <TextView
                 android:id="@+id/tv_xxfw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/fontSize12"
-                android:text="线上服务"
-                android:paddingTop="@dimen/px20dp"
-                android:paddingBottom="@dimen/px20dp"
-                android:paddingRight="@dimen/px30dp"
-                android:paddingLeft="@dimen/px30dp"
+                android:layout_below="@+id/tv_tag5"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:layout_toRightOf="@+id/tv_xsfw"
                 android:background="@drawable/round_button_border_gray2"
-                android:layout_below="@+id/tv_tag5"
-                />
+                android:paddingBottom="@dimen/px20dp"
+                android:paddingLeft="@dimen/px30dp"
+                android:paddingRight="@dimen/px30dp"
+                android:paddingTop="@dimen/px20dp"
+                android:text="线上服务"
+                android:textSize="@dimen/fontSize12" />
 
             <Button
                 android:id="@+id/btn_submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="提交"
-                android:textColor="@color/colorWhite"
-                android:background="@drawable/round_button_border_gray"
                 android:layout_below="@+id/tv_xsfw"
-                android:layout_marginTop="@dimen/px108dp"
                 android:layout_marginBottom="@dimen/px108dp"
                 android:layout_marginLeft="@dimen/px30dp"
                 android:layout_marginRight="@dimen/px30dp"
-                android:textSize="@dimen/fontSize18"
-                android:paddingTop="@dimen/px32dp"
+                android:layout_marginTop="@dimen/px108dp"
+                android:background="@drawable/round_button_border_gray"
                 android:paddingBottom="@dimen/px32dp"
-                />
+                android:paddingTop="@dimen/px32dp"
+                android:text="提交"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/fontSize18" />
 
         </RelativeLayout>
     </ScrollView>
-
 
 
 </RelativeLayout>

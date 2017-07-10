@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" 
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    >
-    
-    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+    android:background="@color/colorBackground">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar2"></include>
 
 
     <RelativeLayout
@@ -13,38 +14,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
-        android:background="@color/colorWhite"
         android:layout_marginTop="@dimen/px22dp"
-        >
+        android:background="@color/colorWhite">
+
         <ImageView
             android:id="@+id/iv_icon_zfb"
             android:layout_width="@dimen/px74dp"
             android:layout_height="@dimen/px60dp"
-            android:src="@mipmap/me_ye_zfb"
+            android:layout_marginBottom="@dimen/px48dp"
             android:layout_marginLeft="@dimen/px30dp"
             android:layout_marginTop="@dimen/px48dp"
-            android:layout_marginBottom="@dimen/px48dp"
-            />
+            android:src="@mipmap/me_ye_zfb" />
+
         <TextView
             android:id="@+id/tv_zfb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px32dp"
             android:layout_marginTop="@dimen/px42dp"
+            android:layout_toRightOf="@+id/iv_icon_zfb"
             android:text="支付宝支付"
             android:textColor="@color/coloBlack"
-            android:textSize="@dimen/fontSize17"
-            android:layout_toRightOf="@+id/iv_icon_zfb"
-            android:layout_marginLeft="@dimen/px32dp"
-            />
+            android:textSize="@dimen/fontSize17" />
+
         <TextView
             android:id="@+id/tv_remarks_zfb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/tv_zfb"
             android:layout_below="@id/tv_zfb"
-            android:text="银行卡、信用卡都可以使用哦！"
             android:layout_marginTop="@dimen/px14dp"
-            />
+            android:text="银行卡、信用卡都可以使用哦！" />
+
         <ImageView
             android:id="@+id/iv_xz_zfb"
             android:layout_width="@dimen/px48dp"
@@ -52,8 +53,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/px54dp"
-            android:src="@mipmap/sy_zf_zz"
-            />
+            android:src="@mipmap/sy_zf_zz" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -61,38 +61,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl_zfb"
-        android:background="@color/colorWhite"
         android:layout_marginTop="1dp"
-        >
+        android:background="@color/colorWhite">
+
         <ImageView
             android:id="@+id/iv_icon_wx"
             android:layout_width="@dimen/px74dp"
             android:layout_height="@dimen/px60dp"
-            android:src="@mipmap/me_ye_wx"
+            android:layout_marginBottom="@dimen/px48dp"
             android:layout_marginLeft="@dimen/px30dp"
             android:layout_marginTop="@dimen/px48dp"
-            android:layout_marginBottom="@dimen/px48dp"
-            />
+            android:src="@mipmap/me_ye_wx" />
+
         <TextView
             android:id="@+id/tv_yhk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px32dp"
             android:layout_marginTop="@dimen/px42dp"
+            android:layout_toRightOf="@+id/iv_icon_wx"
             android:text="银行卡支付"
             android:textColor="@color/coloBlack"
-            android:textSize="@dimen/fontSize17"
-            android:layout_toRightOf="@+id/iv_icon_wx"
-            android:layout_marginLeft="@dimen/px32dp"
-            />
+            android:textSize="@dimen/fontSize17" />
+
         <TextView
             android:id="@+id/tv_remarks_wx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/tv_yhk"
             android:layout_below="@id/tv_yhk"
-            android:text="银行卡、信用卡都可以使用哦！"
             android:layout_marginTop="@dimen/px14dp"
-            />
+            android:text="银行卡、信用卡都可以使用哦！" />
+
         <ImageView
             android:id="@+id/iv_xz_yhk"
             android:layout_width="@dimen/px48dp"
@@ -100,8 +100,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/px54dp"
-            android:src="@mipmap/me_ye_xz_pre"
-            />
+            android:src="@mipmap/me_ye_xz_pre" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -110,40 +109,37 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl_wx"
         android:layout_marginTop="@dimen/px22dp"
-        android:background="@color/colorWhite"
-        >
-    <TextView
-        android:id="@+id/tv_tag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="提现金额"
-        android:layout_marginLeft="@dimen/px30dp"
-        android:layout_marginTop="@dimen/px34dp"
-        android:textSize="@dimen/fontSize12"
-        android:textColor="@color/colorTextGray"
-        />
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:id="@+id/tv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px30dp"
+            android:layout_marginTop="@dimen/px34dp"
+            android:text="提现金额"
+            android:textColor="@color/colorTextGray"
+            android:textSize="@dimen/fontSize12" />
 
         <EditText
             android:id="@+id/et_money"
             android:layout_width="match_parent"
             android:layout_height="@dimen/px72dp"
             android:layout_below="@+id/tv_tag"
-            android:layout_marginTop="@dimen/px50dp"
-            android:layout_marginLeft="@dimen/px92dp"
-            android:background="@null"
             android:layout_marginBottom="@dimen/px20dp"
-            />
+            android:layout_marginLeft="@dimen/px92dp"
+            android:layout_marginTop="@dimen/px50dp"
+            android:background="@null" />
 
         <TextView
             android:id="@+id/tv_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¥"
-            android:textSize="18sp"
-            android:textColor="@color/colorTextGray"
-            android:layout_marginLeft="@dimen/px42dp"
             android:layout_alignBottom="@+id/et_money"
-            />
+            android:layout_marginLeft="@dimen/px42dp"
+            android:text="¥"
+            android:textColor="@color/colorTextGray"
+            android:textSize="18sp" />
 
     </RelativeLayout>
 
@@ -153,47 +149,44 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl_je"
         android:layout_marginTop="1dp"
-        android:background="@color/colorWhite"
-        >
+        android:background="@color/colorWhite">
+
         <TextView
             android:id="@+id/tv_ktxje"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="可提现金额 1200.59"
-            android:textSize="@dimen/fontSize12"
-            android:textColor="@color/colorText999999"
+            android:layout_marginBottom="@dimen/px22dp"
             android:layout_marginLeft="@dimen/px30dp"
             android:layout_marginTop="@dimen/px22dp"
-            android:layout_marginBottom="@dimen/px22dp"
-            />
+            android:text="可提现金额 1200.59"
+            android:textColor="@color/colorText999999"
+            android:textSize="@dimen/fontSize12" />
 
         <TextView
             android:id="@+id/tv_qbtx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/px38dp"
+            android:layout_toRightOf="@+id/tv_ktxje"
             android:text="全部提现"
             android:textColor="@color/colorTextYellow"
-            android:layout_toRightOf="@+id/tv_ktxje"
-            android:layout_marginLeft="@dimen/px38dp"
-            android:textSize="@dimen/fontSize12"
-            />
+            android:textSize="@dimen/fontSize12" />
     </RelativeLayout>
 
     <Button
         android:id="@+id/btn_withdraw_cash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="立即提现"
-        android:textColor="@color/colorWhite"
-        android:background="@drawable/round_button_border_gray"
         android:layout_below="@+id/rl_tx"
-        android:layout_marginTop="@dimen/px108dp"
         android:layout_marginLeft="@dimen/px60dp"
         android:layout_marginRight="@dimen/px60dp"
-        android:textSize="@dimen/fontSize18"
-        android:paddingTop="@dimen/px32dp"
+        android:layout_marginTop="@dimen/px108dp"
+        android:background="@drawable/round_button_border_gray"
         android:paddingBottom="@dimen/px32dp"
-        />
+        android:paddingTop="@dimen/px32dp"
+        android:text="立即提现"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/fontSize18" />
 
 </RelativeLayout>

@@ -1,97 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-    <include layout="@layout/toolbar" android:id="@+id/toolbar"></include>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"></include>
 
     <RelativeLayout
         android:id="@+id/rl_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        >
+        android:layout_below="@id/toolbar">
+
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/sdv_headIcon"
             android:layout_width="@dimen/myHeadIconDimen"
             android:layout_height="@dimen/myHeadIconDimen"
-            android:layout_marginTop="@dimen/px34dp"
             android:layout_marginBottom="@dimen/px34dp"
             android:layout_marginLeft="@dimen/px30dp"
-            fresco:roundAsCircle = "true"
+            android:layout_marginTop="@dimen/px34dp"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:failureImage="@drawable/error"
+            fresco:failureImageScaleType="centerInside"
+            fresco:placeholderImage="@drawable/loading"
             fresco:progressBarImage="@drawable/loading"
             fresco:progressBarImageScaleType="centerInside"
-            fresco:failureImageScaleType="centerInside"
-            fresco:actualImageScaleType="centerCrop"
-            fresco:placeholderImage="@drawable/loading"
-            fresco:failureImage="@drawable/error"
-            />
+            fresco:roundAsCircle="true" />
+
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/px72dp"
-            android:text="卓艾蚁帮帮"
-            android:textSize="17sp"
-            android:textColor="@color/colorTextBlack"
-            android:layout_toRightOf="@+id/sdv_headIcon"
             android:layout_marginLeft="@dimen/px38dp"
-            />
+            android:layout_marginTop="@dimen/px72dp"
+            android:layout_toRightOf="@+id/sdv_headIcon"
+            android:text="卓艾蚁帮帮"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="17sp" />
+
         <ImageView
             android:id="@+id/iv_littleIcon1"
             android:layout_width="@dimen/px24dp"
             android:layout_height="@dimen/px24dp"
-            android:src="@mipmap/me_zl_sfrz"
             android:layout_alignLeft="@+id/tv_name"
             android:layout_below="@+id/tv_name"
             android:layout_marginTop="@dimen/px16dp"
-            />
+            android:src="@mipmap/me_zl_sfrz" />
+
         <ImageView
             android:id="@+id/iv_littleIcon2"
             android:layout_width="@dimen/px24dp"
             android:layout_height="@dimen/px24dp"
             android:layout_alignTop="@+id/iv_littleIcon1"
-            android:layout_toRightOf="@+id/iv_littleIcon1"
             android:layout_marginLeft="@dimen/px10dp"
-            android:src="@mipmap/me_zl_myhb"
-            />
+            android:layout_toRightOf="@+id/iv_littleIcon1"
+            android:src="@mipmap/me_zl_myhb" />
+
         <ImageView
             android:id="@+id/iv_littleIcon3"
             android:layout_width="@dimen/px24dp"
             android:layout_height="@dimen/px24dp"
             android:layout_alignTop="@+id/iv_littleIcon1"
-            android:layout_toRightOf="@+id/iv_littleIcon2"
             android:layout_marginLeft="@dimen/px10dp"
-            android:src="@mipmap/me_zl_jnrz"
-            />
+            android:layout_toRightOf="@+id/iv_littleIcon2"
+            android:src="@mipmap/me_zl_jnrz" />
 
         <ImageView
             android:layout_width="@dimen/px20dp"
             android:layout_height="@dimen/px36dp"
-            android:src="@mipmap/right_arrow"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/px30dp"
-            />
+            android:src="@mipmap/right_arrow" />
     </RelativeLayout>
 
     <View
         android:id="@+id/view_background"
         android:layout_width="match_parent"
         android:layout_height="@dimen/px22dp"
-        android:background="@color/colorBackgroundeaeaea"
         android:layout_below="@+id/rl_head"
-        ></View>
+        android:background="@color/colorBackgroundeaeaea"></View>
+
     <GridView
         android:id="@+id/gv_show"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/view_background"
-        android:numColumns="4"
         android:horizontalSpacing="@dimen/px36dp"
-        android:verticalSpacing="@dimen/px36dp"
-        android:padding="@dimen/px36dp"
         android:listSelector="@android:color/transparent"
-        ></GridView>
+        android:numColumns="4"
+        android:padding="@dimen/px36dp"
+        android:verticalSpacing="@dimen/px36dp"></GridView>
 </RelativeLayout>

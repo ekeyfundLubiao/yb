@@ -2,19 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    >
+    android:background="@color/colorBackground">
 
-    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar2"></include>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="暂无该版本功能功能介绍信息"
-        android:layout_margin="@dimen/px30dp"
         android:layout_below="@+id/toolbar"
-        android:textSize="@dimen/fontSize14"
+        android:layout_margin="@dimen/px30dp"
+        android:text="暂无该版本功能功能介绍信息"
         android:textColor="@color/colorText999999"
-        />
+        android:textSize="@dimen/fontSize14" />
 
 </RelativeLayout>

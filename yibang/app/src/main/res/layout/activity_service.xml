@@ -3,69 +3,71 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar2"></include>
 
     <LinearLayout
         android:id="@+id/ll_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_below="@+id/toolbar"
-        >
+        android:orientation="horizontal">
+
         <LinearLayout
             android:id="@+id/ll_type1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/tv_type1"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/height1"
-                android:text="消息"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:gravity="center"
+                android:text="消息"
                 android:textColor="@color/colorTextYellow"
-                android:textSize="17sp"
-                />
+                android:textSize="17sp" />
+
             <View
                 android:id="@+id/line1"
                 android:layout_width="@dimen/px168dp"
                 android:layout_height="@dimen/px6dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@color/colorTextYellow"
-                ></View>
+                android:background="@color/colorTextYellow"></View>
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/ll_type2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <TextView
                     android:id="@+id/tv_type2"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/height1"
-                    android:text="通知"
                     android:layout_centerHorizontal="true"
                     android:gravity="center"
+                    android:text="通知"
                     android:textColor="@color/coloBlack"
-                    android:textSize="17sp"
-                    />
+                    android:textSize="17sp" />
+
                 <View
                     android:id="@+id/line2"
                     android:layout_width="@dimen/px168dp"
                     android:layout_height="@dimen/px6dp"
+                    android:layout_below="@+id/tv_type2"
                     android:layout_centerHorizontal="true"
                     android:background="@color/colorTextYellow"
-                    android:visibility="invisible"
-                    android:layout_below="@+id/tv_type2"
-                    ></View>
+                    android:visibility="invisible"></View>
 
             </RelativeLayout>
         </LinearLayout>

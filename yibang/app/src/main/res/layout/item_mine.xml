@@ -7,17 +7,16 @@
         android:id="@+id/iv_icon"
         android:layout_width="@dimen/px60dp"
         android:layout_height="@dimen/px60dp"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_centerHorizontal="true" />
+
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="名称"
-        android:textSize="12sp"
-        android:textColor="@color/coloBlack"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/iv_icon"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/px22dp"
-        />
+        android:text="名称"
+        android:textColor="@color/coloBlack"
+        android:textSize="12sp" />
 </RelativeLayout>

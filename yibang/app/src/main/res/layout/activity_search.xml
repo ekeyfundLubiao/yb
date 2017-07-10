@@ -2,64 +2,59 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    >
+    android:background="@color/colorWhite">
 
     <RelativeLayout
         android:id="@+id/rl_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/px20dp"
-        >
+        android:layout_marginTop="@dimen/px20dp">
+
         <View
             android:id="@+id/back_search"
             android:layout_width="match_parent"
             android:layout_height="@dimen/px56dp"
-            android:layout_marginLeft="@dimen/px16dp"
-            android:background="@mipmap/home_searchbtn_label_disable"
-            android:layout_toLeftOf="@+id/tv_cancel"
             android:layout_centerVertical="true"
-            />
+            android:layout_marginLeft="@dimen/px16dp"
+            android:layout_toLeftOf="@+id/tv_cancel"
+            android:background="@mipmap/home_searchbtn_label_disable" />
 
         <ImageView
             android:id="@+id/iv_search"
             android:layout_width="@dimen/px26dp"
             android:layout_height="@dimen/px26dp"
-            android:src="@mipmap/home_btn_search_disable"
+            android:layout_alignLeft="@+id/back_search"
             android:layout_centerVertical="true"
             android:layout_margin="@dimen/px20dp"
-            android:layout_alignLeft="@+id/back_search"
-            />
+            android:src="@mipmap/home_btn_search_disable" />
 
         <EditText
             android:id="@+id/et_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="搜索你想找的服务"
-            android:paddingLeft="@dimen/px58dp"
-            android:layout_marginLeft="@dimen/px16dp"
-            android:background="@null"
-            android:textSize="@dimen/fontSize14"
-            android:textColor="@color/colorText999999"
-            android:paddingTop="@dimen/px8dp"
-            android:paddingBottom="@dimen/px8dp"
-            android:layout_toLeftOf="@+id/iv_search"
-            android:layout_marginRight="@dimen/px16dp"
             android:layout_alignRight="@+id/back_search"
             android:layout_centerVertical="true"
-            />
-        
+            android:layout_marginLeft="@dimen/px16dp"
+            android:layout_marginRight="@dimen/px16dp"
+            android:layout_toLeftOf="@+id/iv_search"
+            android:background="@null"
+            android:hint="搜索你想找的服务"
+            android:paddingBottom="@dimen/px8dp"
+            android:paddingLeft="@dimen/px58dp"
+            android:paddingTop="@dimen/px8dp"
+            android:textColor="@color/colorText999999"
+            android:textSize="@dimen/fontSize14" />
+
         <TextView
             android:id="@+id/tv_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="取消"
-            android:textSize="@dimen/fontSize17"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:paddingRight="@dimen/px16dp"
             android:paddingLeft="@dimen/px20dp"
-            />
+            android:paddingRight="@dimen/px16dp"
+            android:text="取消"
+            android:textSize="@dimen/fontSize17" />
 
     </RelativeLayout>
 
@@ -67,22 +62,20 @@
         android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorBackgroundeaeaea"
         android:layout_below="@+id/rl_search"
         android:layout_marginTop="@dimen/px16dp"
-        />
+        android:background="@color/colorBackgroundeaeaea" />
 
     <TextView
         android:id="@+id/tv_rmss"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="热门搜索"
-        android:textColor="@color/colorText666666"
         android:layout_below="@+id/line"
-        android:layout_marginTop="@dimen/px30dp"
-        android:layout_marginLeft="@dimen/px30dp"
         android:layout_marginBottom="@dimen/px20dp"
-        />
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px30dp"
+        android:text="热门搜索"
+        android:textColor="@color/colorText666666" />
 
 
     <GridView
@@ -90,46 +83,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_rmss"
-        android:verticalSpacing="@dimen/px20dp"
-        android:horizontalSpacing="@dimen/px30dp"
         android:layout_marginLeft="@dimen/px30dp"
         android:layout_marginRight="@dimen/px30dp"
+        android:horizontalSpacing="@dimen/px30dp"
         android:numColumns="3"
-        >
-    </GridView>
+        android:verticalSpacing="@dimen/px20dp"></GridView>
 
     <TextView
         android:id="@+id/tv_lsss"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="历史搜索"
-        android:textColor="@color/colorText666666"
         android:layout_below="@+id/gv_show1"
-        android:layout_marginTop="@dimen/px30dp"
-        android:layout_marginLeft="@dimen/px30dp"
         android:layout_marginBottom="@dimen/px20dp"
-        />
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px30dp"
+        android:text="历史搜索"
+        android:textColor="@color/colorText666666" />
 
     <ImageView
         android:id="@+id/iv_delete"
         android:layout_width="@dimen/px30dp"
         android:layout_height="@dimen/px30dp"
-        android:src="@mipmap/home_searchbtn_delete_highlighted"
+        android:layout_alignBottom="@id/tv_lsss"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/px30dp"
-        android:layout_alignBottom="@id/tv_lsss"
-        />
+        android:src="@mipmap/home_searchbtn_delete_highlighted" />
 
     <GridView
         android:id="@+id/gv_show2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_lsss"
-        android:verticalSpacing="@dimen/px20dp"
-        android:horizontalSpacing="@dimen/px30dp"
         android:layout_marginLeft="@dimen/px30dp"
         android:layout_marginRight="@dimen/px30dp"
+        android:horizontalSpacing="@dimen/px30dp"
         android:numColumns="3"
-        >
-    </GridView>
+        android:verticalSpacing="@dimen/px20dp"></GridView>
 </RelativeLayout>
