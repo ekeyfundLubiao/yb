@@ -16,7 +16,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.gson.Gson;
 import com.lidroid.xutils.exception.HttpException;
 
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.BeanOrder;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
@@ -33,7 +33,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/15.
  */
 
-public class ActivityQRDD extends BaseActivity implements RequsetUtils.OnCompleteListener{
+public class ActivityConfirmOrder extends BaseActivity implements RequsetUtils.OnCompleteListener{
 
     @BindView(R.id.tag)
     View tag;
@@ -190,13 +190,13 @@ public class ActivityQRDD extends BaseActivity implements RequsetUtils.OnComplet
                 }
 
                 map.clear();
-                map.put("sendmsg", "{ \"cmd\": \"appointmentservice\",\"uid\": \""+Utils.getSpUtils().getString(C.USER_ID,"")+"\"," +
-                        "\"token\": \""+Utils.getSpUtils().getString(C.TOKEN,"")+"\",\"productid\": \""+service_id+"\",\"buynum\": " +
+                map.put("sendmsg", "{ \"cmd\": \"appointmentservice\",\"uid\": \""+Utils.getSpUtils().getString(Config.USER_ID,"")+"\"," +
+                        "\"token\": \""+Utils.getSpUtils().getString(Config.TOKEN,"")+"\",\"productid\": \""+service_id+"\",\"buynum\": " +
                         "\""+buy_num+"\",\"servicetime\": " + "\"2017-09-11\",\"tel\": \""+tel+"\",\"message\": \""+
                         etMjll.getText().toString()+"\",\"photos\": \"\"}");
                 map.put("encrypt", "0");
                 request_line = 0;
-                RequsetUtils.request(this, C.HOST, map, request_line);
+                RequsetUtils.request(this, Config.HOST, map, request_line);
                 break;
         }
     }
@@ -206,7 +206,7 @@ public class ActivityQRDD extends BaseActivity implements RequsetUtils.OnComplet
         BeanOrder order = new Gson().fromJson(result,BeanOrder.class);
         if(Integer.valueOf(order.getResult()) > 0){
             order_id = order.getResult();
-            Intent intent = new Intent(this,ActivityZFDD.class);
+            Intent intent = new Intent(this,ActivityPayOrder.class);
             intent.putExtra("order_id",order_id);
             startActivity(intent);
         }

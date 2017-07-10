@@ -3,8 +3,6 @@ package ag.yinglingedu.com.ag;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
-import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -47,10 +45,10 @@ public class APP extends Application implements RequsetUtils.OnCompleteListener{
 //                StringBuffer sb = new StringBuffer();
                 //errCode等于0代表定位成功，其他的为定位失败，具体的可以参照官网定位错误码说明
                 if (location.getErrorCode() == 0) {
-                    Utils.getSpUtils().put(C.JD, location.getLongitude()+"");
-                    Utils.getSpUtils().put(C.WD, location.getLatitude()+"");
-                    Utils.getSpUtils().put(C.USER_CITY, location.getCity());
-                    LogUtils.e("---------"+Utils.getSpUtils().getString(C.USER_CITY));
+                    Utils.getSpUtils().put(Config.JD, location.getLongitude()+"");
+                    Utils.getSpUtils().put(Config.WD, location.getLatitude()+"");
+                    Utils.getSpUtils().put(Config.USER_CITY, location.getCity());
+                    LogUtils.e("---------"+Utils.getSpUtils().getString(Config.USER_CITY));
                 }
                    /* sb.append("定位成功" + "\n");
                     sb.append("定位类型: " + location.getLocationType() + "\n");
@@ -103,10 +101,10 @@ public class APP extends Application implements RequsetUtils.OnCompleteListener{
         Fresco.initialize(this);
         databaseHelper = new DatabaseHelper(this);
 
-        Utils.getSpUtils().put(C.IS_CERTIFICATION_NAME, false);//实名认证-默认未认证
-        Utils.getSpUtils().put(C.IS_CERTIFICATION_ZMXY, false);//芝麻信用-默认未认证
-        Utils.getSpUtils().put(C.IS_CERTIFICATION_SKILL, false);//技能认证-默认未认证
-        Utils.getSpUtils().put(C.IS_RECEIVE_NOTIFICATION, true);//技能认证-默认未认证
+        Utils.getSpUtils().put(Config.IS_CERTIFICATION_NAME, false);//实名认证-默认未认证
+        Utils.getSpUtils().put(Config.IS_CERTIFICATION_ZMXY, false);//芝麻信用-默认未认证
+        Utils.getSpUtils().put(Config.IS_CERTIFICATION_SKILL, false);//技能认证-默认未认证
+        Utils.getSpUtils().put(Config.IS_RECEIVE_NOTIFICATION, true);//技能认证-默认未认证
         /*融云初始化*/
         if (getApplicationInfo().packageName.equals(getCurProcessName(getApplicationContext())) ||
                 "io.rong.push".equals(getCurProcessName(getApplicationContext()))) {
@@ -133,7 +131,7 @@ public class APP extends Application implements RequsetUtils.OnCompleteListener{
                 "\",\"lastupatetime\":\""+""+"\",\"longitude\":\""+
                 ""+"\",\"latitude\":\""+""+"\"}");
         map.put("encrypt","0");
-        RequsetUtils.request(this,C.HOST,map,0);
+        RequsetUtils.request(this, Config.HOST,map,0);
     }
 
     /*获取进程名称*/

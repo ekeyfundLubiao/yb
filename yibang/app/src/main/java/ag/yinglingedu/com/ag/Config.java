@@ -9,7 +9,7 @@ import ag.yinglingedu.com.ag.bean.TestBean;
  * Created by M 4700 on 2017/6/2.
  */
 
-public class C {
+public class Config {
 
     public static final String SP_NAME = "SP_NAME";    //SharedPrefrence名称
     public static final String IS_CERTIFICATION_NAME = "IS_CERTIFICATION_NAME";    //实名认证

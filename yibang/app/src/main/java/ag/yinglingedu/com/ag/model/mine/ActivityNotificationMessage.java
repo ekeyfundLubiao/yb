@@ -7,8 +7,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import ag.yinglingedu.com.ag.APP;
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.utils.ChangeUtil;
@@ -44,7 +43,7 @@ public class ActivityNotificationMessage extends BaseActivity {
     @BindView(R.id.iv_btn)
     ImageView ivBtn;
 
-    SPUtils spUtils = new SPUtils(C.SP_NAME);
+    SPUtils spUtils = new SPUtils(Config.SP_NAME);
     private boolean status;
 
     @Override
@@ -62,7 +61,7 @@ public class ActivityNotificationMessage extends BaseActivity {
         ivBack.setVisibility(View.VISIBLE);
         title.setText("通知与消息");
         ChangeUtil.initialize(this);
-        status = spUtils.getBoolean(C.IS_RECEIVE_NOTIFICATION);
+        status = spUtils.getBoolean(Config.IS_RECEIVE_NOTIFICATION);
         initButton(status);
     }
 
@@ -89,7 +88,7 @@ public class ActivityNotificationMessage extends BaseActivity {
                 break;
             case R.id.iv_btn:
                 //是否接收
-                status = spUtils.getBoolean(C.IS_RECEIVE_NOTIFICATION);
+                status = spUtils.getBoolean(Config.IS_RECEIVE_NOTIFICATION);
                 changeButton(status);//改变按钮
                 break;
         }
@@ -102,10 +101,10 @@ public class ActivityNotificationMessage extends BaseActivity {
     private void changeButton(boolean status) {
         if(status){//接收,改变状态
             ChangeUtil.setImageWithID(ivBtn,R.mipmap.wd_btn_offfloat_highlighted);
-            spUtils.put(C.IS_RECEIVE_NOTIFICATION,false);
+            spUtils.put(Config.IS_RECEIVE_NOTIFICATION,false);
         }else{
             ChangeUtil.setImageWithID(ivBtn,R.mipmap.wd_btn_onfloat_highlighted);
-            spUtils.put(C.IS_RECEIVE_NOTIFICATION,true);
+            spUtils.put(Config.IS_RECEIVE_NOTIFICATION,true);
         }
     }
 }

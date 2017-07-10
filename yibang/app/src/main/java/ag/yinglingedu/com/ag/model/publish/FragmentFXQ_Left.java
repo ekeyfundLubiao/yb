@@ -14,13 +14,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import ag.yinglingedu.com.ag.C;
 import ag.yinglingedu.com.ag.R;
-import ag.yinglingedu.com.ag.bean.TestBean;
 import ag.yinglingedu.com.xlibrary.adapter.CommonAdapter;
 import ag.yinglingedu.com.xlibrary.adapter.ViewHolder;
 import ag.yinglingedu.com.xlibrary.base.BaseFragment;
-import ag.yinglingedu.com.xlibrary.utils.ChangeUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;

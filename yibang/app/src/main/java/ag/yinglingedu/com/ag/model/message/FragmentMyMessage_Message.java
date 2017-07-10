@@ -1,6 +1,5 @@
 package ag.yinglingedu.com.ag.model.message;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -11,25 +10,16 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.facebook.drawee.view.SimpleDraweeView;
-import com.google.gson.Gson;
-import com.lidroid.xutils.http.RequestParams;
-
 import org.greenrobot.eventbus.EventBus;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ag.yinglingedu.com.ag.APP;
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.TestBean;
 import ag.yinglingedu.com.ag.event.EventTwo;
 import ag.yinglingedu.com.xlibrary.adapter.CommonAdapter;
 import ag.yinglingedu.com.xlibrary.adapter.ViewHolder;
 import ag.yinglingedu.com.xlibrary.base.BaseFragment;
-import ag.yinglingedu.com.xlibrary.utils.LogUtils;
-import ag.yinglingedu.com.xlibrary.utils.Utils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -53,7 +43,7 @@ public class FragmentMyMessage_Message extends BaseFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        connect(Utils.getSpUtils().getString(C.TOKEN));//链接服务器
-        connect(C.TOKEN_TEST);//链接服务器
+        connect(Config.TOKEN_TEST);//链接服务器
     }
 
     /**
@@ -135,7 +125,7 @@ public class FragmentMyMessage_Message extends BaseFragment {
             }
         });*/
 
-        lvShow.setAdapter(new CommonAdapter<TestBean>(getContext(),C.getList(),R.layout.item_my_message) {
+        lvShow.setAdapter(new CommonAdapter<TestBean>(getContext(), Config.getList(),R.layout.item_my_message) {
             @Override
             public void convert(ViewHolder helper, TestBean item) {
 

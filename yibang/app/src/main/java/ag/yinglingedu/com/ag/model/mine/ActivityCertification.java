@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.utils.SPUtils;
@@ -81,7 +81,7 @@ public class ActivityCertification extends BaseActivity {
     Button btnSubmit;
     @BindView(R.id.tv_shz)
     TextView tvShz;
-    SPUtils spUtils = new SPUtils(C.SP_NAME);
+    SPUtils spUtils = new SPUtils(Config.SP_NAME);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -131,7 +131,7 @@ public class ActivityCertification extends BaseActivity {
             case R.id.btn_submit://提交
                 tvShz.setVisibility(View.VISIBLE);
                 btnSubmit.setVisibility(View.GONE);
-                spUtils.put(C.IS_CERTIFICATION_NAME,true);//已实名认证
+                spUtils.put(Config.IS_CERTIFICATION_NAME,true);//已实名认证
                 break;
         }
     }

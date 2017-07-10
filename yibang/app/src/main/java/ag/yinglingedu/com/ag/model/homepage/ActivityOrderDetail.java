@@ -13,7 +13,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.gson.Gson;
 import com.lidroid.xutils.exception.HttpException;
 
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.BeanOrderDetail;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/15.
  */
 
-public class ActivityDDXQ extends BaseActivity implements RequsetUtils.OnCompleteListener {
+public class ActivityOrderDetail extends BaseActivity implements RequsetUtils.OnCompleteListener {
 
     @BindView(R.id.iv_back)
     ImageView ivBack;
@@ -129,11 +129,11 @@ public class ActivityDDXQ extends BaseActivity implements RequsetUtils.OnComplet
         Intent intent = getIntent();
         order_id = intent.getStringExtra("order_id");
         map.clear();
-        map.put("sendmsg", "{ \"cmd\": \"getorderdetail\",\"uid\": \"" + Utils.getSpUtils().getString(C.USER_ID, "") + "\"," +
-                "\"token\": \"" + Utils.getSpUtils().getString(C.TOKEN, "") + "\",\"order_id\":\"" + order_id + "\"}");
+        map.put("sendmsg", "{ \"cmd\": \"getorderdetail\",\"uid\": \"" + Utils.getSpUtils().getString(Config.USER_ID, "") + "\"," +
+                "\"token\": \"" + Utils.getSpUtils().getString(Config.TOKEN, "") + "\",\"order_id\":\"" + order_id + "\"}");
         map.put("encrypt", "0");
         request_line = 0;
-        RequsetUtils.request(this, C.HOST, map, request_line);
+        RequsetUtils.request(this, Config.HOST, map, request_line);
     }
 
     @Override
@@ -170,10 +170,10 @@ public class ActivityDDXQ extends BaseActivity implements RequsetUtils.OnComplet
     public void success(String result, int line) {
         BeanOrderDetail beanOrderDetail = new Gson().fromJson(result, BeanOrderDetail.class);
         BeanOrderDetail.ListBean listBean = beanOrderDetail.getList().get(0);
-        sdvHeadIcon.setImageURI(Uri.parse(C.PIC + listBean.getUser_headpic()));
+        sdvHeadIcon.setImageURI(Uri.parse(Config.PIC + listBean.getUser_headpic()));
         tvName.setText(listBean.getUser_nickname());
         tvIconName.setText(listBean.getOrder_producttitle());
-        sdvIcon.setImageURI(Uri.parse(C.PIC + listBean));
+        sdvIcon.setImageURI(Uri.parse(Config.PIC + listBean));
         tvPriceInt.setText("￥" + listBean.getOrder_price());
         tvNum.setText("× "+listBean.getOrder_buynum());
         tvPriceIntTotal.setText("￥"+listBean.getOrder_orderamount());

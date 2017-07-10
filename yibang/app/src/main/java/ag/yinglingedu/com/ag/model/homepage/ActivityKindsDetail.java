@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.BeanHomePageGridViewItem;
 import ag.yinglingedu.com.ag.bean.TestBean;
@@ -132,8 +132,8 @@ public class ActivityKindsDetail extends BaseActivity implements SwipeRefreshLay
         ivBack.setVisibility(View.VISIBLE);
         EventBus.getDefault().register(this);
         refresh.setColorSchemeColors(ContextCompat.getColor(this,R.color.colorTextYellow));
-        C.getList().clear();
-        mList = C.getList();
+        Config.getList().clear();
+        mList = Config.getList();
 
         int layoutId = R.layout.item_homepage_listview;
         changeData(mList, layoutId);//改变数据
@@ -257,7 +257,7 @@ public class ActivityKindsDetail extends BaseActivity implements SwipeRefreshLay
         ListView listView_right = (ListView) contentView.findViewById(R.id.lv_right);
         View pop_back = contentView.findViewById(R.id.ll_back);
         List<String> mList_l = new ArrayList<>();
-        mList_l.addAll(Arrays.asList(C.T_YJFL));
+        mList_l.addAll(Arrays.asList(Config.T_YJFL));
         /**/
         listView_left.setAdapter(mAdapter_left = new CommonAdapter<String>(this, mList_l, R.layout.item_fxq_left) {
             @Override
@@ -270,16 +270,16 @@ public class ActivityKindsDetail extends BaseActivity implements SwipeRefreshLay
             }
         });
         List<String> mList_r = new ArrayList<>();
-        mList_r.addAll(Arrays.asList(C.T_XXYL));
-        mList_r.addAll(Arrays.asList(C.T_JJSH));
-        mList_r.addAll(Arrays.asList(C.T_YDJK));
-        mList_r.addAll(Arrays.asList(C.T_PTBS));
-        mList_r.addAll(Arrays.asList(C.T_JYPX));
-        mList_r.addAll(Arrays.asList(C.T_CWFU));
-        mList_r.addAll(Arrays.asList(C.T_ZHXY));
-        mList_r.addAll(Arrays.asList(C.T_JSFW));
-        mList_r.addAll(Arrays.asList(C.T_LRSS));
-        mList_r.addAll(Arrays.asList(C.T_ZXFW));
+        mList_r.addAll(Arrays.asList(Config.T_XXYL));
+        mList_r.addAll(Arrays.asList(Config.T_JJSH));
+        mList_r.addAll(Arrays.asList(Config.T_YDJK));
+        mList_r.addAll(Arrays.asList(Config.T_PTBS));
+        mList_r.addAll(Arrays.asList(Config.T_JYPX));
+        mList_r.addAll(Arrays.asList(Config.T_CWFU));
+        mList_r.addAll(Arrays.asList(Config.T_ZHXY));
+        mList_r.addAll(Arrays.asList(Config.T_JSFW));
+        mList_r.addAll(Arrays.asList(Config.T_LRSS));
+        mList_r.addAll(Arrays.asList(Config.T_ZXFW));
         listView_right.setAdapter(mAdapter_right = new CommonAdapter<String>(this, mList_r, R.layout.item_kinds_right) {
             @Override
             public void convert(ViewHolder helper, String item) {
@@ -311,19 +311,19 @@ public class ActivityKindsDetail extends BaseActivity implements SwipeRefreshLay
         ListView listView_right = (ListView) contentView.findViewById(R.id.lv_right);
         View pop_back = contentView.findViewById(R.id.ll_back);
         List<String> mList_l = new ArrayList<>();
-        mList_l.addAll(Arrays.asList(C.T_YJFL));
+        mList_l.addAll(Arrays.asList(Config.T_YJFL));
 
         List<String> mList_r = new ArrayList<>();
-        mList_r.addAll(Arrays.asList(C.T_XXYL));
-        mList_r.addAll(Arrays.asList(C.T_JJSH));
-        mList_r.addAll(Arrays.asList(C.T_YDJK));
-        mList_r.addAll(Arrays.asList(C.T_PTBS));
-        mList_r.addAll(Arrays.asList(C.T_JYPX));
-        mList_r.addAll(Arrays.asList(C.T_CWFU));
-        mList_r.addAll(Arrays.asList(C.T_ZHXY));
-        mList_r.addAll(Arrays.asList(C.T_JSFW));
-        mList_r.addAll(Arrays.asList(C.T_LRSS));
-        mList_r.addAll(Arrays.asList(C.T_ZXFW));
+        mList_r.addAll(Arrays.asList(Config.T_XXYL));
+        mList_r.addAll(Arrays.asList(Config.T_JJSH));
+        mList_r.addAll(Arrays.asList(Config.T_YDJK));
+        mList_r.addAll(Arrays.asList(Config.T_PTBS));
+        mList_r.addAll(Arrays.asList(Config.T_JYPX));
+        mList_r.addAll(Arrays.asList(Config.T_CWFU));
+        mList_r.addAll(Arrays.asList(Config.T_ZHXY));
+        mList_r.addAll(Arrays.asList(Config.T_JSFW));
+        mList_r.addAll(Arrays.asList(Config.T_LRSS));
+        mList_r.addAll(Arrays.asList(Config.T_ZXFW));
         listView_right.setAdapter(mAdapter_right = new CommonAdapter<String>(this, mList_r, R.layout.item_kinds_right) {
             @Override
             public void convert(ViewHolder helper, String item) {

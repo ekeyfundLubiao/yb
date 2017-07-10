@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/16.
  */
 
-public class ActivityPJFW extends BaseActivity {
+public class ActivityAppraiseDetail extends BaseActivity {
 
 
     @BindView(R.id.iv_back)

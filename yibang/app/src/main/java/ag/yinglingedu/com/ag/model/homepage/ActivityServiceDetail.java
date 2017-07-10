@@ -17,10 +17,9 @@ import com.lidroid.xutils.exception.HttpException;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.BeanServiceDetail;
 import ag.yinglingedu.com.xlibrary.adapter.BannerImageLoader;
@@ -40,7 +39,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/12.
  */
 
-public class ActivityFWXQ extends BaseActivity implements RequsetUtils.OnCompleteListener,SwipeRefreshLayout.OnRefreshListener{
+public class ActivityServiceDetail extends BaseActivity implements RequsetUtils.OnCompleteListener,SwipeRefreshLayout.OnRefreshListener{
 
     @BindView(R.id.banner)
     Banner banner;
@@ -112,13 +111,13 @@ public class ActivityFWXQ extends BaseActivity implements RequsetUtils.OnComplet
         AppManager.getAppManager().addActivity(this);
 
         Intent intent = getIntent();
-        service_id = intent.getStringExtra(C.SERVICE_ID);
+        service_id = intent.getStringExtra(Config.SERVICE_ID);
         String user_id = intent.getStringExtra("user_id");
         map.clear();
-        map.put("sendmsg", "{\"cmd\": \"getservicedetail\",\"uid\": \""+user_id+"\",\"token\": \""+Utils.getSpUtils().getString(C.TOKEN,"")+"\",\"id\": \""+ service_id +"\"}");
+        map.put("sendmsg", "{\"cmd\": \"getservicedetail\",\"uid\": \""+user_id+"\",\"token\": \""+Utils.getSpUtils().getString(Config.TOKEN,"")+"\",\"id\": \""+ service_id +"\"}");
         map.put("encrypt", "0");
         request_line = 0;
-        RequsetUtils.request(this, C.HOST, map, request_line);
+        RequsetUtils.request(this, Config.HOST, map, request_line);
 
         starBar.setCanChangeable(false);
 
@@ -136,12 +135,12 @@ public class ActivityFWXQ extends BaseActivity implements RequsetUtils.OnComplet
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.tv_ljyy:
-                Intent intent = new Intent(this,ActivityQRDD.class);
+                Intent intent = new Intent(this,ActivityConfirmOrder.class);
                 intent.putExtra("service_id",service_id);
                 intent.putExtra("user_name",list.get(0).getUser_nickname());
                 intent.putExtra("service_title",list.get(0).getService_title());
                 intent.putExtra("service_price",list.get(0).getService_price());
-                intent.putExtra("user_icon",C.PIC + list.get(0).getUser_headpic());
+                intent.putExtra("user_icon", Config.PIC + list.get(0).getUser_headpic());
                 intent.putExtra("product_icon",list_pic.get(0));
                 startActivity(intent);
                 break;
@@ -157,7 +156,7 @@ public class ActivityFWXQ extends BaseActivity implements RequsetUtils.OnComplet
                 String[] split = list.get(0).getService_photos().split(",");
                 list_pic = new ArrayList<>();
                 for (String bean:split) {
-                    list_pic.add(C.PIC+bean);
+                    list_pic.add(Config.PIC+bean);
                 }
                 banner.setImageLoader(new BannerImageLoader());
                 //设置图片集合
@@ -169,7 +168,7 @@ public class ActivityFWXQ extends BaseActivity implements RequsetUtils.OnComplet
                 tvPrice.setText(list.get(0).getService_price()+"/"+ list.get(0).getService_unit());
                 tvYssl.setText("[已售"+ list.get(0).getService_ordercount()+"]");
                 starBar.setStarMark(Float.parseFloat(list.get(0).getService_evaluatestar()));
-                sdvHeadIcon.setImageURI(Uri.parse(C.PIC + list.get(0).getUser_headpic()));
+                sdvHeadIcon.setImageURI(Uri.parse(Config.PIC + list.get(0).getUser_headpic()));
                 tvUserName.setText(list.get(0).getUser_nickname());
                 tvUserContent.setText(list.get(0).getService_message());
                 service_mode = Integer.valueOf(list.get(0).getService_servicemode());

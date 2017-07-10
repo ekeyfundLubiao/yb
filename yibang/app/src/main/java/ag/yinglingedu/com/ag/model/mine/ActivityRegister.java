@@ -1,7 +1,6 @@
 package ag.yinglingedu.com.ag.model.mine;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.InputType;
@@ -22,14 +21,13 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import ag.yinglingedu.com.ag.ActivityMain;
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.BeanRegister;
 import ag.yinglingedu.com.ag.bean.BeanYZM;
 import ag.yinglingedu.com.ag.event.EventOne;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.utils.ChangeUtil;
-import ag.yinglingedu.com.xlibrary.utils.LogUtils;
 import ag.yinglingedu.com.xlibrary.utils.PhoneUtils;
 import ag.yinglingedu.com.xlibrary.utils.RequsetUtils;
 import ag.yinglingedu.com.xlibrary.utils.ToastUtils;
@@ -149,7 +147,7 @@ public class ActivityRegister extends BaseActivity implements RequsetUtils.OnCom
                         map.put("sendmsg", "{\"cmd\":\"getsmscode\",\"mobile\":" + number + ",\"type\":\"reg\"}");
                         map.put("encrypt", "0");
                         request_line = 0;
-                        RequsetUtils.request(this, C.HOST, map, request_line);
+                        RequsetUtils.request(this, Config.HOST, map, request_line);
                     } else {
                         ToastUtils.showShortToast("请输入正确的手机号！");
                     }
@@ -167,7 +165,7 @@ public class ActivityRegister extends BaseActivity implements RequsetUtils.OnCom
                         map.put("sendmsg", "{\"cmd\":\"reg\",\"mobile\":" + number + ",\"password\":" + password + ",\"code\":" + yzm + "}");
                         map.put("encrypt", "0");
                         request_line = 1;
-                        RequsetUtils.request(this, C.HOST, map, request_line);
+                        RequsetUtils.request(this, Config.HOST, map, request_line);
                     } else {
                         ToastUtils.showShortToast("请输入密码！");
                     }

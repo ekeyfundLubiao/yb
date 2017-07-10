@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.utils.SPUtils;
@@ -63,7 +63,7 @@ public class ActivityPersonalCertification extends BaseActivity {
     ImageView ivRightArrow3;
     @BindView(R.id.rl_type3)
     RelativeLayout rlType3;
-    SPUtils spUtils = new SPUtils(C.SP_NAME);
+    SPUtils spUtils = new SPUtils(Config.SP_NAME);
     private boolean isCertification_name;
 
     @Override
@@ -79,7 +79,7 @@ public class ActivityPersonalCertification extends BaseActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        isCertification_name = spUtils.getBoolean(C.IS_CERTIFICATION_NAME);//是否实名认证
+        isCertification_name = spUtils.getBoolean(Config.IS_CERTIFICATION_NAME);//是否实名认证
         if(isCertification_name){
             tvSmrz.setText("已实名认证");
         }

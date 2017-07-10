@@ -13,10 +13,9 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.BeanSYLB;
-import ag.yinglingedu.com.ag.bean.TestBean;
 import ag.yinglingedu.com.xlibrary.utils.ChangeUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,17 +66,17 @@ public class HomepageAdapter extends BaseAdapter {
         }else if(service_photos.length == 2){//两张图片
             convertView = LayoutInflater.from(mContext).inflate(R.layout.item_homepage_listview_two_pic, null, false);
             sdvIcon2 = (SimpleDraweeView) convertView.findViewById(R.id.sdv_icon2);
-            sdvIcon2.setImageURI(C.PIC + service_photos[1]);
+            sdvIcon2.setImageURI(Config.PIC + service_photos[1]);
         }else if(service_photos.length == 3){//三张图片
             convertView = LayoutInflater.from(mContext).inflate(R.layout.item_homepage_listview, null, false);
             sdvIcon2 = (SimpleDraweeView) convertView.findViewById(R.id.sdv_icon2);
             sdvIcon3 = (SimpleDraweeView) convertView.findViewById(R.id.sdv_icon3);
-            sdvIcon2.setImageURI(C.PIC + service_photos[1]);
-            sdvIcon3.setImageURI(C.PIC + service_photos[2]);
+            sdvIcon2.setImageURI(Config.PIC + service_photos[1]);
+            sdvIcon3.setImageURI(Config.PIC + service_photos[2]);
         }
         holder = new ViewHolder(convertView);
-        holder.sdvHeadIcon.setImageURI(C.PIC + mList.get(position).getUser_headpic());
-        holder.sdvIcon1.setImageURI(C.PIC + service_photos[0]);
+        holder.sdvHeadIcon.setImageURI(Config.PIC + mList.get(position).getUser_headpic());
+        holder.sdvIcon1.setImageURI(Config.PIC + service_photos[0]);
         holder.tvName.setText(mList.get(position).getUser_nickname());
         holder.tvName2.setText(mList.get(position).getService_title());
         holder.tvContent.setText(mList.get(position).getService_intro());

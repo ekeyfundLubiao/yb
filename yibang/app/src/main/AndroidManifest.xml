@@ -101,14 +101,14 @@
         <activity android:name=".model.publish.ActivityPublish_FFW" /><!--发服务-->
         <activity android:name=".model.homepage.ActivityAllKinds" /><!--全部分类-->
         <activity android:name=".model.homepage.ActivityKindsDetail" /><!--分类详情-->
-        <activity android:name=".model.homepage.ActivityFWXQ" /><!--服务详情-->
-        <activity android:name=".model.homepage.ActivityQRDD" android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".model.homepage.ActivityZFDD" />
-        <activity android:name=".model.homepage.ActivityZFXQ" />
-        <activity android:name=".model.homepage.ActivityDDXQ" />
-        <activity android:name=".model.homepage.ActivityPJFW" />
+        <activity android:name=".model.homepage.ActivityServiceDetail" /><!--服务详情-->
+        <activity android:name=".model.homepage.ActivityConfirmOrder" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".model.homepage.ActivityPayOrder" />
+        <activity android:name=".model.homepage.ActivityPayDetail" />
+        <activity android:name=".model.homepage.ActivityOrderDetail" />
+        <activity android:name=".model.homepage.ActivityAppraiseDetail" />
         <activity android:name=".model.hall.ActivityService" />
-        <activity android:name=".model.hall.ActivityXQXQ" />
+        <activity android:name=".model.hall.ActivityDemandDetail" />
         <activity android:name=".model.homepage.ActivitySearch" /><!--支付订单-->
 
         <!-- 融云 -->

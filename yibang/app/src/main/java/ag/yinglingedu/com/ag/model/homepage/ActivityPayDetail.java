@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/15.
  */
 
-public class ActivityZFXQ extends BaseActivity {
+public class ActivityPayDetail extends BaseActivity {
 
     @BindView(R.id.iv_back)
     ImageView ivBack;
@@ -93,13 +93,13 @@ public class ActivityZFXQ extends BaseActivity {
                 finish();
                 break;
             case R.id.tv_ckdd://查看订单
-                startActivity(new Intent(this,ActivityDDXQ.class));
+                startActivity(new Intent(this,ActivityOrderDetail.class));
                 finish();
                 break;
             case R.id.tv_fhsy://返回首页
-                AppManager.getAppManager().finishActivity(ActivityZFDD.class);
-                AppManager.getAppManager().finishActivity(ActivityQRDD.class);
-                AppManager.getAppManager().finishActivity(ActivityFWXQ.class);
+                AppManager.getAppManager().finishActivity(ActivityPayOrder.class);
+                AppManager.getAppManager().finishActivity(ActivityConfirmOrder.class);
+                AppManager.getAppManager().finishActivity(ActivityServiceDetail.class);
                 finish();
                 break;
         }

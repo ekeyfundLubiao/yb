@@ -17,13 +17,12 @@ import com.google.gson.Gson;
 import com.lidroid.xutils.exception.HttpException;
 
 import ag.yinglingedu.com.ag.ActivityMain;
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.HeartBeatService;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.BeanUser;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.utils.ChangeUtil;
-import ag.yinglingedu.com.xlibrary.utils.LogUtils;
 import ag.yinglingedu.com.xlibrary.utils.PhoneUtils;
 import ag.yinglingedu.com.xlibrary.utils.RequsetUtils;
 import ag.yinglingedu.com.xlibrary.utils.ToastUtils;
@@ -127,7 +126,7 @@ public class ActivityLogin extends BaseActivity implements RequsetUtils.OnComple
                             map.put("sendmsg", "{\"cmd\":\"login\",\"mobile\":" + number + ",\"password\":" + password + "}");
                             map.put("encrypt", "0");
                             request_line = 0;
-                            RequsetUtils.request(this, C.HOST, map, request_line);
+                            RequsetUtils.request(this, Config.HOST, map, request_line);
                         } else {//空密码
                             ToastUtils.showShortToast("请输入密码");
                         }
@@ -154,23 +153,23 @@ public class ActivityLogin extends BaseActivity implements RequsetUtils.OnComple
         BeanUser user = new Gson().fromJson(result, BeanUser.class);
         if (user.getResult().equals("1")) {//登陆成功
             ToastUtils.showShortToast("登陆成功！跳转中...");
-            if (!Utils.getSpUtils().getBoolean(C.IS_FIRST_LOGIN)) {//第一次登录
-                Utils.getSpUtils().put(C.IS_FIRST_LOGIN, true);
+            if (!Utils.getSpUtils().getBoolean(Config.IS_FIRST_LOGIN)) {//第一次登录
+                Utils.getSpUtils().put(Config.IS_FIRST_LOGIN, true);
             }
-            Utils.getSpUtils().put(C.TOKEN, user.getToken());
-            Utils.getSpUtils().put(C.USER_ID, user.getUserinfo().get(0).getUser_id());
-            Utils.getSpUtils().put(C.USER_NAME, user.getUserinfo().get(0).getUser_name());
-            Utils.getSpUtils().put(C.USER_NICKNAME, user.getUserinfo().get(0).getUser_nickname());
-            Utils.getSpUtils().put(C.USER_HEADPIC, user.getUserinfo().get(0).getUser_headpic());
-            Utils.getSpUtils().put(C.USER_SEX, user.getUserinfo().get(0).getUser_headpic());
-            Utils.getSpUtils().put(C.USER_REGMOBILE, user.getUserinfo().get(0).getUser_regmobile());
-            Utils.getSpUtils().put(C.USER_WORKMOBILE, user.getUserinfo().get(0).getUser_workmobile());
-            Utils.getSpUtils().put(C.USER_BIRTHDAY, user.getUserinfo().get(0).getUser_birthday());
-            Utils.getSpUtils().put(C.USER_INTRO, user.getUserinfo().get(0).getUser_intro());
-            Utils.getSpUtils().put(C.USER_FANS, user.getUserinfo().get(0).getUser_fans());
-            Utils.getSpUtils().put(C.USER_SUBSCRIBE, user.getUserinfo().get(0).getUser_subscribe());
-            Utils.getSpUtils().put(C.VERSION_CODE, getVersion());
-            Utils.getSpUtils().put(C.LAST_TIME, user.getTime());
+            Utils.getSpUtils().put(Config.TOKEN, user.getToken());
+            Utils.getSpUtils().put(Config.USER_ID, user.getUserinfo().get(0).getUser_id());
+            Utils.getSpUtils().put(Config.USER_NAME, user.getUserinfo().get(0).getUser_name());
+            Utils.getSpUtils().put(Config.USER_NICKNAME, user.getUserinfo().get(0).getUser_nickname());
+            Utils.getSpUtils().put(Config.USER_HEADPIC, user.getUserinfo().get(0).getUser_headpic());
+            Utils.getSpUtils().put(Config.USER_SEX, user.getUserinfo().get(0).getUser_headpic());
+            Utils.getSpUtils().put(Config.USER_REGMOBILE, user.getUserinfo().get(0).getUser_regmobile());
+            Utils.getSpUtils().put(Config.USER_WORKMOBILE, user.getUserinfo().get(0).getUser_workmobile());
+            Utils.getSpUtils().put(Config.USER_BIRTHDAY, user.getUserinfo().get(0).getUser_birthday());
+            Utils.getSpUtils().put(Config.USER_INTRO, user.getUserinfo().get(0).getUser_intro());
+            Utils.getSpUtils().put(Config.USER_FANS, user.getUserinfo().get(0).getUser_fans());
+            Utils.getSpUtils().put(Config.USER_SUBSCRIBE, user.getUserinfo().get(0).getUser_subscribe());
+            Utils.getSpUtils().put(Config.VERSION_CODE, getVersion());
+            Utils.getSpUtils().put(Config.LAST_TIME, user.getTime());
 
 //            LogUtils.e("-----------" + getVersion());
             startService(new Intent(this, HeartBeatService.class));

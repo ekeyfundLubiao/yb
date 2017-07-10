@@ -11,12 +11,11 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.lidroid.xutils.exception.HttpException;
 
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.BeanOrderDetail;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.utils.AppManager;
-import ag.yinglingedu.com.xlibrary.utils.LogUtils;
 import ag.yinglingedu.com.xlibrary.utils.RequsetUtils;
 import ag.yinglingedu.com.xlibrary.utils.Utils;
 import butterknife.BindView;
@@ -27,7 +26,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/15.
  */
 
-public class ActivityZFDD extends BaseActivity implements RequsetUtils.OnCompleteListener{
+public class ActivityPayOrder extends BaseActivity implements RequsetUtils.OnCompleteListener{
 
     @BindView(R.id.title)
     TextView title;
@@ -119,11 +118,11 @@ public class ActivityZFDD extends BaseActivity implements RequsetUtils.OnComplet
         order_id = intent.getStringExtra("order_id");
 //        LogUtils.e("---------"+order_id);
         map.clear();
-        map.put("sendmsg", "{ \"cmd\": \"getorderdetail\",\"uid\": \""+ Utils.getSpUtils().getString(C.USER_ID,"")+"\"," +
-                "\"token\": \""+Utils.getSpUtils().getString(C.TOKEN,"")+"\",\"order_id\":\""+ order_id +"\"}");
+        map.put("sendmsg", "{ \"cmd\": \"getorderdetail\",\"uid\": \""+ Utils.getSpUtils().getString(Config.USER_ID,"")+"\"," +
+                "\"token\": \""+Utils.getSpUtils().getString(Config.TOKEN,"")+"\",\"order_id\":\""+ order_id +"\"}");
         map.put("encrypt", "0");
         request_line = 0;
-        RequsetUtils.request(this, C.HOST, map, request_line);
+        RequsetUtils.request(this, Config.HOST, map, request_line);
     }
 
     @Override
@@ -140,7 +139,7 @@ public class ActivityZFDD extends BaseActivity implements RequsetUtils.OnComplet
                 break;
             case R.id.tv_ljfk:
 
-                Intent intent = new Intent(this,ActivityZFXQ.class);
+                Intent intent = new Intent(this,ActivityPayDetail.class);
                 intent.putExtra("order_id",order_id);
                 startActivity(intent);
                 break;

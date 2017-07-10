@@ -1,26 +1,18 @@
 package ag.yinglingedu.com.ag;
 
-import android.app.ActivityManager;
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.IBinder;
-import android.support.annotation.IntDef;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.google.gson.Gson;
 import com.lidroid.xutils.exception.HttpException;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import ag.yinglingedu.com.ag.bean.BeanHeartBeat;
-import ag.yinglingedu.com.xlibrary.utils.LogUtils;
 import ag.yinglingedu.com.xlibrary.utils.RequsetUtils;
-import ag.yinglingedu.com.xlibrary.utils.SPUtils;
 import ag.yinglingedu.com.xlibrary.utils.Utils;
 
 /**
@@ -44,12 +36,12 @@ public class HeartBeatService extends Service implements Runnable ,RequsetUtils.
                 //向服务器发送心跳包
                 map.clear();
                 //请求数据
-                map.put("sendmsg","{\"cmd\":\"heartbeat\",\"uid\":\""+ Utils.getSpUtils().getString(C.USER_ID,"")+"\",\"token\":\""
-                        +Utils.getSpUtils().getString(C.TOKEN,"")+"\",\"version\":\""+Utils.getSpUtils().getString(C.VERSION_CODE,"")+
-                        "\",\"lastupatetime\":\""+Utils.getSpUtils().getString(C.LAST_TIME,"")+"\",\"longitude\":\""+
-                        Utils.getSpUtils().getString(C.JD,"")+"\",\"latitude\":\""+Utils.getSpUtils().getString(C.WD,"")+"\"}");
+                map.put("sendmsg","{\"cmd\":\"heartbeat\",\"uid\":\""+ Utils.getSpUtils().getString(Config.USER_ID,"")+"\",\"token\":\""
+                        +Utils.getSpUtils().getString(Config.TOKEN,"")+"\",\"version\":\""+Utils.getSpUtils().getString(Config.VERSION_CODE,"")+
+                        "\",\"lastupatetime\":\""+Utils.getSpUtils().getString(Config.LAST_TIME,"")+"\",\"longitude\":\""+
+                        Utils.getSpUtils().getString(Config.JD,"")+"\",\"latitude\":\""+Utils.getSpUtils().getString(Config.WD,"")+"\"}");
                 map.put("encrypt","0");
-                RequsetUtils.request(this,C.HOST,map,count);
+                RequsetUtils.request(this, Config.HOST,map,count);
                 count += 1;
                 Thread.sleep(1000 * 10);
             } catch (InterruptedException e) {
@@ -91,7 +83,7 @@ public class HeartBeatService extends Service implements Runnable ,RequsetUtils.
 
         if(beanHeartBeat.getTime() != null && !beanHeartBeat.getTime().equals("")){
             //上次心跳包时间
-            Utils.getSpUtils().put(C.LAST_TIME,beanHeartBeat.getTime());
+            Utils.getSpUtils().put(Config.LAST_TIME,beanHeartBeat.getTime());
         }
 
         String retmsg = beanHeartBeat.getRetmsg();//数据及安装包更新状态标志

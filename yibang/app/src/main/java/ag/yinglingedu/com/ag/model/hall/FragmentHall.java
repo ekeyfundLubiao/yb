@@ -21,7 +21,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.TestBean;
 import ag.yinglingedu.com.ag.event.EventTwo;
@@ -84,7 +84,7 @@ public class FragmentHall extends BaseFragment implements SwipeRefreshLayout.OnR
         title.setText("大厅");
         ChangeUtil.initialize(getContext());
         EventBus.getDefault().register(this);
-        mList = C.getList();
+        mList = Config.getList();
         int layoutId = R.layout.item_hall_xq;
         changeData(mList, layoutId);//改变数据
     }
@@ -119,7 +119,7 @@ public class FragmentHall extends BaseFragment implements SwipeRefreshLayout.OnR
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(type==0){//需求的item
-                    startActivity(new Intent(getContext(),ActivityXQXQ.class));
+                    startActivity(new Intent(getContext(),ActivityDemandDetail.class));
                 }else{//服务的item
 
                 }

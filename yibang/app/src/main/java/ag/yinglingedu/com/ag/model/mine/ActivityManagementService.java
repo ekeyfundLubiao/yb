@@ -9,7 +9,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.TestBean;
 import ag.yinglingedu.com.xlibrary.adapter.CommonAdapter;
@@ -62,7 +62,7 @@ public class ActivityManagementService extends BaseActivity implements SwipeRefr
     public void setListener() {
         refresh.setOnRefreshListener(this);
         ivBack.setOnClickListener(this);
-        lvShow.setAdapter(new CommonAdapter<TestBean>(this, C.getList(),R.layout.item_management_service) {
+        lvShow.setAdapter(new CommonAdapter<TestBean>(this, Config.getList(),R.layout.item_management_service) {
             @Override
             public void convert(ViewHolder helper, TestBean item) {
                 StarBar starBar = (StarBar)(helper.getView(R.id.star_bar));

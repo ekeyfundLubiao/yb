@@ -37,7 +37,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import ag.yinglingedu.com.ag.APP;
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.adapter.HomepageAdapter;
 import ag.yinglingedu.com.ag.bean.BeanAds;
@@ -175,28 +175,28 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
     @Override
     public void init() {
         databaseHelper = ((APP) getActivity().getApplication()).databaseHelper;
-        String location = Utils.getSpUtils().getString(C.USER_CITY);
+        String location = Utils.getSpUtils().getString(Config.USER_CITY);
         if (null != location) {
             tvLocation.setText(location);
         }
         /*请求服务列表   Utils.getSpUtils().getString(C.USER_CITY)*/
         map.clear();
-        map.put("sendmsg", "{\"cmd\": \"getservicelist\",\"uid\": \""+Utils.getSpUtils().getString(C.USER_ID)+"\",\"token\": \""
-                + Utils.getSpUtils().getString(C.TOKEN)+"\"," + "\"longitude\":\""+ Utils.getSpUtils().getString(C.JD)+
-                "\",\"latitude\":\""+ Utils.getSpUtils().getString(C.WD)+"\",\"pagesize\": \"20\"," + "\"pageno\":\""+pageNum+
+        map.put("sendmsg", "{\"cmd\": \"getservicelist\",\"uid\": \""+Utils.getSpUtils().getString(Config.USER_ID)+"\",\"token\": \""
+                + Utils.getSpUtils().getString(Config.TOKEN)+"\"," + "\"longitude\":\""+ Utils.getSpUtils().getString(Config.JD)+
+                "\",\"latitude\":\""+ Utils.getSpUtils().getString(Config.WD)+"\",\"pagesize\": \"20\"," + "\"pageno\":\""+pageNum+
                 "\",\"classid\": \"\",\"sortby\": \"1\",\"filter\":\"{}\",\"isrec\": \"0\"," +
                 "\"city\":\""+"shanghai"+"\",}");
         map.put("encrypt", "0");
         request_line = 1;
-        RequsetUtils.request(this, C.HOST, map, request_line);
+        RequsetUtils.request(this, Config.HOST, map, request_line);
 
         /*请求广告*/
         map.clear();
-        map.put("sendmsg", "{\"cmd\":\"getads\",\"uid\":\"" + Utils.getSpUtils().getString(C.USER_ID) + "\"," +
-                "\"token\":\"" + Utils.getSpUtils().getString(C.TOKEN) + "\",\"classid\":\"" + Utils.getSpUtils().getString("首页广告") + "\"}");
+        map.put("sendmsg", "{\"cmd\":\"getads\",\"uid\":\"" + Utils.getSpUtils().getString(Config.USER_ID) + "\"," +
+                "\"token\":\"" + Utils.getSpUtils().getString(Config.TOKEN) + "\",\"classid\":\"" + Utils.getSpUtils().getString("首页广告") + "\"}");
         map.put("encrypt", "0");
         request_line = 0;
-        RequsetUtils.request(this, C.HOST, map, request_line);
+        RequsetUtils.request(this, Config.HOST, map, request_line);
         refresh.setColorSchemeColors(ContextCompat.getColor(getContext(),R.color.colorTextYellow));
       /*  //设置图片加载器
         sdvAds.setImageURI(Uri.parse(C.URL5));*/
@@ -267,8 +267,8 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String service_id = fwlbList.get(position).getService_id();
-                Intent intent =new Intent(getActivity(), ActivityFWXQ.class);
-                intent.putExtra(C.SERVICE_ID,service_id);
+                Intent intent =new Intent(getActivity(), ActivityServiceDetail.class);
+                intent.putExtra(Config.SERVICE_ID,service_id);
                 intent.putExtra("user_id",fwlbList.get(position).getService_userid());
                 startActivity(intent);
             }
@@ -366,16 +366,16 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
             if (data != null) {
                 String city = data.getStringExtra(CityPickerActivity.KEY_PICKED_CITY);
                 tvLocation.setText(city);
-                Utils.getSpUtils().put(C.USER_CITY, city);
+                Utils.getSpUtils().put(Config.USER_CITY, city);
                 map.clear();
-                map.put("sendmsg", "{\"cmd\": \"getservicelist\",\"uid\": \""+Utils.getSpUtils().getString(C.USER_ID)+"\",\"token\": \""
-                        + Utils.getSpUtils().getString(C.TOKEN)+"\"," + "\"longitude\":\""+ Utils.getSpUtils().getString(C.JD)+
-                        "\",\"latitude\":\""+ Utils.getSpUtils().getString(C.WD)+"\",\"pagesize\": \"20\"," + "\"pageno\":\""+pageNum+
+                map.put("sendmsg", "{\"cmd\": \"getservicelist\",\"uid\": \""+Utils.getSpUtils().getString(Config.USER_ID)+"\",\"token\": \""
+                        + Utils.getSpUtils().getString(Config.TOKEN)+"\"," + "\"longitude\":\""+ Utils.getSpUtils().getString(Config.JD)+
+                        "\",\"latitude\":\""+ Utils.getSpUtils().getString(Config.WD)+"\",\"pagesize\": \"20\"," + "\"pageno\":\""+pageNum+
                         "\",\"classid\": \"\",\"sortby\": \"1\",\"filter\":\"{}\",\"isrec\": \"0\"," +
                         "\"city\":\""+databaseHelper.search_city(city)+"\",}");
                 map.put("encrypt", "0");
                 request_line = 1;
-                RequsetUtils.request(this, C.HOST, map, request_line);
+                RequsetUtils.request(this, Config.HOST, map, request_line);
             }
         }
     }
@@ -396,7 +396,7 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
         listView_left = (ListView) contentView.findViewById(R.id.lv_left);
         listView_right1 = (ListView) contentView.findViewById(R.id.lv_right);
         View pop_back = contentView.findViewById(R.id.ll_back);
-        listView_left.setAdapter(mAdapter_left = new CommonAdapter<String>(getContext(), Arrays.asList(C.T_YJFL), R.layout.item_fxq_left) {
+        listView_left.setAdapter(mAdapter_left = new CommonAdapter<String>(getContext(), Arrays.asList(Config.T_YJFL), R.layout.item_fxq_left) {
             @Override
             public void convert(ViewHolder helper, String item) {
                 helper.setText(R.id.tv_type, item);
@@ -407,15 +407,15 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
             }
         });
         List<String> mList_r = new ArrayList<>();
-        mList_r.addAll(Arrays.asList(C.T_JJSH));
-        mList_r.addAll(Arrays.asList(C.T_YDJK));
-        mList_r.addAll(Arrays.asList(C.T_PTBS));
-        mList_r.addAll(Arrays.asList(C.T_JYPX));
-        mList_r.addAll(Arrays.asList(C.T_CWFU));
-        mList_r.addAll(Arrays.asList(C.T_ZHXY));
-        mList_r.addAll(Arrays.asList(C.T_JSFW));
-        mList_r.addAll(Arrays.asList(C.T_LRSS));
-        mList_r.addAll(Arrays.asList(C.T_ZXFW));
+        mList_r.addAll(Arrays.asList(Config.T_JJSH));
+        mList_r.addAll(Arrays.asList(Config.T_YDJK));
+        mList_r.addAll(Arrays.asList(Config.T_PTBS));
+        mList_r.addAll(Arrays.asList(Config.T_JYPX));
+        mList_r.addAll(Arrays.asList(Config.T_CWFU));
+        mList_r.addAll(Arrays.asList(Config.T_ZHXY));
+        mList_r.addAll(Arrays.asList(Config.T_JSFW));
+        mList_r.addAll(Arrays.asList(Config.T_LRSS));
+        mList_r.addAll(Arrays.asList(Config.T_ZXFW));
         listView_right1.setAdapter(mAdapter_right = new CommonAdapter<String>(getContext(), mList_r, R.layout.item_kinds_right) {
             @Override
             public void convert(ViewHolder helper, String item) {
@@ -480,7 +480,7 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
                     if(bean.getClassid().equals("admidindex")){//中间广告
                         String[] adsMidArr = bean.getAdinfopic().split(",");
 //                        adsMidList.addAll(Arrays.asList(adsMidArr));
-                        sdvAds.setImageURI(Uri.parse(C.PIC+adsMidArr[0]));
+                        sdvAds.setImageURI(Uri.parse(Config.PIC+adsMidArr[0]));
                     }else if(bean.getClassid().equals("adtopindex")){//顶部广告
                         String[] adsTopArr = bean.getAdinfopic().split(",");
                         adsTopList.addAll(Arrays.asList(adsTopArr));
@@ -489,7 +489,7 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
 
                 List<String> imgList = new ArrayList<>();
                 for (int i = 0; i < adsTopList.size(); i++) {
-                    imgList.add(C.PIC+adsTopList.get(i));
+                    imgList.add(Config.PIC+adsTopList.get(i));
 //                    LogUtils.e("--------"+adsMidList.get(i));
                 }
                 banner.setImageLoader(new BannerImageLoader());

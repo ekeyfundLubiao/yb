@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import ag.yinglingedu.com.ag.C;
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.TestBean;
 import ag.yinglingedu.com.xlibrary.adapter.CommonAdapter;
@@ -58,13 +58,13 @@ public class ActivitySearch extends BaseActivity {
 
     @Override
     public void init() {
-        gvShow1.setAdapter(new CommonAdapter<TestBean>(this, C.getList(), R.layout.item_search) {
+        gvShow1.setAdapter(new CommonAdapter<TestBean>(this, Config.getList(), R.layout.item_search) {
             @Override
             public void convert(ViewHolder helper, TestBean item) {
 
             }
         });
-        gvShow2.setAdapter(new CommonAdapter<TestBean>(this, C.getList(), R.layout.item_search) {
+        gvShow2.setAdapter(new CommonAdapter<TestBean>(this, Config.getList(), R.layout.item_search) {
             @Override
             public void convert(ViewHolder helper, TestBean item) {
 
