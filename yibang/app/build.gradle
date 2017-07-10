@@ -12,7 +12,6 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
 
@@ -35,14 +34,11 @@ dependencies {
     compile('com.android.support:appcompat-v7:23.3.0') {
         exclude module: 'support-v4'
     }
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    testCompile 'junit:junit:4.12'
     compile project(':xlibrary')
     compile project(':citypicker')
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-
+    compile files('libs/AMap_Location_V3.4.0_20170427.jar')
+    compile files('libs/fastjson-1.2.7.jar')
+    compile files('libs/Rong_IMLib.jar')
 }

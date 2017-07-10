@@ -1,22 +1,24 @@
 package ag.yinglingedu.com.ag.model.hall;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.lidroid.xutils.exception.HttpException;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.Hall_Demand_Entry;
 import ag.yinglingedu.com.ag.bean.TestBean;
+import ag.yinglingedu.com.ag.util.HttpUtil;
 import ag.yinglingedu.com.xlibrary.adapter.CommonAdapter;
 import ag.yinglingedu.com.xlibrary.adapter.ViewHolder;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
@@ -113,8 +115,9 @@ public class ActivityDemandDetail extends BaseActivity {
     }
 
     private void getData() {
-        map.put("encrypt", "0");
-        RequsetUtils.request(new RequsetUtils.OnCompleteListener() {
+        Map map = new HashMap();
+        map.put("","");
+        HttpUtil.post(map, new RequsetUtils.OnCompleteListener() {
             @Override
             public void success(String result, int line) {
 
@@ -124,7 +127,7 @@ public class ActivityDemandDetail extends BaseActivity {
             public void failed(HttpException e, String s, int line) {
 
             }
-        }, Config.HOST, map, 0);
+        });
     }
 
     @Override
