@@ -1,1 +1,1 @@
-include ':app', ':xlibrary', ':banner', ':citypicker'
+include ':app', ':xlibrary', ':citypicker'
