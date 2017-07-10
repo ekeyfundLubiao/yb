@@ -63,11 +63,11 @@ public class HomepageAdapter extends BaseAdapter {
         int star_marks = Integer.valueOf(mList.get(position).getService_evaluatestar());
         if (service_photos.length == 1) {//一张图片
             convertView = LayoutInflater.from(mContext).inflate(R.layout.item_homepage_listview_one_pic, null, false);
-        }else if(service_photos.length == 2){//两张图片
+        } else if (service_photos.length == 2) {//两张图片
             convertView = LayoutInflater.from(mContext).inflate(R.layout.item_homepage_listview_two_pic, null, false);
             sdvIcon2 = (SimpleDraweeView) convertView.findViewById(R.id.sdv_icon2);
             sdvIcon2.setImageURI(Config.PIC + service_photos[1]);
-        }else if(service_photos.length == 3){//三张图片
+        } else if (service_photos.length == 3) {//三张图片
             convertView = LayoutInflater.from(mContext).inflate(R.layout.item_homepage_listview, null, false);
             sdvIcon2 = (SimpleDraweeView) convertView.findViewById(R.id.sdv_icon2);
             sdvIcon3 = (SimpleDraweeView) convertView.findViewById(R.id.sdv_icon3);
@@ -84,38 +84,38 @@ public class HomepageAdapter extends BaseAdapter {
         holder.tvLike.setText(mList.get(position).getService_favcount());
         holder.tvComment.setText(mList.get(position).getService_evaluatecount());
         holder.tvCheck.setText(mList.get(position).getService_clickcount());
-        holder.tvPrice.setText(mList.get(position).getService_price()+"元/"+mList.get(position).getService_unit());
+        holder.tvPrice.setText(mList.get(position).getService_price() + "元/" + mList.get(position).getService_unit());
         holder.tvFs.setText(mList.get(position).getService_evaluatestar());
-        showStars(holder,star_marks);
+        showStars(holder, star_marks);
         return convertView;
     }
 
-    private void showStars(ViewHolder holder,int star_marks) {
-        switch (star_marks){
+    private void showStars(ViewHolder holder, int star_marks) {
+        switch (star_marks) {
             case 0:
-                ChangeUtil.setImageWithID(holder.ivStar1,R.drawable.star_empty);
-                ChangeUtil.setImageWithID(holder.ivStar2,R.drawable.star_empty);
-                ChangeUtil.setImageWithID(holder.ivStar3,R.drawable.star_empty);
-                ChangeUtil.setImageWithID(holder.ivStar4,R.drawable.star_empty);
-                ChangeUtil.setImageWithID(holder.ivStar5,R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar1, R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar2, R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar3, R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar4, R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar5, R.drawable.star_empty);
                 break;
             case 1:
-                ChangeUtil.setImageWithID(holder.ivStar2,R.drawable.star_empty);
-                ChangeUtil.setImageWithID(holder.ivStar3,R.drawable.star_empty);
-                ChangeUtil.setImageWithID(holder.ivStar4,R.drawable.star_empty);
-                ChangeUtil.setImageWithID(holder.ivStar5,R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar2, R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar3, R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar4, R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar5, R.drawable.star_empty);
                 break;
             case 2:
-                ChangeUtil.setImageWithID(holder.ivStar3,R.drawable.star_empty);
-                ChangeUtil.setImageWithID(holder.ivStar4,R.drawable.star_empty);
-                ChangeUtil.setImageWithID(holder.ivStar5,R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar3, R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar4, R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar5, R.drawable.star_empty);
                 break;
             case 3:
-                ChangeUtil.setImageWithID(holder.ivStar4,R.drawable.star_empty);
-                ChangeUtil.setImageWithID(holder.ivStar5,R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar4, R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar5, R.drawable.star_empty);
                 break;
             case 4:
-                ChangeUtil.setImageWithID(holder.ivStar5,R.drawable.star_empty);
+                ChangeUtil.setImageWithID(holder.ivStar5, R.drawable.star_empty);
                 break;
         }
     }

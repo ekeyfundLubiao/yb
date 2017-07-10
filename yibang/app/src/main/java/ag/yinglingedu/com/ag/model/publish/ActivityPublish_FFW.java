@@ -1,8 +1,6 @@
 package ag.yinglingedu.com.ag.model.publish;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,7 +24,6 @@ import ag.yinglingedu.com.xlibrary.adapter.CommonAdapter;
 import ag.yinglingedu.com.xlibrary.adapter.ViewHolder;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.utils.ChangeUtil;
-import ag.yinglingedu.com.xlibrary.utils.LogUtils;
 import ag.yinglingedu.com.xlibrary.widget.SGridView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -116,12 +113,12 @@ public class ActivityPublish_FFW extends BaseActivity {
         ChangeUtil.initialize(this);
         title.setText("发服务");
         ivBack.setVisibility(View.VISIBLE);
-        ChangeUtil.changeTextViewBackground(tvXsfw,R.drawable.round_button_border_yellow);
-        ChangeUtil.changeTextColor(tvXsfw,R.color.colorWhite);
+        ChangeUtil.changeTextViewBackground(tvXsfw, R.drawable.round_button_border_yellow);
+        ChangeUtil.changeTextColor(tvXsfw, R.color.colorWhite);
         tvRight.setText("发布");
         mList = new ArrayList<>();
         mList.add("");//初始化
-        gvShow.setAdapter(mAdapter = new CommonAdapter<String>(this,mList,R.layout.item_ffw_pic) {
+        gvShow.setAdapter(mAdapter = new CommonAdapter<String>(this, mList, R.layout.item_ffw_pic) {
             @Override
             public void convert(ViewHolder helper, String item) {
                 if (mList.size() == 1) {
@@ -150,7 +147,7 @@ public class ActivityPublish_FFW extends BaseActivity {
         gvShow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == mList.size()-1){
+                if (position == mList.size() - 1) {
                     Intent intent = new Intent(ActivityPublish_FFW.this, PhotoSelectorActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     intent.putExtra("limit", 6);//number是选择图片的数量
@@ -167,11 +164,11 @@ public class ActivityPublish_FFW extends BaseActivity {
                 finish();
                 break;
             case R.id.tv_xxfw://线下服务:1
-                type=1;
+                type = 1;
                 changeColor(type);//改变颜色
                 break;
             case R.id.tv_xsfw://线上服务:0
-                type=0;
+                type = 0;
                 changeColor(type);
                 break;
             case R.id.btn_submit://提交
@@ -181,17 +178,17 @@ public class ActivityPublish_FFW extends BaseActivity {
     }
 
     private void changeColor(int type) {
-        if(type == 1){
-            ChangeUtil.changeTextViewBackground(tvXxfw,R.drawable.round_button_border_yellow);
-            ChangeUtil.changeTextColor(tvXxfw,R.color.colorWhite);
-            ChangeUtil.changeTextViewBackground(tvXsfw,R.drawable.round_button_border_gray2);
-            ChangeUtil.changeTextColor(tvXsfw,R.color.colorTextGray);
+        if (type == 1) {
+            ChangeUtil.changeTextViewBackground(tvXxfw, R.drawable.round_button_border_yellow);
+            ChangeUtil.changeTextColor(tvXxfw, R.color.colorWhite);
+            ChangeUtil.changeTextViewBackground(tvXsfw, R.drawable.round_button_border_gray2);
+            ChangeUtil.changeTextColor(tvXsfw, R.color.colorTextGray);
 
-        }else{
-            ChangeUtil.changeTextViewBackground(tvXsfw,R.drawable.round_button_border_yellow);
-            ChangeUtil.changeTextColor(tvXsfw,R.color.colorWhite);
-            ChangeUtil.changeTextViewBackground(tvXxfw,R.drawable.round_button_border_gray2);
-            ChangeUtil.changeTextColor(tvXxfw,R.color.colorTextGray);
+        } else {
+            ChangeUtil.changeTextViewBackground(tvXsfw, R.drawable.round_button_border_yellow);
+            ChangeUtil.changeTextColor(tvXsfw, R.color.colorWhite);
+            ChangeUtil.changeTextViewBackground(tvXxfw, R.drawable.round_button_border_gray2);
+            ChangeUtil.changeTextColor(tvXxfw, R.color.colorTextGray);
         }
     }
 
@@ -205,26 +202,26 @@ public class ActivityPublish_FFW extends BaseActivity {
                     List<String> paths = (List<String>) data.getExtras().getSerializable("photos");//path是选择拍照或者图片的地址数组
                     //处理代码
 //                    if (paths.size() < 6 && mList.size() != 1){
-                        mList.remove(mList.size()-1);
-                        mList.addAll(paths);
-                        mList.add("");
-                        gvShow.setAdapter(mAdapter = new CommonAdapter<String>(this,mList,R.layout.item_ffw_pic) {
-                            @Override
-                            public void convert(ViewHolder helper, String item) {
-                                if (mList.size() == 1) {
+                    mList.remove(mList.size() - 1);
+                    mList.addAll(paths);
+                    mList.add("");
+                    gvShow.setAdapter(mAdapter = new CommonAdapter<String>(this, mList, R.layout.item_ffw_pic) {
+                        @Override
+                        public void convert(ViewHolder helper, String item) {
+                            if (mList.size() == 1) {
+                                helper.getView(R.id.iv_add).setVisibility(View.VISIBLE);
+                                helper.getView(R.id.tv_tag).setVisibility(View.VISIBLE);
+                            } else {
+                                if (!item.equals("")) {
+                                    ((SimpleDraweeView) helper.getView(R.id.sdv_pic)).setImageURI(Uri.fromFile(new File(item)));
+                                } else {//最后一个
                                     helper.getView(R.id.iv_add).setVisibility(View.VISIBLE);
                                     helper.getView(R.id.tv_tag).setVisibility(View.VISIBLE);
-                                }else{
-                                    if(!item.equals("")){
-                                        ((SimpleDraweeView)helper.getView(R.id.sdv_pic)).setImageURI(Uri.fromFile(new File(item)));
-                                    }else{//最后一个
-                                        helper.getView(R.id.iv_add).setVisibility(View.VISIBLE);
-                                        helper.getView(R.id.tv_tag).setVisibility(View.VISIBLE);
-                                    }
                                 }
                             }
-                        });
-                        mAdapter.notifyDataSetChanged();
+                        }
+                    });
+                    mAdapter.notifyDataSetChanged();
                     /*}else if (mList.size() == 6){
 
                     }*/

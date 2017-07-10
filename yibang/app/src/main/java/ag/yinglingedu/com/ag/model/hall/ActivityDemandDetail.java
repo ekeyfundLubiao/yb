@@ -11,7 +11,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
-import ag.yinglingedu.com.ag.adapter.AdapterXQXQ;
+import ag.yinglingedu.com.ag.adapter.AdapterDemandDetail;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.widget.SListView;
 import butterknife.BindView;
@@ -90,7 +90,7 @@ public class ActivityDemandDetail extends BaseActivity {
         title.setText("需求详情");
         ivBack.setVisibility(View.VISIBLE);
         lvShow.setFocusable(false);
-        lvShow.setAdapter(new AdapterXQXQ(this, Config.getList()));
+        lvShow.setAdapter(new AdapterDemandDetail(this, Config.getList()));
     }
 
     @Override

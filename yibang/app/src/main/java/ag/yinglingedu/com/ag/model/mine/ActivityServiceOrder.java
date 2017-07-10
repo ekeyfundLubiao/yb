@@ -33,7 +33,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/3.
  */
 
-public class ActivityServiceOrder extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener{
+public class ActivityServiceOrder extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
 
     @BindView(R.id.iv_back)
     ImageView ivBack;
@@ -96,7 +96,7 @@ public class ActivityServiceOrder extends BaseActivity implements SwipeRefreshLa
         EventBus.getDefault().register(this);
         title.setText("服务订单");
         ivBack.setVisibility(View.VISIBLE);
-        refresh.setColorSchemeColors(ContextCompat.getColor(this,R.color.colorTextYellow));
+        refresh.setColorSchemeColors(ContextCompat.getColor(this, R.color.colorTextYellow));
         mFragmentList = new ArrayList<>();
         mFragmentList.add(new FragmentServiceOrder_all());//全部
         mFragmentList.add(new FragmentServiceOrder_ToBePaid());//待支付

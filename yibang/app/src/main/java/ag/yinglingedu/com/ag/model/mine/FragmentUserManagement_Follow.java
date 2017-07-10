@@ -51,10 +51,10 @@ public class FragmentUserManagement_Follow extends BaseFragment {
     @Override
     public void init() {
         List<TestBean> list = new ArrayList<>();
-        for (int i=0;i<10;i++){
+        for (int i = 0; i < 10; i++) {
             list.add(new TestBean());
         }
-        lvShow.setAdapter(new CommonAdapter<TestBean>(getContext(),list,R.layout.item_fans) {
+        lvShow.setAdapter(new CommonAdapter<TestBean>(getContext(), list, R.layout.item_fans) {
             @Override
             public void convert(ViewHolder helper, TestBean item) {
 

@@ -97,10 +97,10 @@ public class ActivitySetting extends BaseActivity {
                 startActivity(new Intent(this, ActivityNotificationMessage.class));
                 break;
             case R.id.rl_qchc://清除缓存
-                startActivityForResult(new Intent(this, ActivitySettingConfirm.class),CODE);
+                startActivityForResult(new Intent(this, ActivitySettingConfirm.class), CODE);
                 break;
             case R.id.rl_gygz://给蚁帮一个赞
-                startActivity(new Intent(this,ActivityFunctionIntroduction.class));
+                startActivity(new Intent(this, ActivityFunctionIntroduction.class));
                 break;
             case R.id.rl_gyyb://关于蚁帮
                 startActivity(new Intent(this, ActivityAbout.class));
@@ -113,12 +113,12 @@ public class ActivitySetting extends BaseActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == CODE){
-            boolean type = data.getBooleanExtra("type",false);
-            if(type){//清除缓存
+        if (requestCode == CODE) {
+            boolean type = data.getBooleanExtra("type", false);
+            if (type) {//清除缓存
                 DataCleanManager.clearAllCache(this);
-                tvSize.setText(0+"K");
-            }else{
+                tvSize.setText(0 + "K");
+            } else {
                 ToastUtils.showShortToast("取消清除缓存");
             }
         }

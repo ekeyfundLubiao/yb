@@ -89,7 +89,7 @@ public class ActivityBalanceRecharge extends BaseActivity {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.iv_back:
                 finish();
                 break;
@@ -100,7 +100,7 @@ public class ActivityBalanceRecharge extends BaseActivity {
 
                 break;
             case R.id.btn_recharge://充值
-                startActivity(new Intent(this,ActivityRechargeSuccess.class));
+                startActivity(new Intent(this, ActivityRechargeSuccess.class));
                 break;
         }
     }

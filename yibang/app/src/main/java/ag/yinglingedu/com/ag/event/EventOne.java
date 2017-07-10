@@ -6,6 +6,7 @@ package ag.yinglingedu.com.ag.event;
 
 public class EventOne {
     private String msg;
+
     public EventOne(String msg) {
         this.msg = msg;
     }

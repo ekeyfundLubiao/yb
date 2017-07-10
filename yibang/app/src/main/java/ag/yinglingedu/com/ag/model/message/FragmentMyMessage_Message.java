@@ -90,7 +90,6 @@ public class FragmentMyMessage_Message extends BaseFragment {
     }
 
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -125,7 +124,7 @@ public class FragmentMyMessage_Message extends BaseFragment {
             }
         });*/
 
-        lvShow.setAdapter(new CommonAdapter<TestBean>(getContext(), Config.getList(),R.layout.item_my_message) {
+        lvShow.setAdapter(new CommonAdapter<TestBean>(getContext(), Config.getList(), R.layout.item_my_message) {
             @Override
             public void convert(ViewHolder helper, TestBean item) {
 

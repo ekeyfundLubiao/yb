@@ -5,12 +5,10 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -175,23 +173,23 @@ public class ActivityMain extends BaseFragmentActivity {
 
     @Override
     public void onBackPressed() {
-        if(fragmentHomePage.isShowing()){
+        if (fragmentHomePage.isShowing()) {
             fragmentHomePage.dismiss();
-        }else{
+        } else {
             exit();
         }
     }
 
     private void exit() {
-            if ((System.currentTimeMillis() - exitTime) > 2000) {
-                Toast.makeText(getApplicationContext(), "再按一次退出程序",
-                        Toast.LENGTH_SHORT).show();
-                exitTime = System.currentTimeMillis();
-            } else {
-                stopService(new Intent(this,HeartBeatService.class));//心跳包
-                ((APP)getApplication()).mLocationClient.stopLocation();//停止定位
-                finish();
-                System.exit(0);
-            }
+        if ((System.currentTimeMillis() - exitTime) > 2000) {
+            Toast.makeText(getApplicationContext(), "再按一次退出程序",
+                    Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            stopService(new Intent(this, HeartBeatService.class));//心跳包
+            ((APP) getApplication()).mLocationClient.stopLocation();//停止定位
+            finish();
+            System.exit(0);
+        }
     }
 }

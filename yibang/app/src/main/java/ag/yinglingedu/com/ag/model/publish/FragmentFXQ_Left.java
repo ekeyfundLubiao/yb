@@ -63,11 +63,11 @@ public class FragmentFXQ_Left extends BaseFragment {
         mList.add("技术服务");
         mList.add("丽人时尚");
         mList.add("咨询服务");
-        lvShow.setAdapter( mAdapter =new CommonAdapter<String>(getContext(), mList,R.layout.item_fxq_left) {
+        lvShow.setAdapter(mAdapter = new CommonAdapter<String>(getContext(), mList, R.layout.item_fxq_left) {
             @Override
             public void convert(ViewHolder helper, String item) {
-                helper.setText(R.id.tv_type,item);
-                if( helper.getPosition()==0){
+                helper.setText(R.id.tv_type, item);
+                if (helper.getPosition() == 0) {
                     helper.getView(R.id.line).setVisibility(View.VISIBLE);
                     helper.getConvertView().setBackgroundColor(Color.WHITE);
                 }
@@ -77,33 +77,34 @@ public class FragmentFXQ_Left extends BaseFragment {
 
     @Override
     public void setListener() {
-       lvShow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-           @Override
-           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               changeColor(view, position);//改变选中及清除未选中的颜色
-               ((ActivityPublish_FXQ)getActivity()).changeRight(position);
-           }
-       });
+        lvShow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                changeColor(view, position);//改变选中及清除未选中的颜色
+                ((ActivityPublish_FXQ) getActivity()).changeRight(position);
+            }
+        });
     }
 
     /*改变选中及清除未选中的颜色*/
     private void changeColor(View view, int position) {
         lvShow.getChildAt(hasBeenChoosed).findViewById(R.id.line).setVisibility(View.GONE);
-        ((TextView)lvShow.getChildAt(hasBeenChoosed).findViewById(R.id.tv_type)).setTextColor(ContextCompat.getColor(getContext(),R.color.colorText333333));
-        lvShow.getChildAt(hasBeenChoosed).setBackgroundColor(ContextCompat.getColor(getContext(),R.color.colorBackground));
+        ((TextView) lvShow.getChildAt(hasBeenChoosed).findViewById(R.id.tv_type)).setTextColor(ContextCompat.getColor(getContext(), R.color.colorText333333));
+        lvShow.getChildAt(hasBeenChoosed).setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorBackground));
         hasBeenChoosed = position;
         view.findViewById(R.id.line).setVisibility(View.VISIBLE);
-        ((TextView)view.findViewById(R.id.tv_type)).setTextColor(ContextCompat.getColor(getContext(),R.color.colorTextYellow));
+        ((TextView) view.findViewById(R.id.tv_type)).setTextColor(ContextCompat.getColor(getContext(), R.color.colorTextYellow));
         view.setBackgroundColor(Color.WHITE);
     }
 
     /**
      * 改变菜单
+     *
      * @param position
      */
-    public void changeLeft(int position){
+    public void changeLeft(int position) {
         View view = lvShow.getChildAt(position);
-        changeColor(view,position);
+        changeColor(view, position);
     }
 
     @Override

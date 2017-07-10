@@ -175,8 +175,8 @@ public class ActivityOrderDetail extends BaseActivity implements RequsetUtils.On
         tvIconName.setText(listBean.getOrder_producttitle());
         sdvIcon.setImageURI(Uri.parse(Config.PIC + listBean));
         tvPriceInt.setText("￥" + listBean.getOrder_price());
-        tvNum.setText("× "+listBean.getOrder_buynum());
-        tvPriceIntTotal.setText("￥"+listBean.getOrder_orderamount());
+        tvNum.setText("× " + listBean.getOrder_buynum());
+        tvPriceIntTotal.setText("￥" + listBean.getOrder_orderamount());
     }
 
     @Override

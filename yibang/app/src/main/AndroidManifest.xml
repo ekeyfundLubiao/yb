@@ -43,23 +43,26 @@
         android:roundIcon="@mipmap/me_dl_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".model.mine.ActivityLogin"
+        <activity
+            android:name=".model.mine.ActivityLogin"
             android:theme="@style/AppTheme"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="stateVisible|adjustResize"
-            >
+            android:windowSoftInputMode="stateVisible|adjustResize">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name="com.zzti.fengyongge.imagepicker.PhotoSelectorActivity"></activity>//选择图片
-        <activity android:name="com.zzti.fengyongge.imagepicker.PhotoPreviewActivity"></activity>//预览图片
+        <activity android:name="com.zzti.fengyongge.imagepicker.PhotoSelectorActivity"></activity>
+        //选择图片
+        <activity android:name="com.zzti.fengyongge.imagepicker.PhotoPreviewActivity"></activity>
+        //预览图片
 
         <!--高德地图-->
-        <meta-data android:name="com.amap.api.v2.apikey"
-            android:value="a04dff587ea07963aaa7258f874ccca5"/>
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="a04dff587ea07963aaa7258f874ccca5" />
 
         <service android:name="com.amap.api.location.APSService"></service>//高德地图
 
@@ -68,13 +71,16 @@
             android:name="com.zaaach.citypicker.CityPickerActivity"
             android:theme="@style/CityPicker.NoActionBar"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustPan"/>
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <activity android:name=".ActivityMain"></activity><!--主界面-->
         <activity android:name=".model.publish.ActivityPublish"></activity><!--发布-->
-        <activity android:name=".model.mine.ActivityRegister" android:launchMode="singleTask" android:windowSoftInputMode="stateVisible|adjustResize"></activity><!--注册-->
+        <activity
+            android:name=".model.mine.ActivityRegister"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateVisible|adjustResize"></activity><!--注册-->
         <activity android:name=".model.mine.ActivityPhoneConfirm"></activity><!--手机认证-->
-        <activity android:name=".model.mine.ActivityMyBalance" ></activity><!--我的余额-->
+        <activity android:name=".model.mine.ActivityMyBalance"></activity><!--我的余额-->
         <activity android:name=".model.mine.ActivityPaymentsDetail"></activity><!--收支明细-->
         <activity android:name=".model.mine.ActivityBalanceRecharge"></activity><!--余额充值-->
         <activity android:name=".model.mine.ActivityRechargeSuccess"></activity><!--充值成功-->
@@ -85,24 +91,32 @@
         <activity android:name=".model.mine.ActivityWithdrawResult"></activity><!--体现结果-->
         <activity android:name=".model.mine.ActivityPersonalCertification"></activity><!--个人认证-->
         <activity android:name=".model.mine.ActivityCertification"></activity><!--实名认证-->
-        <activity android:name=".model.mine.ActivitySkillCertification" android:windowSoftInputMode="adjustPan"></activity><!--技能认证-->
+        <activity
+            android:name=".model.mine.ActivitySkillCertification"
+            android:windowSoftInputMode="adjustPan"></activity><!--技能认证-->
         <activity android:name=".model.mine.ActivityAlreadyCertificationName"></activity><!--已实名认证-->
         <activity android:name=".model.mine.ActivitySetting"></activity><!--我的设置-->
         <activity android:name=".model.mine.ActivityNotificationMessage"></activity><!--通知与消息-->
-        <activity android:name=".model.mine.ActivitySettingConfirm" android:theme="@style/MyTransparent"></activity><!--清除缓存确认-->
+        <activity
+            android:name=".model.mine.ActivitySettingConfirm"
+            android:theme="@style/MyTransparent"></activity><!--清除缓存确认-->
         <activity android:name=".model.mine.ActivityAbout"></activity><!--关于蚁帮-->
         <activity android:name=".model.mine.ActivityFunctionIntroduction"></activity><!--功能介绍-->
         <activity android:name=".model.mine.ActivityFeedback"></activity><!--意见反馈-->
         <activity android:name=".model.mine.ActivityCollectionService" /><!--收藏服务-->
         <activity android:name=".model.mine.ActivityManagementService" /><!--管理服务-->
         <activity android:name=".model.mine.ActivityUserManagement" /><!--关注的人-->
-        <activity android:name=".model.publish.ActivityXSBD_FFW" android:windowSoftInputMode="adjustResize"/><!--发服务-->
+        <activity
+            android:name=".model.publish.ActivityXSBD_FFW"
+            android:windowSoftInputMode="adjustResize" /><!--发服务-->
         <activity android:name=".model.publish.ActivityPublish_FXQ" /><!--发需求-->
         <activity android:name=".model.publish.ActivityPublish_FFW" /><!--发服务-->
         <activity android:name=".model.homepage.ActivityAllKinds" /><!--全部分类-->
         <activity android:name=".model.homepage.ActivityKindsDetail" /><!--分类详情-->
         <activity android:name=".model.homepage.ActivityServiceDetail" /><!--服务详情-->
-        <activity android:name=".model.homepage.ActivityConfirmOrder" android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".model.homepage.ActivityConfirmOrder"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".model.homepage.ActivityPayOrder" />
         <activity android:name=".model.homepage.ActivityPayDetail" />
         <activity android:name=".model.homepage.ActivityOrderDetail" />
@@ -121,11 +135,13 @@
             android:exported="true"
             android:process=":ipc" />
 
-        <service android:name="io.rong.imlib.ReConnectService"
-            android:exported="true"/>
+        <service
+            android:name="io.rong.imlib.ReConnectService"
+            android:exported="true" />
 
-        <receiver android:name="io.rong.imlib.ConnectChangeReceiver"
-            android:exported="true"/>
+        <receiver
+            android:name="io.rong.imlib.ConnectChangeReceiver"
+            android:exported="true" />
 
         <receiver
             android:name="io.rong.imlib.HeartbeatReceiver"
@@ -137,14 +153,12 @@
         <!--第三方相关,向第三方推送服务请求 token 的服务 -->
         <service
             android:name="io.rong.push.core.PushRegistrationService"
-            android:exported="false">
-        </service>
+            android:exported="false"></service>
 
         <!-- 处理 push 消息相关的服务 -->
         <service
             android:name="io.rong.push.core.MessageHandleService"
-            android:exported="true">
-        </service>
+            android:exported="true"></service>
 
         <!-- push服务 -->
         <service
@@ -176,8 +190,6 @@
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
-
-
 
 
     </application>

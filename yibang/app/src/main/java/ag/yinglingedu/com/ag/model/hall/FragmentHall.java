@@ -91,14 +91,14 @@ public class FragmentHall extends BaseFragment implements SwipeRefreshLayout.OnR
 
     /*改变数据*/
     private void changeData(final List<TestBean> list, final int layoutId) {
-        lvShow.setAdapter(mAdapter =new CommonAdapter<TestBean>(getContext(), list, layoutId) {
+        lvShow.setAdapter(mAdapter = new CommonAdapter<TestBean>(getContext(), list, layoutId) {
             @Override
             public void convert(ViewHolder helper, TestBean item) {
-                if(layoutId == R.layout.item_hall_fw){
-                    StarBar starBar = (StarBar)(helper.getView(R.id.star_bar));
+                if (layoutId == R.layout.item_hall_fw) {
+                    StarBar starBar = (StarBar) (helper.getView(R.id.star_bar));
                     starBar.setStarMark(5.0f);
                     starBar.setCanChangeable(false);//不可改变
-                }else if(layoutId == R.layout.item_hall_xq){
+                } else if (layoutId == R.layout.item_hall_xq) {
 
                 }
             }
@@ -118,9 +118,9 @@ public class FragmentHall extends BaseFragment implements SwipeRefreshLayout.OnR
         lvShow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(type==0){//需求的item
-                    startActivity(new Intent(getContext(),ActivityDemandDetail.class));
-                }else{//服务的item
+                if (type == 0) {//需求的item
+                    startActivity(new Intent(getContext(), ActivityDemandDetail.class));
+                } else {//服务的item
 
                 }
             }
@@ -142,14 +142,14 @@ public class FragmentHall extends BaseFragment implements SwipeRefreshLayout.OnR
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_xq://需求
-                type=0;
+                type = 0;
                 changeColor(0);//改变颜色
-                changeData(mList,R.layout.item_hall_xq);
+                changeData(mList, R.layout.item_hall_xq);
                 break;
             case R.id.tv_fw://服务
                 type = 1;
                 changeColor(1);//改变颜色
-                changeData(mList,R.layout.item_hall_fw);
+                changeData(mList, R.layout.item_hall_fw);
                 break;
         }
     }

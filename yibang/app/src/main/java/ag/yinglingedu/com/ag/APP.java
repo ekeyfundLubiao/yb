@@ -29,12 +29,12 @@ import io.rong.imlib.RongIMClient;
  * Created by CC on 2017/5/25.
  */
 
-public class APP extends Application implements RequsetUtils.OnCompleteListener{
+public class APP extends Application implements RequsetUtils.OnCompleteListener {
     private SPUtils spUtils;
     //声明AMapLocationClient类对象
     public AMapLocationClient mLocationClient = null;
 
-    public Map<String,String> map = new HashMap<>();
+    public Map<String, String> map = new HashMap<>();
 
     //声明定位回调监听器
     AMapLocationListener locationListener = new AMapLocationListener() {
@@ -45,10 +45,10 @@ public class APP extends Application implements RequsetUtils.OnCompleteListener{
 //                StringBuffer sb = new StringBuffer();
                 //errCode等于0代表定位成功，其他的为定位失败，具体的可以参照官网定位错误码说明
                 if (location.getErrorCode() == 0) {
-                    Utils.getSpUtils().put(Config.JD, location.getLongitude()+"");
-                    Utils.getSpUtils().put(Config.WD, location.getLatitude()+"");
+                    Utils.getSpUtils().put(Config.JD, location.getLongitude() + "");
+                    Utils.getSpUtils().put(Config.WD, location.getLatitude() + "");
                     Utils.getSpUtils().put(Config.USER_CITY, location.getCity());
-                    LogUtils.e("---------"+Utils.getSpUtils().getString(Config.USER_CITY));
+                    LogUtils.e("---------" + Utils.getSpUtils().getString(Config.USER_CITY));
                 }
                    /* sb.append("定位成功" + "\n");
                     sb.append("定位类型: " + location.getLocationType() + "\n");
@@ -87,7 +87,7 @@ public class APP extends Application implements RequsetUtils.OnCompleteListener{
                 LogUtils.e("-----------"+result);*/
             } else {
 //                tvResult.setText("定位失败，loc is null");
-                LogUtils.e("-----------"+"定位失败");
+                LogUtils.e("-----------" + "定位失败");
             }
         }
     };
@@ -126,12 +126,12 @@ public class APP extends Application implements RequsetUtils.OnCompleteListener{
         //启动定位
         mLocationClient.startLocation();
 
-        map.put("sendmsg","{\"cmd\":\"heartbeat\",\"uid\":\""+ ""+"\",\"token\":\""
-                +""+"\",\"version\":\""+""+
-                "\",\"lastupatetime\":\""+""+"\",\"longitude\":\""+
-                ""+"\",\"latitude\":\""+""+"\"}");
-        map.put("encrypt","0");
-        RequsetUtils.request(this, Config.HOST,map,0);
+        map.put("sendmsg", "{\"cmd\":\"heartbeat\",\"uid\":\"" + "" + "\",\"token\":\""
+                + "" + "\",\"version\":\"" + "" +
+                "\",\"lastupatetime\":\"" + "" + "\",\"longitude\":\"" +
+                "" + "\",\"latitude\":\"" + "" + "\"}");
+        map.put("encrypt", "0");
+        RequsetUtils.request(this, Config.HOST, map, 0);
     }
 
     /*获取进程名称*/
@@ -158,17 +158,17 @@ public class APP extends Application implements RequsetUtils.OnCompleteListener{
         databaseHelper.cleanTab("tab_city");
         databaseHelper.cleanTab("tab_kinds_one");
         databaseHelper.cleanTab("tab_kinds_two");
-        BeanHeartBeat beanHeartBeat = new Gson().fromJson(result,BeanHeartBeat.class);
-        List<BeanHeartBeat.ListBean> list =  beanHeartBeat.getList();
-        for (BeanHeartBeat.ListBean bean:list) {
-            Utils.getSpUtils().put(bean.getClassname(),bean.getClassid());
-            if(bean.getModule().equals("city") && bean.getParentname().equals("无")){//为城市的时候
-                LogUtils.e("--------"+bean.getClassname()+"----"+bean.getClassid());
-                databaseHelper.insertCity(new City(bean.getClassname(),bean.getClassid()));
-            }else if(bean.getModule().equals("info")){
-                if(bean.getParentname().equals("无")) {//一级分类
+        BeanHeartBeat beanHeartBeat = new Gson().fromJson(result, BeanHeartBeat.class);
+        List<BeanHeartBeat.ListBean> list = beanHeartBeat.getList();
+        for (BeanHeartBeat.ListBean bean : list) {
+            Utils.getSpUtils().put(bean.getClassname(), bean.getClassid());
+            if (bean.getModule().equals("city") && bean.getParentname().equals("无")) {//为城市的时候
+                LogUtils.e("--------" + bean.getClassname() + "----" + bean.getClassid());
+                databaseHelper.insertCity(new City(bean.getClassname(), bean.getClassid()));
+            } else if (bean.getModule().equals("info")) {
+                if (bean.getParentname().equals("无")) {//一级分类
 
-                }else{//二级分类
+                } else {//二级分类
 
                 }
             }

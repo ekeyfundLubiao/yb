@@ -1,10 +1,7 @@
 package ag.yinglingedu.com.ag.model.publish;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -54,8 +51,8 @@ public class ActivityPublish_FXQ extends BaseActivity {
         ivBack.setVisibility(View.VISIBLE);
         ChangeUtil.initialize(this);
         ChangeUtil.setBasckgound(ivRight, R.mipmap.xx_search);
-        fragmentLeft = (FragmentFXQ_Left)getSupportFragmentManager().findFragmentById(R.id.fragment_left);
-        fragmentRight = (FragmentFXQ_Right)getSupportFragmentManager().findFragmentById(R.id.fragment_right);
+        fragmentLeft = (FragmentFXQ_Left) getSupportFragmentManager().findFragmentById(R.id.fragment_left);
+        fragmentRight = (FragmentFXQ_Right) getSupportFragmentManager().findFragmentById(R.id.fragment_right);
     }
 
     @Override
@@ -66,7 +63,7 @@ public class ActivityPublish_FXQ extends BaseActivity {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.iv_back:
                 finish();
                 break;
@@ -78,9 +75,10 @@ public class ActivityPublish_FXQ extends BaseActivity {
 
     /**
      * 改变右边菜单
+     *
      * @param position
      */
-    public void changeRight(int position){
+    public void changeRight(int position) {
 //        fragmentRight.lvShow.smoothScrollToPosition(position);
         fragmentRight.lvShow.setSelection(position);
     }
@@ -88,9 +86,10 @@ public class ActivityPublish_FXQ extends BaseActivity {
 
     /**
      * 改变左边菜单
+     *
      * @param position
      */
-    public void changeLeft(int position){
+    public void changeLeft(int position) {
         fragmentLeft.changeLeft(position);
     }
 }

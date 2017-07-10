@@ -181,11 +181,11 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
         }
         /*请求服务列表   Utils.getSpUtils().getString(C.USER_CITY)*/
         map.clear();
-        map.put("sendmsg", "{\"cmd\": \"getservicelist\",\"uid\": \""+Utils.getSpUtils().getString(Config.USER_ID)+"\",\"token\": \""
-                + Utils.getSpUtils().getString(Config.TOKEN)+"\"," + "\"longitude\":\""+ Utils.getSpUtils().getString(Config.JD)+
-                "\",\"latitude\":\""+ Utils.getSpUtils().getString(Config.WD)+"\",\"pagesize\": \"20\"," + "\"pageno\":\""+pageNum+
+        map.put("sendmsg", "{\"cmd\": \"getservicelist\",\"uid\": \"" + Utils.getSpUtils().getString(Config.USER_ID) + "\",\"token\": \""
+                + Utils.getSpUtils().getString(Config.TOKEN) + "\"," + "\"longitude\":\"" + Utils.getSpUtils().getString(Config.JD) +
+                "\",\"latitude\":\"" + Utils.getSpUtils().getString(Config.WD) + "\",\"pagesize\": \"20\"," + "\"pageno\":\"" + pageNum +
                 "\",\"classid\": \"\",\"sortby\": \"1\",\"filter\":\"{}\",\"isrec\": \"0\"," +
-                "\"city\":\""+"shanghai"+"\",}");
+                "\"city\":\"" + "shanghai" + "\",}");
         map.put("encrypt", "0");
         request_line = 1;
         RequsetUtils.request(this, Config.HOST, map, request_line);
@@ -197,7 +197,7 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
         map.put("encrypt", "0");
         request_line = 0;
         RequsetUtils.request(this, Config.HOST, map, request_line);
-        refresh.setColorSchemeColors(ContextCompat.getColor(getContext(),R.color.colorTextYellow));
+        refresh.setColorSchemeColors(ContextCompat.getColor(getContext(), R.color.colorTextYellow));
       /*  //设置图片加载器
         sdvAds.setImageURI(Uri.parse(C.URL5));*/
 
@@ -267,9 +267,9 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String service_id = fwlbList.get(position).getService_id();
-                Intent intent =new Intent(getActivity(), ActivityServiceDetail.class);
-                intent.putExtra(Config.SERVICE_ID,service_id);
-                intent.putExtra("user_id",fwlbList.get(position).getService_userid());
+                Intent intent = new Intent(getActivity(), ActivityServiceDetail.class);
+                intent.putExtra(Config.SERVICE_ID, service_id);
+                intent.putExtra("user_id", fwlbList.get(position).getService_userid());
                 startActivity(intent);
             }
         });
@@ -284,17 +284,17 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
         switch (v.getId()) {
             case R.id.rl_type1://智能排序
                 scrollView.scrollTo(0, llChoose.getTop() - title.getHeight());
-                title.setBackgroundColor(ContextCompat.getColor(getContext(),R.color.colorBackgroundYellow));
+                title.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorBackgroundYellow));
                 showMenu();
                 break;
             case R.id.rl_type2://筛选
                 scrollView.scrollTo(0, llChoose.getTop() - title.getHeight());
-                title.setBackgroundColor(ContextCompat.getColor(getContext(),R.color.colorBackgroundYellow));
+                title.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorBackgroundYellow));
                 showMenu();
                 break;
             case R.id.rl_type3://服务方式
                 scrollView.scrollTo(0, llChoose.getTop() - title.getHeight());
-                title.setBackgroundColor(ContextCompat.getColor(getContext(),R.color.colorBackgroundYellow));
+                title.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorBackgroundYellow));
                 showMenu();
                 break;
             case R.id.tv_search://搜索
@@ -342,14 +342,14 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
         if (scrollY > 0) { //开始滑动
             ivLocation.setBackgroundResource(R.mipmap.home_navbtn_location_disable);
             if (scrollY > 125) {
-                title.setBackgroundColor(ContextCompat.getColor(getContext(),R.color.colorBackgroundYellow));
+                title.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorBackgroundYellow));
                 title.getBackground().mutate().setAlpha(255);
                 return;
             }
-            title.setBackgroundColor(ContextCompat.getColor(getContext(),R.color.colorBackgroundYellow));
+            title.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorBackgroundYellow));
             title.getBackground().mutate().setAlpha(scrollY * 2);
         } else {//到顶部
-            title.setBackground(ContextCompat.getDrawable(getContext(),R.drawable.title));
+            title.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.title));
             ivLocation.setBackgroundResource(R.mipmap.home_btn_location_disable);
         }
     }
@@ -368,11 +368,11 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
                 tvLocation.setText(city);
                 Utils.getSpUtils().put(Config.USER_CITY, city);
                 map.clear();
-                map.put("sendmsg", "{\"cmd\": \"getservicelist\",\"uid\": \""+Utils.getSpUtils().getString(Config.USER_ID)+"\",\"token\": \""
-                        + Utils.getSpUtils().getString(Config.TOKEN)+"\"," + "\"longitude\":\""+ Utils.getSpUtils().getString(Config.JD)+
-                        "\",\"latitude\":\""+ Utils.getSpUtils().getString(Config.WD)+"\",\"pagesize\": \"20\"," + "\"pageno\":\""+pageNum+
+                map.put("sendmsg", "{\"cmd\": \"getservicelist\",\"uid\": \"" + Utils.getSpUtils().getString(Config.USER_ID) + "\",\"token\": \""
+                        + Utils.getSpUtils().getString(Config.TOKEN) + "\"," + "\"longitude\":\"" + Utils.getSpUtils().getString(Config.JD) +
+                        "\",\"latitude\":\"" + Utils.getSpUtils().getString(Config.WD) + "\",\"pagesize\": \"20\"," + "\"pageno\":\"" + pageNum +
                         "\",\"classid\": \"\",\"sortby\": \"1\",\"filter\":\"{}\",\"isrec\": \"0\"," +
-                        "\"city\":\""+databaseHelper.search_city(city)+"\",}");
+                        "\"city\":\"" + databaseHelper.search_city(city) + "\",}");
                 map.put("encrypt", "0");
                 request_line = 1;
                 RequsetUtils.request(this, Config.HOST, map, request_line);
@@ -382,7 +382,7 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
 
     /*显示菜单*/
     private void showMenu() {
-        if(null != pop && pop.isShowing()){
+        if (null != pop && pop.isShowing()) {
             pop.dismiss();
         }
         hasBeenChoosed = 0;
@@ -402,7 +402,7 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
                 helper.setText(R.id.tv_type, item);
                 if (helper.getPosition() == 0) {
                     helper.getView(R.id.line).setVisibility(View.VISIBLE);
-                    helper.getConvertView().setBackgroundColor(ContextCompat.getColor(getContext(),R.color.colorBackground));
+                    helper.getConvertView().setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorBackground));
                 }
             }
         });
@@ -448,11 +448,11 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
     /*改变选中及清除未选中的颜色*/
     private void changeColor(View view, int position) {
         listView_left.getChildAt(hasBeenChoosed).findViewById(R.id.line).setVisibility(View.GONE);
-        ((TextView) listView_left.getChildAt(hasBeenChoosed).findViewById(R.id.tv_type)).setTextColor(ContextCompat.getColor(getContext(),R.color.colorText333333));
-        listView_left.getChildAt(hasBeenChoosed).setBackgroundColor(ContextCompat.getColor(getContext(),R.color.colorBackground));
+        ((TextView) listView_left.getChildAt(hasBeenChoosed).findViewById(R.id.tv_type)).setTextColor(ContextCompat.getColor(getContext(), R.color.colorText333333));
+        listView_left.getChildAt(hasBeenChoosed).setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorBackground));
         hasBeenChoosed = position;
         view.findViewById(R.id.line).setVisibility(View.VISIBLE);
-        ((TextView) view.findViewById(R.id.tv_type)).setTextColor(ContextCompat.getColor(getContext(),R.color.colorTextYellow));
+        ((TextView) view.findViewById(R.id.tv_type)).setTextColor(ContextCompat.getColor(getContext(), R.color.colorTextYellow));
         view.setBackgroundColor(Color.WHITE);
     }
 
@@ -474,14 +474,14 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
             case 0://顶部和中间广告
                 List<String> adsTopList = new ArrayList<>();
                 List<String> adsMidList = new ArrayList<>();
-                BeanAds beanAds = new Gson().fromJson(result,BeanAds.class);
+                BeanAds beanAds = new Gson().fromJson(result, BeanAds.class);
                 List<BeanAds.ListBean> beanAdsList = beanAds.getList();
-                for (BeanAds.ListBean bean:beanAdsList) {
-                    if(bean.getClassid().equals("admidindex")){//中间广告
+                for (BeanAds.ListBean bean : beanAdsList) {
+                    if (bean.getClassid().equals("admidindex")) {//中间广告
                         String[] adsMidArr = bean.getAdinfopic().split(",");
 //                        adsMidList.addAll(Arrays.asList(adsMidArr));
-                        sdvAds.setImageURI(Uri.parse(Config.PIC+adsMidArr[0]));
-                    }else if(bean.getClassid().equals("adtopindex")){//顶部广告
+                        sdvAds.setImageURI(Uri.parse(Config.PIC + adsMidArr[0]));
+                    } else if (bean.getClassid().equals("adtopindex")) {//顶部广告
                         String[] adsTopArr = bean.getAdinfopic().split(",");
                         adsTopList.addAll(Arrays.asList(adsTopArr));
                     }
@@ -489,7 +489,7 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
 
                 List<String> imgList = new ArrayList<>();
                 for (int i = 0; i < adsTopList.size(); i++) {
-                    imgList.add(Config.PIC+adsTopList.get(i));
+                    imgList.add(Config.PIC + adsTopList.get(i));
 //                    LogUtils.e("--------"+adsMidList.get(i));
                 }
                 banner.setImageLoader(new BannerImageLoader());
@@ -500,11 +500,11 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
 //                sdvAds.setImageURI(Uri.parse(C.PIC+adsMidList.get(0)));
                 break;
             case 1://服务列表
-                BeanSYLB beanSYLB = new Gson().fromJson(result,BeanSYLB.class);
+                BeanSYLB beanSYLB = new Gson().fromJson(result, BeanSYLB.class);
                 fwlbList = beanSYLB.getList();
-                if(fwlbList.size() != 0){
+                if (fwlbList.size() != 0) {
                     lvShow.setAdapter(mAdapter = new HomepageAdapter(getContext(), fwlbList));
-                }else{
+                } else {
                     ToastUtils.showShortToast("暂无数据！");
                 }
                 break;

@@ -26,7 +26,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/15.
  */
 
-public class ActivityPayOrder extends BaseActivity implements RequsetUtils.OnCompleteListener{
+public class ActivityPayOrder extends BaseActivity implements RequsetUtils.OnCompleteListener {
 
     @BindView(R.id.title)
     TextView title;
@@ -118,8 +118,8 @@ public class ActivityPayOrder extends BaseActivity implements RequsetUtils.OnCom
         order_id = intent.getStringExtra("order_id");
 //        LogUtils.e("---------"+order_id);
         map.clear();
-        map.put("sendmsg", "{ \"cmd\": \"getorderdetail\",\"uid\": \""+ Utils.getSpUtils().getString(Config.USER_ID,"")+"\"," +
-                "\"token\": \""+Utils.getSpUtils().getString(Config.TOKEN,"")+"\",\"order_id\":\""+ order_id +"\"}");
+        map.put("sendmsg", "{ \"cmd\": \"getorderdetail\",\"uid\": \"" + Utils.getSpUtils().getString(Config.USER_ID, "") + "\"," +
+                "\"token\": \"" + Utils.getSpUtils().getString(Config.TOKEN, "") + "\",\"order_id\":\"" + order_id + "\"}");
         map.put("encrypt", "0");
         request_line = 0;
         RequsetUtils.request(this, Config.HOST, map, request_line);
@@ -139,8 +139,8 @@ public class ActivityPayOrder extends BaseActivity implements RequsetUtils.OnCom
                 break;
             case R.id.tv_ljfk:
 
-                Intent intent = new Intent(this,ActivityPayDetail.class);
-                intent.putExtra("order_id",order_id);
+                Intent intent = new Intent(this, ActivityPayDetail.class);
+                intent.putExtra("order_id", order_id);
                 startActivity(intent);
                 break;
         }
@@ -148,10 +148,10 @@ public class ActivityPayOrder extends BaseActivity implements RequsetUtils.OnCom
 
     @Override
     public void success(String result, int line) {
-        BeanOrderDetail beanOrderDetail = new Gson().fromJson(result,BeanOrderDetail.class);
+        BeanOrderDetail beanOrderDetail = new Gson().fromJson(result, BeanOrderDetail.class);
         BeanOrderDetail.ListBean listBean = beanOrderDetail.getList().get(0);
         tvName.setText(listBean.getUser_nickname());
-        tvPrice.setText("￥"+listBean.getOrder_orderamount());
+        tvPrice.setText("￥" + listBean.getOrder_orderamount());
         tvDdmc.setText(listBean.getOrder_producttitle());
         tvDdje.setText(listBean.getOrder_orderamount());
     }

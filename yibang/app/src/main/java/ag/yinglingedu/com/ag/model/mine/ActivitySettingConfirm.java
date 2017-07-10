@@ -44,22 +44,22 @@ public class ActivitySettingConfirm extends BaseActivity {
 
     @Override
     public void setListener() {
-       tvCancel.setOnClickListener(this);
-       tvConfirm.setOnClickListener(this);
+        tvCancel.setOnClickListener(this);
+        tvConfirm.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.tv_cancel://取消清除缓存
                 intent = getIntent();
-                intent.putExtra("type",false);
+                intent.putExtra("type", false);
                 setResult(CODE, intent);
                 finish();
                 break;
             case R.id.tv_confirm://清除缓存
                 intent = getIntent();
-                intent.putExtra("type",true);
+                intent.putExtra("type", true);
                 setResult(CODE, intent);
                 finish();
                 break;

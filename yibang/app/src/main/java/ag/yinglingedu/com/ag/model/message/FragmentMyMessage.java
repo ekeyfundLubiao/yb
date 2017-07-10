@@ -22,9 +22,6 @@ import java.util.List;
 
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.event.EventTwo;
-import ag.yinglingedu.com.ag.model.mine.FragmentPaymentsDetail_all;
-import ag.yinglingedu.com.ag.model.mine.FragmentPaymentsDetail_expenditure;
-import ag.yinglingedu.com.ag.model.mine.FragmentPaymentsDetail_income;
 import ag.yinglingedu.com.xlibrary.adapter.CommonFragmentPagerAdapter;
 import ag.yinglingedu.com.xlibrary.base.BaseFragment;
 import ag.yinglingedu.com.xlibrary.utils.ChangeUtil;
@@ -37,7 +34,7 @@ import butterknife.Unbinder;
  * Created by CC on 2017/5/25.
  */
 
-public class FragmentMyMessage extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener{
+public class FragmentMyMessage extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener {
     Unbinder unbinder;
     @BindView(R.id.iv_back)
     ImageView ivBack;

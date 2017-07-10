@@ -60,21 +60,21 @@ public class ActivityPublish extends BaseActivity {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.iv_close://关闭
                 finish();
                 break;
             case R.id.iv_fxq://发需求
-                startActivity(new Intent(this,ActivityPublish_FXQ.class));
+                startActivity(new Intent(this, ActivityPublish_FXQ.class));
                 break;
             case R.id.iv_ffw://发服务
-                startActivity(new Intent(this,ActivityPublish_FFW.class));
+                startActivity(new Intent(this, ActivityPublish_FFW.class));
                 break;
             case R.id.rl_btn_l://新手必读
-                startActivity(new Intent(this,ActivityXSBD_FXQ.class));
+                startActivity(new Intent(this, ActivityXSBD_FXQ.class));
                 break;
             case R.id.rl_btn_r://新手必读-右边
-                startActivity(new Intent(this,ActivityXSBD_FFW.class));
+                startActivity(new Intent(this, ActivityXSBD_FFW.class));
                 break;
         }
     }

@@ -80,7 +80,7 @@ public class ActivityPhoneConfirm extends BaseActivity {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.tv_yzm:
                 changeTime();
                 break;

@@ -80,7 +80,7 @@ public class ActivityPersonalCertification extends BaseActivity {
     protected void onStart() {
         super.onStart();
         isCertification_name = spUtils.getBoolean(Config.IS_CERTIFICATION_NAME);//是否实名认证
-        if(isCertification_name){
+        if (isCertification_name) {
             tvSmrz.setText("已实名认证");
         }
     }
@@ -102,22 +102,22 @@ public class ActivityPersonalCertification extends BaseActivity {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.iv_back:
                 finish();
                 break;
             case R.id.rl_type1://实名认证
-                if(isCertification_name){//已认证
+                if (isCertification_name) {//已认证
                     startActivity(new Intent(this, ActivityAlreadyCertificationName.class));
-                }else{//未认证
+                } else {//未认证
                     startActivity(new Intent(this, ActivityCertification.class));
                 }
                 break;
-             case R.id.rl_type2://芝麻信用认证
+            case R.id.rl_type2://芝麻信用认证
 
                 break;
-             case R.id.rl_type3://技能认证
-                 startActivity(new Intent(this, ActivitySkillCertification.class));
+            case R.id.rl_type3://技能认证
+                startActivity(new Intent(this, ActivitySkillCertification.class));
                 break;
 
         }

@@ -131,7 +131,7 @@ public class ActivityKindsDetail extends BaseActivity implements SwipeRefreshLay
         initStatus();
         ivBack.setVisibility(View.VISIBLE);
         EventBus.getDefault().register(this);
-        refresh.setColorSchemeColors(ContextCompat.getColor(this,R.color.colorTextYellow));
+        refresh.setColorSchemeColors(ContextCompat.getColor(this, R.color.colorTextYellow));
         Config.getList().clear();
         mList = Config.getList();
 
@@ -298,7 +298,8 @@ public class ActivityKindsDetail extends BaseActivity implements SwipeRefreshLay
         pop.showAsDropDown(llChoose, 0, 0);
         pop.update();
     }
-  /*显示菜单-智能排序*/
+
+    /*显示菜单-智能排序*/
     private void showMenu2() {
         if (null != pop && pop.isShowing()) {
             pop.dismiss();

@@ -109,7 +109,7 @@ public class ActivityBalanceWithdraw extends BaseActivity {
 
                 break;
             case R.id.btn_withdraw_cash://立即提现
-                startActivity(new Intent(this,ActivityWithdrawResult.class));
+                startActivity(new Intent(this, ActivityWithdrawResult.class));
                 break;
             case R.id.tv_qbtx:      //全部提现
 

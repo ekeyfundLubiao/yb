@@ -131,7 +131,7 @@ public class ActivityCertification extends BaseActivity {
             case R.id.btn_submit://提交
                 tvShz.setVisibility(View.VISIBLE);
                 btnSubmit.setVisibility(View.GONE);
-                spUtils.put(Config.IS_CERTIFICATION_NAME,true);//已实名认证
+                spUtils.put(Config.IS_CERTIFICATION_NAME, true);//已实名认证
                 break;
         }
     }

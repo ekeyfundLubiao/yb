@@ -1,6 +1,5 @@
 package ag.yinglingedu.com.ag.model.mine;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -82,13 +81,13 @@ public class ActivityMyBalance extends BaseActivity {
                 finish();
                 break;
             case R.id.tv_right:  //收支明细
-                startActivity(new Intent(this,ActivityPaymentsDetail.class));
+                startActivity(new Intent(this, ActivityPaymentsDetail.class));
                 break;
             case R.id.btn_recharge: //充值
-                startActivity(new Intent(this,ActivityBalanceRecharge.class));
+                startActivity(new Intent(this, ActivityBalanceRecharge.class));
                 break;
             case R.id.btn_withdraw_cash: //提现
-                startActivity(new Intent(this,ActivityBalanceWithdraw.class));
+                startActivity(new Intent(this, ActivityBalanceWithdraw.class));
                 break;
             case R.id.tv_xsjc:      //新手教程
 

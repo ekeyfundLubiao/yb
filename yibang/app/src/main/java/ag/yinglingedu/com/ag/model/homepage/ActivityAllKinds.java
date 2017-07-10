@@ -8,7 +8,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import ag.yinglingedu.com.ag.R;
-import ag.yinglingedu.com.ag.model.publish.FragmentFXQ_Right;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,7 +46,7 @@ public class ActivityAllKinds extends BaseActivity {
     public void init() {
         ivBack.setVisibility(View.VISIBLE);
         title.setText("全部分类");
-        fragmentRight = (FragmentAllKinds)getSupportFragmentManager().findFragmentById(R.id.fragment_right);
+        fragmentRight = (FragmentAllKinds) getSupportFragmentManager().findFragmentById(R.id.fragment_right);
     }
 
     @Override
@@ -57,8 +56,8 @@ public class ActivityAllKinds extends BaseActivity {
 
     @Override
     public void onClick(View v) {
-       if (v.getId() == R.id.iv_back){
-           finish();
-       }
+        if (v.getId() == R.id.iv_back) {
+            finish();
+        }
     }
 }

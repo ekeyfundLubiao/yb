@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/8.
  */
 
-public class ActivityManagementService extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener{
+public class ActivityManagementService extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
 
 
     @BindView(R.id.iv_back)
@@ -62,10 +62,10 @@ public class ActivityManagementService extends BaseActivity implements SwipeRefr
     public void setListener() {
         refresh.setOnRefreshListener(this);
         ivBack.setOnClickListener(this);
-        lvShow.setAdapter(new CommonAdapter<TestBean>(this, Config.getList(),R.layout.item_management_service) {
+        lvShow.setAdapter(new CommonAdapter<TestBean>(this, Config.getList(), R.layout.item_management_service) {
             @Override
             public void convert(ViewHolder helper, TestBean item) {
-                StarBar starBar = (StarBar)(helper.getView(R.id.star_bar));
+                StarBar starBar = (StarBar) (helper.getView(R.id.star_bar));
                 starBar.setStarMark(5.0f);
                 starBar.setCanChangeable(false);//不可改变
             }
@@ -74,7 +74,7 @@ public class ActivityManagementService extends BaseActivity implements SwipeRefr
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.iv_back:
                 finish();
                 break;

@@ -67,10 +67,10 @@ public class ActivityNotificationMessage extends BaseActivity {
 
     /*初始化按钮*/
     private void initButton(boolean status) {
-        if(status){//接收
-            ChangeUtil.setImageWithID(ivBtn,R.mipmap.wd_btn_onfloat_highlighted);
-        }else{//不接收
-            ChangeUtil.setImageWithID(ivBtn,R.mipmap.wd_btn_offfloat_highlighted);
+        if (status) {//接收
+            ChangeUtil.setImageWithID(ivBtn, R.mipmap.wd_btn_onfloat_highlighted);
+        } else {//不接收
+            ChangeUtil.setImageWithID(ivBtn, R.mipmap.wd_btn_offfloat_highlighted);
         }
     }
 
@@ -96,15 +96,16 @@ public class ActivityNotificationMessage extends BaseActivity {
 
     /**
      * 改变按钮
+     *
      * @param status
      */
     private void changeButton(boolean status) {
-        if(status){//接收,改变状态
-            ChangeUtil.setImageWithID(ivBtn,R.mipmap.wd_btn_offfloat_highlighted);
-            spUtils.put(Config.IS_RECEIVE_NOTIFICATION,false);
-        }else{
-            ChangeUtil.setImageWithID(ivBtn,R.mipmap.wd_btn_onfloat_highlighted);
-            spUtils.put(Config.IS_RECEIVE_NOTIFICATION,true);
+        if (status) {//接收,改变状态
+            ChangeUtil.setImageWithID(ivBtn, R.mipmap.wd_btn_offfloat_highlighted);
+            spUtils.put(Config.IS_RECEIVE_NOTIFICATION, false);
+        } else {
+            ChangeUtil.setImageWithID(ivBtn, R.mipmap.wd_btn_onfloat_highlighted);
+            spUtils.put(Config.IS_RECEIVE_NOTIFICATION, true);
         }
     }
 }

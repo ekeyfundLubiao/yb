@@ -39,7 +39,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/12.
  */
 
-public class ActivityServiceDetail extends BaseActivity implements RequsetUtils.OnCompleteListener,SwipeRefreshLayout.OnRefreshListener{
+public class ActivityServiceDetail extends BaseActivity implements RequsetUtils.OnCompleteListener, SwipeRefreshLayout.OnRefreshListener {
 
     @BindView(R.id.banner)
     Banner banner;
@@ -114,14 +114,14 @@ public class ActivityServiceDetail extends BaseActivity implements RequsetUtils.
         service_id = intent.getStringExtra(Config.SERVICE_ID);
         String user_id = intent.getStringExtra("user_id");
         map.clear();
-        map.put("sendmsg", "{\"cmd\": \"getservicedetail\",\"uid\": \""+user_id+"\",\"token\": \""+Utils.getSpUtils().getString(Config.TOKEN,"")+"\",\"id\": \""+ service_id +"\"}");
+        map.put("sendmsg", "{\"cmd\": \"getservicedetail\",\"uid\": \"" + user_id + "\",\"token\": \"" + Utils.getSpUtils().getString(Config.TOKEN, "") + "\",\"id\": \"" + service_id + "\"}");
         map.put("encrypt", "0");
         request_line = 0;
         RequsetUtils.request(this, Config.HOST, map, request_line);
 
         starBar.setCanChangeable(false);
 
-        refresh.setColorSchemeColors(ContextCompat.getColor(this,R.color.colorTextYellow));
+        refresh.setColorSchemeColors(ContextCompat.getColor(this, R.color.colorTextYellow));
         //设置图片加载器
         refresh.setOnRefreshListener(this);
     }
@@ -133,15 +133,15 @@ public class ActivityServiceDetail extends BaseActivity implements RequsetUtils.
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.tv_ljyy:
-                Intent intent = new Intent(this,ActivityConfirmOrder.class);
-                intent.putExtra("service_id",service_id);
-                intent.putExtra("user_name",list.get(0).getUser_nickname());
-                intent.putExtra("service_title",list.get(0).getService_title());
-                intent.putExtra("service_price",list.get(0).getService_price());
+                Intent intent = new Intent(this, ActivityConfirmOrder.class);
+                intent.putExtra("service_id", service_id);
+                intent.putExtra("user_name", list.get(0).getUser_nickname());
+                intent.putExtra("service_title", list.get(0).getService_title());
+                intent.putExtra("service_price", list.get(0).getService_price());
                 intent.putExtra("user_icon", Config.PIC + list.get(0).getUser_headpic());
-                intent.putExtra("product_icon",list_pic.get(0));
+                intent.putExtra("product_icon", list_pic.get(0));
                 startActivity(intent);
                 break;
         }
@@ -149,14 +149,14 @@ public class ActivityServiceDetail extends BaseActivity implements RequsetUtils.
 
     @Override
     public void success(String result, int line) {
-        switch (line){
+        switch (line) {
             case 0://服务详情
-                BeanServiceDetail serviceDetail = new Gson().fromJson(result,BeanServiceDetail.class);
+                BeanServiceDetail serviceDetail = new Gson().fromJson(result, BeanServiceDetail.class);
                 list = serviceDetail.getList();
                 String[] split = list.get(0).getService_photos().split(",");
                 list_pic = new ArrayList<>();
-                for (String bean:split) {
-                    list_pic.add(Config.PIC+bean);
+                for (String bean : split) {
+                    list_pic.add(Config.PIC + bean);
                 }
                 banner.setImageLoader(new BannerImageLoader());
                 //设置图片集合
@@ -165,8 +165,8 @@ public class ActivityServiceDetail extends BaseActivity implements RequsetUtils.
                 banner.start();
                 tvName.setText(list.get(0).getService_title());
                 tvContent.setText(list.get(0).getService_intro());
-                tvPrice.setText(list.get(0).getService_price()+"/"+ list.get(0).getService_unit());
-                tvYssl.setText("[已售"+ list.get(0).getService_ordercount()+"]");
+                tvPrice.setText(list.get(0).getService_price() + "/" + list.get(0).getService_unit());
+                tvYssl.setText("[已售" + list.get(0).getService_ordercount() + "]");
                 starBar.setStarMark(Float.parseFloat(list.get(0).getService_evaluatestar()));
                 sdvHeadIcon.setImageURI(Uri.parse(Config.PIC + list.get(0).getUser_headpic()));
                 tvUserName.setText(list.get(0).getUser_nickname());

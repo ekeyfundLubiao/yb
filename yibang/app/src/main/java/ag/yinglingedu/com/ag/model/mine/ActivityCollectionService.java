@@ -51,7 +51,7 @@ public class ActivityCollectionService extends BaseActivity {
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.iv_back){
+        if (v.getId() == R.id.iv_back) {
             finish();
         }
     }

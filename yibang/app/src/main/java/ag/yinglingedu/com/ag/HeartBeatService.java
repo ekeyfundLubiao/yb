@@ -19,11 +19,11 @@ import ag.yinglingedu.com.xlibrary.utils.Utils;
  * Created by M 4700 on 2017/6/20.
  */
 
-public class HeartBeatService extends Service implements Runnable ,RequsetUtils.OnCompleteListener{
+public class HeartBeatService extends Service implements Runnable, RequsetUtils.OnCompleteListener {
     private Thread mThread;
     public int count = 0;
     private static String KEY_REST_MSG = "KEY_REST_MSG";
-    public Map<String,String> map = new HashMap<>();//存放访问网络所需参数
+    public Map<String, String> map = new HashMap<>();//存放访问网络所需参数
 
     @Override
     public void run() {
@@ -36,12 +36,12 @@ public class HeartBeatService extends Service implements Runnable ,RequsetUtils.
                 //向服务器发送心跳包
                 map.clear();
                 //请求数据
-                map.put("sendmsg","{\"cmd\":\"heartbeat\",\"uid\":\""+ Utils.getSpUtils().getString(Config.USER_ID,"")+"\",\"token\":\""
-                        +Utils.getSpUtils().getString(Config.TOKEN,"")+"\",\"version\":\""+Utils.getSpUtils().getString(Config.VERSION_CODE,"")+
-                        "\",\"lastupatetime\":\""+Utils.getSpUtils().getString(Config.LAST_TIME,"")+"\",\"longitude\":\""+
-                        Utils.getSpUtils().getString(Config.JD,"")+"\",\"latitude\":\""+Utils.getSpUtils().getString(Config.WD,"")+"\"}");
-                map.put("encrypt","0");
-                RequsetUtils.request(this, Config.HOST,map,count);
+                map.put("sendmsg", "{\"cmd\":\"heartbeat\",\"uid\":\"" + Utils.getSpUtils().getString(Config.USER_ID, "") + "\",\"token\":\""
+                        + Utils.getSpUtils().getString(Config.TOKEN, "") + "\",\"version\":\"" + Utils.getSpUtils().getString(Config.VERSION_CODE, "") +
+                        "\",\"lastupatetime\":\"" + Utils.getSpUtils().getString(Config.LAST_TIME, "") + "\",\"longitude\":\"" +
+                        Utils.getSpUtils().getString(Config.JD, "") + "\",\"latitude\":\"" + Utils.getSpUtils().getString(Config.WD, "") + "\"}");
+                map.put("encrypt", "0");
+                RequsetUtils.request(this, Config.HOST, map, count);
                 count += 1;
                 Thread.sleep(1000 * 10);
             } catch (InterruptedException e) {
@@ -79,23 +79,23 @@ public class HeartBeatService extends Service implements Runnable ,RequsetUtils.
     @Override
     public void success(String result, int line) {
 //        Utils.getSpUtils().put(C.LAST_TIME,);
-        BeanHeartBeat beanHeartBeat = new Gson().fromJson(result,BeanHeartBeat.class);
+        BeanHeartBeat beanHeartBeat = new Gson().fromJson(result, BeanHeartBeat.class);
 
-        if(beanHeartBeat.getTime() != null && !beanHeartBeat.getTime().equals("")){
+        if (beanHeartBeat.getTime() != null && !beanHeartBeat.getTime().equals("")) {
             //上次心跳包时间
-            Utils.getSpUtils().put(Config.LAST_TIME,beanHeartBeat.getTime());
+            Utils.getSpUtils().put(Config.LAST_TIME, beanHeartBeat.getTime());
         }
 
         String retmsg = beanHeartBeat.getRetmsg();//数据及安装包更新状态标志
-        if(result!= null && !retmsg.equals("")){
+        if (result != null && !retmsg.equals("")) {
             String[] split = retmsg.split("\\|");
-            if(split[0].equals("1")){//List数据有更新
+            if (split[0].equals("1")) {//List数据有更新
 
             }
-            if(Integer.valueOf(split[1]) > 0){//有系统消息
+            if (Integer.valueOf(split[1]) > 0) {//有系统消息
 
             }
-            if(split[2].equals("1")){//有更新包
+            if (split[2].equals("1")) {//有更新包
 
             }
         }

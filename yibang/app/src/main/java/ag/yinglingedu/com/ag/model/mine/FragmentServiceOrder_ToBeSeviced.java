@@ -49,13 +49,13 @@ public class FragmentServiceOrder_ToBeSeviced extends BaseFragment {
     @Override
     public void init() {
         List<TestBean> list = new ArrayList<>();
-        for (int i=0;i<10;i++){
+        for (int i = 0; i < 10; i++) {
             list.add(new TestBean());
         }
-        lvShow.setAdapter(new CommonAdapter<TestBean>(getContext(),list,R.layout.item_service_order) {
+        lvShow.setAdapter(new CommonAdapter<TestBean>(getContext(), list, R.layout.item_service_order) {
             @Override
             public void convert(ViewHolder helper, TestBean item) {
-                helper.setText(R.id.tv_type,"待服务");
+                helper.setText(R.id.tv_type, "待服务");
             }
         });
         lvShow.setOnScrollListener(new AbsListView.OnScrollListener() {

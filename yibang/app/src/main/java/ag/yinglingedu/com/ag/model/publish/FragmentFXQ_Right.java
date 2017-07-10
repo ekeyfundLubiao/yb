@@ -16,7 +16,6 @@ import ag.yinglingedu.com.ag.bean.BeanFXQ;
 import ag.yinglingedu.com.xlibrary.adapter.CommonAdapter;
 import ag.yinglingedu.com.xlibrary.adapter.ViewHolder;
 import ag.yinglingedu.com.xlibrary.base.BaseFragment;
-import ag.yinglingedu.com.xlibrary.utils.LogUtils;
 import ag.yinglingedu.com.xlibrary.widget.SGridView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,15 +47,15 @@ public class FragmentFXQ_Right extends BaseFragment {
     public void init() {
         initData();//初始化数据
 
-        lvShow.setAdapter(new CommonAdapter<BeanFXQ>(getContext(),mList,R.layout.item_fxq_right) {
+        lvShow.setAdapter(new CommonAdapter<BeanFXQ>(getContext(), mList, R.layout.item_fxq_right) {
             @Override
             public void convert(ViewHolder helper, BeanFXQ item) {
-                helper.setText(R.id.tv_title,item.getType());//类型
-                SGridView gvshow = ((SGridView)helper.getView(R.id.gv_show));
-                gvshow.setAdapter(new CommonAdapter<Integer>(getContext(),item.getListBeen(),R.layout.item_fxq_right_gridview) {
+                helper.setText(R.id.tv_title, item.getType());//类型
+                SGridView gvshow = ((SGridView) helper.getView(R.id.gv_show));
+                gvshow.setAdapter(new CommonAdapter<Integer>(getContext(), item.getListBeen(), R.layout.item_fxq_right_gridview) {
                     @Override
                     public void convert(ViewHolder helper, Integer item) {
-                        helper.setImageResource(R.id.iv_pic,item.intValue());
+                        helper.setImageResource(R.id.iv_pic, item.intValue());
                     }
                 });
             }
@@ -76,7 +75,7 @@ public class FragmentFXQ_Right extends BaseFragment {
         listBeen1.add(R.mipmap.yyyl);
         listBeen1.add(R.mipmap.yxpw);
         listBeen1.add(R.mipmap.xxpw);
-        mList.add( new BeanFXQ("休闲娱乐",listBeen1));
+        mList.add(new BeanFXQ("休闲娱乐", listBeen1));
 
         List<Integer> listBeen2 = new ArrayList<>();
         listBeen2.add(R.mipmap.zhsq);
@@ -87,18 +86,18 @@ public class FragmentFXQ_Right extends BaseFragment {
         listBeen2.add(R.mipmap.lyfw);
         listBeen2.add(R.mipmap.cw);
         listBeen2.add(R.mipmap.zlfw);
-        mList.add( new BeanFXQ("居家生活",listBeen2));
+        mList.add(new BeanFXQ("居家生活", listBeen2));
 
         List<Integer> listBeen3 = new ArrayList<>();
         listBeen3.add(R.mipmap.yd);
         listBeen3.add(R.mipmap.js);
         listBeen3.add(R.mipmap.yyss);
-        mList.add( new BeanFXQ("运动健康",listBeen3));
+        mList.add(new BeanFXQ("运动健康", listBeen3));
 
         List<Integer> listBeen4 = new ArrayList<>();
         listBeen4.add(R.mipmap.dpt);
         listBeen4.add(R.mipmap.dbs);
-        mList.add( new BeanFXQ("跑腿办事",listBeen4));
+        mList.add(new BeanFXQ("跑腿办事", listBeen4));
 
         List<Integer> listBeen5 = new ArrayList<>();
         listBeen5.add(R.mipmap.yq);
@@ -108,7 +107,7 @@ public class FragmentFXQ_Right extends BaseFragment {
         listBeen5.add(R.mipmap.zj);
         listBeen5.add(R.mipmap.hh);
         listBeen5.add(R.mipmap.sf);
-        mList.add( new BeanFXQ("教育培训",listBeen5));
+        mList.add(new BeanFXQ("教育培训", listBeen5));
 
         List<Integer> listBeen6 = new ArrayList<>();
         listBeen6.add(R.mipmap.gcfw);
@@ -116,35 +115,35 @@ public class FragmentFXQ_Right extends BaseFragment {
         listBeen6.add(R.mipmap.clby);
         listBeen6.add(R.mipmap.cldb);
         listBeen6.add(R.mipmap.pzcfw);
-        mList.add(new BeanFXQ("车务服务",listBeen6));
+        mList.add(new BeanFXQ("车务服务", listBeen6));
 
-         List<Integer> listBeen7 = new ArrayList<>();
+        List<Integer> listBeen7 = new ArrayList<>();
         listBeen7.add(R.mipmap.xysh);
         listBeen7.add(R.mipmap.qzjy);
         listBeen7.add(R.mipmap.tsxy);
-        mList.add(new BeanFXQ("智慧校园",listBeen7));
+        mList.add(new BeanFXQ("智慧校园", listBeen7));
 
-         List<Integer> listBeen8 = new ArrayList<>();
+        List<Integer> listBeen8 = new ArrayList<>();
         listBeen8.add(R.mipmap.smwx);
         listBeen8.add(R.mipmap.sjfw);
         listBeen8.add(R.mipmap.yxtg);
         listBeen8.add(R.mipmap.qtwbfw);
-        mList.add(new BeanFXQ("技术服务",listBeen8));
+        mList.add(new BeanFXQ("技术服务", listBeen8));
 
-         List<Integer> listBeen9 = new ArrayList<>();
+        List<Integer> listBeen9 = new ArrayList<>();
         listBeen9.add(R.mipmap.mj);
         listBeen9.add(R.mipmap.mr);
         listBeen9.add(R.mipmap.mf);
-        mList.add(new BeanFXQ("丽人时尚",listBeen9));
+        mList.add(new BeanFXQ("丽人时尚", listBeen9));
 
-         List<Integer> listBeen10 = new ArrayList<>();
+        List<Integer> listBeen10 = new ArrayList<>();
         listBeen10.add(R.mipmap.zyzx);
         listBeen10.add(R.mipmap.qgzx);
         listBeen10.add(R.mipmap.flzx);
         listBeen10.add(R.mipmap.zhiyzx);
         listBeen10.add(R.mipmap.lyzx);
         listBeen10.add(R.mipmap.jrlczx);
-        mList.add(new BeanFXQ("咨询服务",listBeen10));
+        mList.add(new BeanFXQ("咨询服务", listBeen10));
 
 
     }
@@ -154,7 +153,7 @@ public class FragmentFXQ_Right extends BaseFragment {
         lvShow.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                ((ActivityPublish_FXQ)getActivity()).changeLeft(lvShow.getFirstVisiblePosition());
+                ((ActivityPublish_FXQ) getActivity()).changeLeft(lvShow.getFirstVisiblePosition());
             }
 
             @Override

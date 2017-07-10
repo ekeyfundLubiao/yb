@@ -28,8 +28,7 @@ import butterknife.Unbinder;
  * Created by M 4700 on 2017/5/31.
  */
 
-public class FragmentPaymentsDetail_income extends BaseFragment{
-
+public class FragmentPaymentsDetail_income extends BaseFragment {
 
 
     @BindView(R.id.lv_show)
@@ -51,10 +50,10 @@ public class FragmentPaymentsDetail_income extends BaseFragment{
     @Override
     public void init() {
         List<TestBean> list = new ArrayList<>();
-        for (int i=0;i<10;i++){
+        for (int i = 0; i < 10; i++) {
             list.add(new TestBean());
         }
-        lvShow.setAdapter(new CommonAdapter<TestBean>(getContext(),list,R.layout.item_payments_detail) {
+        lvShow.setAdapter(new CommonAdapter<TestBean>(getContext(), list, R.layout.item_payments_detail) {
             @Override
             public void convert(ViewHolder helper, TestBean item) {
 

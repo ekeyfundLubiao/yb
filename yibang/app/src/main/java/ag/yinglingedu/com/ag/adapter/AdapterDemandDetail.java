@@ -15,11 +15,11 @@ import ag.yinglingedu.com.ag.bean.TestBean;
  * Created by M 4700 on 2017/6/16.
  */
 
-public class AdapterXQXQ extends BaseAdapter{
+public class AdapterDemandDetail extends BaseAdapter {
     Context mContext;
     List<TestBean> mList;
 
-    public AdapterXQXQ(Context context, List<TestBean> list) {
+    public AdapterDemandDetail(Context context, List<TestBean> list) {
         mContext = context;
         mList = list;
     }
@@ -46,7 +46,7 @@ public class AdapterXQXQ extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_xqxq,null,false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_xqxq, null, false);
         return view;
     }
 }

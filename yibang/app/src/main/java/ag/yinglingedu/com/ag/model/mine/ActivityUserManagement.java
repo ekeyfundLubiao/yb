@@ -20,8 +20,6 @@ import java.util.List;
 
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.event.EventTwo;
-import ag.yinglingedu.com.ag.model.message.FragmentMyMessage_Message;
-import ag.yinglingedu.com.ag.model.message.FragmentMyMessage_Notify;
 import ag.yinglingedu.com.xlibrary.adapter.CommonFragmentPagerAdapter;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.utils.ChangeUtil;
@@ -34,7 +32,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/8.
  */
 
-public class ActivityUserManagement extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener{
+public class ActivityUserManagement extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
 
 
     @BindView(R.id.iv_back)

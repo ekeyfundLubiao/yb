@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ag.yinglingedu.com.ag.R;
-import ag.yinglingedu.com.ag.event.EventOne;
 import ag.yinglingedu.com.ag.event.EventTwo;
 import ag.yinglingedu.com.xlibrary.adapter.CommonFragmentPagerAdapter;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
@@ -92,7 +91,7 @@ public class ActivityPaymentsDetail extends BaseActivity implements SwipeRefresh
         EventBus.getDefault().register(this);
         title.setText("收支明细");
         ivBack.setVisibility(View.VISIBLE);
-        refresh.setColorSchemeColors(ContextCompat.getColor(this,R.color.colorTextYellow));
+        refresh.setColorSchemeColors(ContextCompat.getColor(this, R.color.colorTextYellow));
         mFragmentList = new ArrayList<>();
         mFragmentList.add(new FragmentPaymentsDetail_all());
         mFragmentList.add(new FragmentPaymentsDetail_expenditure());

@@ -88,12 +88,12 @@ public class ActivityPayDetail extends BaseActivity {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.iv_back:
                 finish();
                 break;
             case R.id.tv_ckdd://查看订单
-                startActivity(new Intent(this,ActivityOrderDetail.class));
+                startActivity(new Intent(this, ActivityOrderDetail.class));
                 finish();
                 break;
             case R.id.tv_fhsy://返回首页

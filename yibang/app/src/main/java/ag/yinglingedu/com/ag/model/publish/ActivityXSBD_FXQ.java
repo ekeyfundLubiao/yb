@@ -50,7 +50,7 @@ public class ActivityXSBD_FXQ extends BaseActivity {
         ivBack.setVisibility(View.VISIBLE);
         title.setText("新手必读");
         ChangeUtil.initialize(this);
-        ChangeUtil.setImageWithID(wvShow,R.drawable.xsbd_fxq);
+        ChangeUtil.setImageWithID(wvShow, R.drawable.xsbd_fxq);
     }
 
     @Override

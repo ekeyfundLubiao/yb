@@ -33,7 +33,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/15.
  */
 
-public class ActivityConfirmOrder extends BaseActivity implements RequsetUtils.OnCompleteListener{
+public class ActivityConfirmOrder extends BaseActivity implements RequsetUtils.OnCompleteListener {
 
     @BindView(R.id.tag)
     View tag;
@@ -141,7 +141,7 @@ public class ActivityConfirmOrder extends BaseActivity implements RequsetUtils.O
         sdvPic.setImageURI(Uri.parse(product_icon_url));
         tvName.setText(user_name);
         tvGoodsName.setText(product_name);
-        tvPriceInt.setText("￥"+price );
+        tvPriceInt.setText("￥" + price);
     }
 
     @Override
@@ -163,9 +163,9 @@ public class ActivityConfirmOrder extends BaseActivity implements RequsetUtils.O
             public void afterTextChanged(Editable s) {
                 String str = etNum.getText().toString();
                 int num = Integer.valueOf(str);
-                if(!str.equals("") &&  num >= 0){
-                    int total = num * (int)Integer.valueOf(price);
-                    tvPriceIntTotal.setText("￥"+total);
+                if (!str.equals("") && num >= 0) {
+                    int total = num * (int) Integer.valueOf(price);
+                    tvPriceIntTotal.setText("￥" + total);
                 }
             }
         });
@@ -173,27 +173,27 @@ public class ActivityConfirmOrder extends BaseActivity implements RequsetUtils.O
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.iv_back:
                 finish();
                 break;
             case R.id.tv_tjdd://提交订单
                 String buy_num = etNum.getText().toString();
                 String tel = etLldh.getText().toString();
-                if(buy_num.equals("") || Integer.valueOf(buy_num) < 0){
+                if (buy_num.equals("") || Integer.valueOf(buy_num) < 0) {
                     ToastUtils.showShortToast("请输入正确的购买数量！");
                     return;
                 }
-                if(tel.equals("")){
+                if (tel.equals("")) {
                     ToastUtils.showShortToast("请输入正确的手机号！");
                     return;
                 }
 
                 map.clear();
-                map.put("sendmsg", "{ \"cmd\": \"appointmentservice\",\"uid\": \""+Utils.getSpUtils().getString(Config.USER_ID,"")+"\"," +
-                        "\"token\": \""+Utils.getSpUtils().getString(Config.TOKEN,"")+"\",\"productid\": \""+service_id+"\",\"buynum\": " +
-                        "\""+buy_num+"\",\"servicetime\": " + "\"2017-09-11\",\"tel\": \""+tel+"\",\"message\": \""+
-                        etMjll.getText().toString()+"\",\"photos\": \"\"}");
+                map.put("sendmsg", "{ \"cmd\": \"appointmentservice\",\"uid\": \"" + Utils.getSpUtils().getString(Config.USER_ID, "") + "\"," +
+                        "\"token\": \"" + Utils.getSpUtils().getString(Config.TOKEN, "") + "\",\"productid\": \"" + service_id + "\",\"buynum\": " +
+                        "\"" + buy_num + "\",\"servicetime\": " + "\"2017-09-11\",\"tel\": \"" + tel + "\",\"message\": \"" +
+                        etMjll.getText().toString() + "\",\"photos\": \"\"}");
                 map.put("encrypt", "0");
                 request_line = 0;
                 RequsetUtils.request(this, Config.HOST, map, request_line);
@@ -203,11 +203,11 @@ public class ActivityConfirmOrder extends BaseActivity implements RequsetUtils.O
 
     @Override
     public void success(String result, int line) {
-        BeanOrder order = new Gson().fromJson(result,BeanOrder.class);
-        if(Integer.valueOf(order.getResult()) > 0){
+        BeanOrder order = new Gson().fromJson(result, BeanOrder.class);
+        if (Integer.valueOf(order.getResult()) > 0) {
             order_id = order.getResult();
-            Intent intent = new Intent(this,ActivityPayOrder.class);
-            intent.putExtra("order_id",order_id);
+            Intent intent = new Intent(this, ActivityPayOrder.class);
+            intent.putExtra("order_id", order_id);
             startActivity(intent);
         }
     }

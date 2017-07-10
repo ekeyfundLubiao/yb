@@ -73,15 +73,15 @@ public class ActivityAbout extends BaseActivity {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.iv_back:
                 finish();
                 break;
             case R.id.rl_function://功能介绍
-                startActivity(new Intent(this,ActivityFunctionIntroduction.class));
+                startActivity(new Intent(this, ActivityFunctionIntroduction.class));
                 break;
             case R.id.rl_feedback://意见反馈
-                startActivity(new Intent(this,ActivityFeedback.class));
+                startActivity(new Intent(this, ActivityFeedback.class));
                 break;
         }
     }

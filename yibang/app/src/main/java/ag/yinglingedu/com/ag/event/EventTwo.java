@@ -8,6 +8,7 @@ import android.view.View;
 
 public class EventTwo {
     private View view;
+
     public EventTwo(View view) {
         this.view = view;
     }
