@@ -2,61 +2,60 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="true"
-    >
+    android:clipToPadding="true">
 
-    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar2"></include>
 
     <TextView
         android:id="@+id/tv_tag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:text="账户余额（元）"
         android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/px198dp"
-        />
+        android:text="账户余额（元）"
+        android:textSize="17sp" />
+
     <TextView
         android:id="@+id/tv_money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:text="1200.59"
         android:layout_below="@+id/tv_tag"
-        android:layout_marginTop="@dimen/px58dp"
         android:layout_centerHorizontal="true"
-        />
-    
+        android:layout_marginTop="@dimen/px58dp"
+        android:text="1200.59"
+        android:textSize="40sp" />
+
     <Button
         android:id="@+id/btn_recharge"
         android:layout_width="match_parent"
         android:layout_height="@dimen/px100dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/round_button_border_yellow_deep"
         android:layout_below="@+id/tv_money"
-        android:layout_marginTop="@dimen/px278dp"
-        android:text="充值"
-        android:textSize="18sp"
-        android:textColor="@color/colorWhite"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="@dimen/px30dp"
         android:layout_marginRight="@dimen/px30dp"
-        />
+        android:layout_marginTop="@dimen/px278dp"
+        android:background="@drawable/round_button_border_yellow_deep"
+        android:text="充值"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp" />
+
     <Button
         android:id="@+id/btn_withdraw_cash"
         android:layout_width="match_parent"
         android:layout_height="@dimen/px100dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/round_button_yellow_border"
         android:layout_below="@+id/btn_recharge"
-        android:layout_marginTop="@dimen/px30dp"
-        android:text="提现"
-        android:textSize="18sp"
-        android:textColor="@color/coloBlack"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="@dimen/px30dp"
         android:layout_marginRight="@dimen/px30dp"
-        />
-    
+        android:layout_marginTop="@dimen/px30dp"
+        android:background="@drawable/round_button_yellow_border"
+        android:text="提现"
+        android:textColor="@color/coloBlack"
+        android:textSize="18sp" />
+
     <ImageView
         android:id="@+id/iv_divider"
         android:layout_width="@dimen/px2dp"
@@ -64,30 +63,29 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/px20dp"
-        android:src="@mipmap/me_ye_sr"
-        />
+        android:src="@mipmap/me_ye_sr" />
+
     <TextView
         android:id="@+id/tv_xsjc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="新手教程"
-        android:layout_toLeftOf="@id/iv_divider"
-        android:layout_alignTop="@id/iv_divider"
         android:layout_alignBottom="@id/iv_divider"
+        android:layout_alignTop="@id/iv_divider"
         android:layout_marginRight="@dimen/px20dp"
+        android:layout_toLeftOf="@id/iv_divider"
         android:gravity="center"
-        android:textSize="16sp"
-        />
+        android:text="新手教程"
+        android:textSize="16sp" />
+
     <TextView
         android:id="@+id/tv_cjwt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="常见问题"
-        android:layout_toRightOf="@id/iv_divider"
-        android:layout_alignTop="@id/iv_divider"
         android:layout_alignBottom="@id/iv_divider"
+        android:layout_alignTop="@id/iv_divider"
         android:layout_marginLeft="@dimen/px20dp"
+        android:layout_toRightOf="@id/iv_divider"
         android:gravity="center"
-        android:textSize="16sp"
-        />
+        android:text="常见问题"
+        android:textSize="16sp" />
 </RelativeLayout>

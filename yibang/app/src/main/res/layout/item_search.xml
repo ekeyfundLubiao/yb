@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/px60dp"
-    android:text="占卜"
-    android:gravity="center"
-    android:textSize="@dimen/fontSize12"
-    android:textColor="@color/colorText999999"
-    android:background="@mipmap/home_searchbtn_label_disable"
-    />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px60dp"
+        android:background="@mipmap/home_searchbtn_label_disable"
+        android:gravity="center"
+        android:text="占卜"
+        android:textColor="@color/colorText999999"
+        android:textSize="@dimen/fontSize12" />
 </RelativeLayout>

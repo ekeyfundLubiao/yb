@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <include layout="@layout/toolbar2" android:id="@+id/toolbar"></include>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar2"></include>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
-        >
+        android:layout_below="@+id/toolbar">
+
         <fragment
             android:id="@+id/fragment_left"
             android:name="ag.yinglingedu.com.ag.model.publish.FragmentFXQ_Left"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            ></fragment>
+            android:layout_weight="1"></fragment>
+
         <fragment
             android:id="@+id/fragment_right"
             android:name="ag.yinglingedu.com.ag.model.publish.FragmentFXQ_Right"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
-            ></fragment>
+            android:layout_weight="3"></fragment>
 
     </LinearLayout>
 

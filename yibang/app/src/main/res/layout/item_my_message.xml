@@ -1,76 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    android:background="@color/colorWhite">
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/sdv_headIcon"
         android:layout_width="@dimen/px88dp"
         android:layout_height="@dimen/px88dp"
         android:layout_centerVertical="true"
+        android:layout_marginBottom="@dimen/px34dp"
         android:layout_marginLeft="@dimen/px30dp"
-        fresco:roundAsCircle = "true"
+        android:layout_marginTop="@dimen/px34dp"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:failureImage="@drawable/error"
+        fresco:failureImageScaleType="centerInside"
+        fresco:placeholderImage="@drawable/loading"
         fresco:progressBarImage="@drawable/loading"
         fresco:progressBarImageScaleType="centerInside"
-        fresco:failureImageScaleType="centerInside"
-        fresco:actualImageScaleType="centerCrop"
-        fresco:placeholderImage="@drawable/loading"
-        fresco:failureImage="@drawable/error"
-        android:layout_marginTop="@dimen/px34dp"
-        android:layout_marginBottom="@dimen/px34dp"
-        />
+        fresco:roundAsCircle="true" />
 
-    
+
     <ImageView
         android:id="@+id/iv_dd"
         android:layout_width="@dimen/px18dp"
         android:layout_height="@dimen/px18dp"
-        android:src="@mipmap/xx_xx_dd"
-        android:layout_alignTop="@+id/sdv_headIcon"
         android:layout_alignRight="@id/sdv_headIcon"
-        android:layout_marginTop="@dimen/px4dp"
+        android:layout_alignTop="@+id/sdv_headIcon"
         android:layout_marginRight="@dimen/px4dp"
-        />
-    
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/sdv_headIcon"
-            android:layout_toRightOf="@+id/sdv_headIcon"
-            android:layout_marginLeft="@dimen/px24dp"
-            android:text="无敌习大大大大大"
-            android:textSize="@dimen/fontSize17"
-            android:textColor="@color/coloBlack"
-            />
+        android:layout_marginTop="@dimen/px4dp"
+        android:src="@mipmap/xx_xx_dd" />
 
-        <TextView
-            android:id="@+id/tv_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tv_name"
-            android:layout_below="@+id/tv_name"
-            android:layout_marginTop="@dimen/px16dp"
-            android:text="这将是当今世界两个最具影响的大国构建新时代的大国构建新时代"
-            android:singleLine="true"
-            android:layout_marginRight="@dimen/px30dp"
-            android:ellipsize="end"
-            android:textColor="@color/colorText999999"
-            android:textSize="@dimen/fontSize14"
-            />
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/sdv_headIcon"
+        android:layout_marginLeft="@dimen/px24dp"
+        android:layout_toRightOf="@+id/sdv_headIcon"
+        android:text="无敌习大大大大大"
+        android:textColor="@color/coloBlack"
+        android:textSize="@dimen/fontSize17" />
 
-        <TextView
-            android:id="@+id/tv_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/tv_name"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/px30dp"
-            android:text="上午11:51"
-            android:layout_marginTop="@dimen/px22dp"
-            android:textSize="@dimen/fontSize10"
-            android:textColor="@color/colorText999999"
-            />
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_name"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginRight="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px16dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="这将是当今世界两个最具影响的大国构建新时代的大国构建新时代"
+        android:textColor="@color/colorText999999"
+        android:textSize="@dimen/fontSize14" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/tv_name"
+        android:layout_marginRight="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px22dp"
+        android:text="上午11:51"
+        android:textColor="@color/colorText999999"
+        android:textSize="@dimen/fontSize10" />
 </RelativeLayout>

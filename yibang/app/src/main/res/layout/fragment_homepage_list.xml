@@ -7,90 +7,86 @@
         android:id="@+id/ll_choose"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorWhite"
-        >
+        android:background="@color/colorWhite">
+
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            >
+            android:gravity="center">
+
             <TextView
                 android:id="@+id/tv_type1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="智能排序"
-                android:layout_marginTop="@dimen/px24dp"
                 android:layout_marginBottom="@dimen/px24dp"
-                android:textSize="@dimen/fontSize14"
+                android:layout_marginTop="@dimen/px24dp"
+                android:text="智能排序"
                 android:textColor="@color/colorText666666"
-                />
-            
+                android:textSize="@dimen/fontSize14" />
+
             <ImageView
                 android:id="@+id/iv_arrow1"
                 android:layout_width="@dimen/px14dp"
                 android:layout_height="@dimen/px14dp"
-                android:layout_toRightOf="@+id/tv_type1"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/px10dp"
-                android:src="@mipmap/home_btn_dropdown_disable"
-                />
+                android:layout_toRightOf="@+id/tv_type1"
+                android:src="@mipmap/home_btn_dropdown_disable" />
 
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            >
+            android:gravity="center">
+
             <TextView
                 android:id="@+id/tv_type2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="筛选"
-                android:layout_marginTop="@dimen/px24dp"
                 android:layout_marginBottom="@dimen/px24dp"
-                android:textSize="@dimen/fontSize14"
+                android:layout_marginTop="@dimen/px24dp"
+                android:text="筛选"
                 android:textColor="@color/colorText666666"
-                />
+                android:textSize="@dimen/fontSize14" />
 
             <ImageView
                 android:id="@+id/iv_arrow2"
                 android:layout_width="@dimen/px14dp"
                 android:layout_height="@dimen/px14dp"
-                android:layout_toRightOf="@+id/tv_type2"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/px10dp"
-                android:src="@mipmap/home_btn_dropdown_disable"
-                />
+                android:layout_toRightOf="@+id/tv_type2"
+                android:src="@mipmap/home_btn_dropdown_disable" />
 
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            >
+            android:gravity="center">
+
             <TextView
                 android:id="@+id/tv_type3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="服务方式"
-                android:layout_marginTop="@dimen/px24dp"
                 android:layout_marginBottom="@dimen/px24dp"
-                android:textSize="@dimen/fontSize14"
+                android:layout_marginTop="@dimen/px24dp"
+                android:text="服务方式"
                 android:textColor="@color/colorText666666"
-                />
+                android:textSize="@dimen/fontSize14" />
 
             <ImageView
                 android:id="@+id/iv_arrow3"
                 android:layout_width="@dimen/px14dp"
                 android:layout_height="@dimen/px14dp"
-                android:layout_toRightOf="@+id/tv_type3"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/px10dp"
-                android:src="@mipmap/home_btn_dropdown_disable"
-                />
+                android:layout_toRightOf="@+id/tv_type3"
+                android:src="@mipmap/home_btn_dropdown_disable" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -100,14 +96,12 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/ll_choose"
-        android:background="@color/colorBackgroundeaeaea"
-        ></View>
+        android:background="@color/colorBackgroundeaeaea"></View>
 
     <ag.yinglingedu.com.xlibrary.widget.SListView
         android:id="@+id/lv_show"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/line"
-        ></ag.yinglingedu.com.xlibrary.widget.SListView>
+        android:layout_below="@+id/line"></ag.yinglingedu.com.xlibrary.widget.SListView>
 
 </RelativeLayout>

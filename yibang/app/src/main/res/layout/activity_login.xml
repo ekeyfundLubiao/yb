@@ -1,151 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" 
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/me_dl_bg"
-    >
-    
+    android:background="@mipmap/me_dl_bg">
+
     <ImageView
         android:id="@+id/iv_logo"
         android:layout_width="@dimen/px146dp"
         android:layout_height="@dimen/px146dp"
-        android:layout_marginTop="@dimen/px168dp"
         android:layout_centerHorizontal="true"
-        android:src="@mipmap/me_dl_logo"
-        />
+        android:layout_marginTop="@dimen/px168dp"
+        android:src="@mipmap/me_dl_logo" />
 
     <ImageView
         android:id="@+id/iv_zh"
         android:layout_width="@dimen/px38dp"
         android:layout_height="@dimen/px42dp"
         android:layout_below="@+id/iv_logo"
-        android:layout_marginTop="@dimen/px118dp"
         android:layout_marginLeft="@dimen/px30dp"
-        android:src="@mipmap/me_dl_zh"
-        />
+        android:layout_marginTop="@dimen/px118dp"
+        android:src="@mipmap/me_dl_zh" />
 
     <EditText
         android:id="@+id/et_zh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="账户/手机号码"
-        android:background="@null"
-        android:layout_toRightOf="@+id/iv_zh"
         android:layout_alignTop="@+id/iv_zh"
-        android:textColorHint="@color/colorWhite"
         android:layout_marginLeft="@dimen/px24dp"
         android:layout_marginRight="@dimen/px30dp"
-        android:textSize="17sp"
-        />
+        android:layout_toRightOf="@+id/iv_zh"
+        android:background="@null"
+        android:hint="账户/手机号码"
+        android:text="13671691500"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="17sp" />
 
     <View
         android:id="@+id/view_line1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorWhite"
         android:layout_below="@+id/iv_zh"
-        android:layout_marginTop="@dimen/px40dp"
         android:layout_marginLeft="@dimen/px30dp"
         android:layout_marginRight="@dimen/px30dp"
-        />
+        android:layout_marginTop="@dimen/px40dp"
+        android:background="@color/colorWhite" />
 
     <ImageView
         android:id="@+id/iv_mm"
         android:layout_width="@dimen/px38dp"
         android:layout_height="@dimen/px42dp"
         android:layout_below="@+id/view_line1"
-        android:layout_marginTop="@dimen/px40dp"
         android:layout_marginLeft="@dimen/px30dp"
-        android:src="@mipmap/me_dl_m"
-        />
+        android:layout_marginTop="@dimen/px40dp"
+        android:src="@mipmap/me_dl_m" />
 
     <EditText
         android:id="@+id/et_mm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="密码"
-        android:background="@null"
-        android:layout_toRightOf="@+id/iv_mm"
-        android:layout_toLeftOf="@+id/iv_eye"
         android:layout_alignTop="@+id/iv_mm"
-        android:textColorHint="@color/colorWhite"
         android:layout_marginLeft="@dimen/px24dp"
-        android:textSize="17sp"
+        android:layout_toLeftOf="@+id/iv_eye"
+        android:layout_toRightOf="@+id/iv_mm"
+        android:background="@null"
+        android:text="123456"
+        android:hint="密码"
         android:inputType="textPassword"
         android:maxLength="16"
-        />
-    
+        android:textColorHint="@color/colorWhite"
+        android:textSize="17sp" />
+
     <ImageView
         android:id="@+id/iv_eye"
         android:layout_width="@dimen/px40dp"
         android:layout_height="@dimen/px16dp"
-        android:background="@mipmap/me_dl_ycmm"
-        android:layout_alignTop="@+id/view_line1"
-        android:layout_marginTop="@dimen/px54dp"
         android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/view_line1"
         android:layout_marginRight="@dimen/px40dp"
-        />
+        android:layout_marginTop="@dimen/px54dp"
+        android:background="@mipmap/me_dl_ycmm" />
 
 
     <View
         android:id="@+id/view_line2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorWhite"
         android:layout_below="@+id/iv_mm"
-        android:layout_marginTop="@dimen/px40dp"
         android:layout_marginLeft="@dimen/px30dp"
         android:layout_marginRight="@dimen/px30dp"
-        />
+        android:layout_marginTop="@dimen/px40dp"
+        android:background="@color/colorWhite" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="登录"
-        android:textSize="17sp"
-        android:padding="@dimen/px30dp"
+        android:layout_below="@+id/view_line2"
         android:layout_marginLeft="@dimen/px30dp"
         android:layout_marginRight="@dimen/px30dp"
-        android:textColor="@color/colorWhite"
-        android:background="@drawable/round_button_border_yellow"
-        android:layout_below="@+id/view_line2"
         android:layout_marginTop="@dimen/px104dp"
-         />
+        android:background="@drawable/round_button_border_yellow"
+        android:padding="@dimen/px30dp"
+        android:text="登录"
+        android:textColor="@color/colorWhite"
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/tv_tag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_login"
+        android:layout_marginLeft="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px40dp"
         android:text="没有账户？"
         android:textColor="@color/colorWhite"
-        android:layout_below="@+id/btn_login"
-        android:layout_marginTop="@dimen/px40dp"
-        android:layout_marginLeft="@dimen/px30dp"
-        android:textSize="12sp"
-        />
+        android:textSize="12sp" />
+
     <TextView
         android:id="@+id/tv_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="马上注册"
-        android:textColor="@color/colorTextYellow"
         android:layout_below="@+id/btn_login"
         android:layout_marginTop="@dimen/px40dp"
         android:layout_toRightOf="@+id/tv_tag"
-        android:textSize="13sp"
-        />
+        android:text="马上注册"
+        android:textColor="@color/colorTextYellow"
+        android:textSize="13sp" />
+
     <TextView
         android:id="@+id/tv_forget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btn_login"
+        android:layout_marginRight="@dimen/px30dp"
+        android:layout_marginTop="@dimen/px40dp"
         android:text="忘记密码?"
         android:textColor="@color/colorTextYellow"
-        android:layout_below="@+id/btn_login"
-        android:layout_marginTop="@dimen/px40dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="@dimen/px30dp"
-        android:textSize="13sp"
-        />
+        android:textSize="13sp" />
 
 </RelativeLayout>

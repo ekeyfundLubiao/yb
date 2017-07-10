@@ -4,15 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/toolbarHeightAll"
     android:background="@color/colorBackgroundYellow"
-    android:fitsSystemWindows="true"
     android:clipToPadding="true"
-    >
+    android:fitsSystemWindows="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbarHeight"
-        android:layout_marginTop="20dp"
-        >
+        android:layout_marginTop="20dp">
+
         <ImageView
             android:id="@+id/iv_back"
             android:layout_width="@dimen/px20dp"
@@ -20,18 +19,17 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:src="@mipmap/back"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/toolbarTextSize"
             android:text="标题"
-            />
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/toolbarTextSize" />
 
         <ImageView
             android:id="@+id/iv_right"
@@ -39,8 +37,8 @@
             android:layout_height="@dimen/px34dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/px30dp"
-            />
+            android:layout_marginRight="@dimen/px30dp" />
+
         <TextView
             android:id="@+id/tv_right"
             android:layout_width="wrap_content"
@@ -48,9 +46,8 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/px30dp"
-            android:textSize="14sp"
             android:textColor="@color/colorWhite"
-            />
+            android:textSize="14sp" />
     </RelativeLayout>
 
 </RelativeLayout>

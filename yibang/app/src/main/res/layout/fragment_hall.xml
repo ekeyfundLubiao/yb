@@ -2,76 +2,74 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    >
+    android:background="@color/colorBackground">
 
 
-    <include layout="@layout/toolbar" android:id="@+id/toolbar"></include>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"></include>
 
     <ag.yinglingedu.com.xlibrary.widget.VPSwipeRefreshLayout
         android:id="@+id/refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
-        >
+        android:layout_below="@+id/toolbar">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <LinearLayout
-            android:id="@+id/ll_tag"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="@dimen/px20dp"
-            android:paddingBottom="@dimen/px20dp"
-            android:background="@color/colorWhite"
-            >
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv_xq"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="需求"
-                android:textSize="@dimen/fontSize15"
-                android:gravity="center"
-                android:textColor="@color/colorWhite"
-                android:paddingTop="@dimen/px20dp"
+            <LinearLayout
+                android:id="@+id/ll_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
                 android:paddingBottom="@dimen/px20dp"
-                android:background="@drawable/left_round_button_yellow"
-                android:layout_marginLeft="@dimen/px124dp"
-                />
-            <TextView
-                android:id="@+id/tv_fw"
-                android:layout_width="0dp"
+                android:paddingTop="@dimen/px20dp">
+
+                <TextView
+                    android:id="@+id/tv_xq"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/px124dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/left_round_button_yellow"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/px20dp"
+                    android:paddingTop="@dimen/px20dp"
+                    android:text="需求"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/fontSize15" />
+
+                <TextView
+                    android:id="@+id/tv_fw"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/px124dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/right_round_button_yellow_border"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/px20dp"
+                    android:paddingTop="@dimen/px20dp"
+                    android:text="服务"
+                    android:textColor="@color/colorTextYellow"
+                    android:textSize="@dimen/fontSize15" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lv_show"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="服务"
-                android:textSize="@dimen/fontSize15"
-                android:gravity="center"
-                android:textColor="@color/colorTextYellow"
-                android:paddingTop="@dimen/px20dp"
-                android:paddingBottom="@dimen/px20dp"
-                android:layout_marginRight="@dimen/px124dp"
-                android:background="@drawable/right_round_button_yellow_border"
-                />
-        </LinearLayout>
-
-    <ListView
-        android:id="@+id/lv_show"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/px20dp"
-        android:layout_below="@id/ll_tag"
-        android:background="@color/colorBackground"
-        android:listSelector="@android:color/transparent"
-        android:dividerHeight="@dimen/px22dp"
-        >
-        ></ListView>
+                android:layout_below="@id/ll_tag"
+                android:layout_marginTop="@dimen/px20dp"
+                android:background="@color/colorBackground"
+                android:dividerHeight="@dimen/px22dp"
+                android:listSelector="@android:color/transparent">
+                >
+            </ListView>
 
 
-    </RelativeLayout>
+        </RelativeLayout>
 
     </ag.yinglingedu.com.xlibrary.widget.VPSwipeRefreshLayout>
 

@@ -7,20 +7,18 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="全部"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/px30dp"
         android:padding="@dimen/px20dp"
-        />
+        android:text="全部" />
 
     <TextView
         android:id="@+id/tv_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/px30dp"
-        />
+        android:text="1" />
 
 </RelativeLayout>
