@@ -1,6 +1,7 @@
 package ag.yinglingedu.com.ag.model.hall;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,8 +13,12 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.adapter.AdapterDemandDetail;
+import ag.yinglingedu.com.ag.bean.TestBean;
+import ag.yinglingedu.com.xlibrary.adapter.CommonAdapter;
+import ag.yinglingedu.com.xlibrary.adapter.ViewHolder;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.widget.SListView;
+import ag.yinglingedu.com.xlibrary.widget.StarBar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -90,7 +95,19 @@ public class ActivityDemandDetail extends BaseActivity {
         title.setText("需求详情");
         ivBack.setVisibility(View.VISIBLE);
         lvShow.setFocusable(false);
-        lvShow.setAdapter(new AdapterDemandDetail(this, Config.getList()));
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                lvShow.setAdapter(new CommonAdapter<TestBean>(getApplicationContext(), Config.getList(), R.layout.item_xqxq) {
+                    @Override
+                    public void convert(ViewHolder helper, TestBean item) {
+                        StarBar starBar = helper.getView(R.id.star_bar);
+                        starBar.setStarMark(5.0f);
+                        starBar.setCanChangeable(false);//不可改变
+                    }
+                });
+            }
+        }, 100);
     }
 
     @Override

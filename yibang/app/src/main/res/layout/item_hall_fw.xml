@@ -66,6 +66,7 @@
         android:layout_alignTop="@+id/tv_yssl"
         android:layout_marginLeft="@dimen/px6dp"
         android:layout_toRightOf="@id/tv_yssl"
+        android:layout_marginTop="@dimen/px4dp"
         ratingbar:starCount="5"
         ratingbar:starDistance="5dp"
         ratingbar:starEmpty="@drawable/star_empty"

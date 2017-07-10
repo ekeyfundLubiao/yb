@@ -34,6 +34,7 @@
                     android:background="@color/colorWhite"
                     android:paddingLeft="@dimen/px30dp"
                     android:paddingRight="@dimen/px30dp"
+                    android:gravity="center_vertical"
                     android:paddingTop="@dimen/px20dp">
 
                     <TextView
