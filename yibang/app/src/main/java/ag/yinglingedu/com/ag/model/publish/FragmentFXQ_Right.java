@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +18,7 @@ import ag.yinglingedu.com.ag.bean.BeanFXQ;
 import ag.yinglingedu.com.xlibrary.adapter.CommonAdapter;
 import ag.yinglingedu.com.xlibrary.adapter.ViewHolder;
 import ag.yinglingedu.com.xlibrary.base.BaseFragment;
+import ag.yinglingedu.com.xlibrary.utils.ToastUtils;
 import ag.yinglingedu.com.xlibrary.widget.SGridView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,8 +61,21 @@ public class FragmentFXQ_Right extends BaseFragment {
                         helper.setImageResource(R.id.iv_pic, item.intValue());
                     }
                 });
+                gvshow.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                        ToastUtils.showShortToast("111"+view.getId()+"::"+position);
+                        Toast.makeText(mContext,"111"+view.getId()+"::"+position,Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
             }
         });
+
     }
 
     /**
