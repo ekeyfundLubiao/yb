@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
  * Created by CC on 2017/5/25.
  */
 
-public class ActivityPublish extends BaseActivity {
+public class ActivityPublishMain extends BaseActivity {
 
     @BindView(R.id.iv_close)
     ImageView ivPublish;
@@ -68,7 +68,7 @@ public class ActivityPublish extends BaseActivity {
                 startActivity(new Intent(this, ActivityPublish_FXQ.class));
                 break;
             case R.id.iv_ffw://发服务
-                startActivity(new Intent(this, ActivityPublish_FFW.class));
+                startActivity(new Intent(this, ActivityPublishDetail.class));
                 break;
             case R.id.rl_btn_l://新手必读
                 startActivity(new Intent(this, ActivityXSBD_FXQ.class));
