@@ -1,4 +1,4 @@
-package ag.yinglingedu.com.ag.util;
+package ag.yinglingedu.com.ag.util.net;
 
 import com.alibaba.fastjson.JSON;
 
@@ -14,12 +14,10 @@ import ag.yinglingedu.com.xlibrary.utils.RequsetUtils;
 
 public class HttpUtil {
 
-    public static void post(Map value, RequsetUtils.OnCompleteListener listener){
-
-        value.put("token","");
+    public static void post(NetBean bean, RequsetUtils.OnCompleteListener listener){
 
         Map<String, String> map = new HashMap<>();
-        map.put("sendmsg", JSON.toJSONString(value));
+        map.put("sendmsg", JSON.toJSONString(bean));
         map.put("encrypt", "0");
         RequsetUtils.request(listener, Config.HOST,map,0);
     }
