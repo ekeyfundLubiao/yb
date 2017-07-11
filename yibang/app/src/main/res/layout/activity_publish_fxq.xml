@@ -14,14 +14,14 @@
 
         <fragment
             android:id="@+id/fragment_left"
-            android:name="ag.yinglingedu.com.ag.model.publish.FragmentFXQ_Left"
+            android:name="ag.yinglingedu.com.ag.controller.publish.FragmentFXQ_Left"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"></fragment>
 
         <fragment
             android:id="@+id/fragment_right"
-            android:name="ag.yinglingedu.com.ag.model.publish.FragmentFXQ_Right"
+            android:name="ag.yinglingedu.com.ag.controller.publish.FragmentFXQ_Right"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"></fragment>

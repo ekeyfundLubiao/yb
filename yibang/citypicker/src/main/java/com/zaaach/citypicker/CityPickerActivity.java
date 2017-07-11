@@ -29,10 +29,6 @@ import com.zaaach.citypicker.model.LocateState;
 import com.zaaach.citypicker.utils.StringUtils;
 import com.zaaach.citypicker.view.SideLetterBar;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
-
 import java.util.List;
 
 /**
@@ -92,7 +88,7 @@ public class CityPickerActivity extends AppCompatActivity implements View.OnClic
     }
 
     /*浸入式状态栏*/
-    public void initStatus(){
+    public void initStatus() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //透明状态栏
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -102,28 +98,28 @@ public class CityPickerActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void initData() {
-       dbManager = new DBManager(this);
+        dbManager = new DBManager(this);
         /* dbManager.copyDBFile();*/
 //        mAllCities = dbManager.getAllCities();
 
         Intent intent = getIntent();
 
-            List<City> list = (List<City>) intent.getSerializableExtra("city");
-        Log.e("----------",""+list.size());
-            mAllCities = list;
-            mCityAdapter = new CityListAdapter(this, mAllCities);
-            mCityAdapter.setOnCityClickListener(new CityListAdapter.OnCityClickListener() {
-                @Override
-                public void onCityClick(String name) {
-                    back(name);
-                }
+        List<City> list = (List<City>) intent.getSerializableExtra("city");
+        Log.e("----------", "" + list.size());
+        mAllCities = list;
+        mCityAdapter = new CityListAdapter(this, mAllCities);
+        mCityAdapter.setOnCityClickListener(new CityListAdapter.OnCityClickListener() {
+            @Override
+            public void onCityClick(String name) {
+                back(name);
+            }
 
-                @Override
-                public void onLocateClick() {
-                    mCityAdapter.updateLocateState(LocateState.LOCATING, null);
-                    mLocationClient.startLocation();
-                }
-            });
+            @Override
+            public void onLocateClick() {
+                mCityAdapter.updateLocateState(LocateState.LOCATING, null);
+                mLocationClient.startLocation();
+            }
+        });
 
 
         mResultAdapter = new ResultListAdapter(this, null);
@@ -149,10 +145,12 @@ public class CityPickerActivity extends AppCompatActivity implements View.OnClic
         searchBox = (EditText) findViewById(R.id.et_search);
         searchBox.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -192,7 +190,7 @@ public class CityPickerActivity extends AppCompatActivity implements View.OnClic
         backBtn.setOnClickListener(this);
     }
 
-    private void back(String city){
+    private void back(String city) {
         Intent data = new Intent();
         data.putExtra(KEY_PICKED_CITY, city);
         setResult(RESULT_OK, data);

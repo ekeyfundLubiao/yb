@@ -12,11 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import ag.yinglingedu.com.ag.model.hall.FragmentHall;
-import ag.yinglingedu.com.ag.model.homepage.FragmentHomePage;
-import ag.yinglingedu.com.ag.model.message.FragmentMyMessage;
-import ag.yinglingedu.com.ag.model.mine.FragmentMine;
-import ag.yinglingedu.com.ag.model.publish.ActivityPublish;
+import ag.yinglingedu.com.ag.controller.hall.FragmentHall;
+import ag.yinglingedu.com.ag.controller.homepage.FragmentHomePage;
+import ag.yinglingedu.com.ag.controller.message.FragmentMyMessage;
+import ag.yinglingedu.com.ag.controller.mine.FragmentMine;
+import ag.yinglingedu.com.ag.controller.publish.ActivityPublish;
 import ag.yinglingedu.com.xlibrary.base.BaseFragmentActivity;
 import ag.yinglingedu.com.xlibrary.utils.ChangeUtil;
 import butterknife.BindView;

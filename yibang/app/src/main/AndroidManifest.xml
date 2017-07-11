@@ -44,7 +44,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".model.mine.ActivityLogin"
+            android:name=".controller.mine.ActivityLogin"
             android:theme="@style/AppTheme"
             android:launchMode="singleTask"
             android:windowSoftInputMode="stateVisible|adjustResize">
@@ -74,56 +74,56 @@
             android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <activity android:name=".ActivityMain"></activity><!--主界面-->
-        <activity android:name=".model.publish.ActivityPublish"></activity><!--发布-->
+        <activity android:name=".controller.publish.ActivityPublish"></activity><!--发布-->
         <activity
-            android:name=".model.mine.ActivityRegister"
+            android:name=".controller.mine.ActivityRegister"
             android:launchMode="singleTask"
             android:windowSoftInputMode="stateVisible|adjustResize"></activity><!--注册-->
-        <activity android:name=".model.mine.ActivityPhoneConfirm"></activity><!--手机认证-->
-        <activity android:name=".model.mine.ActivityMyBalance"></activity><!--我的余额-->
-        <activity android:name=".model.mine.ActivityPaymentsDetail"></activity><!--收支明细-->
-        <activity android:name=".model.mine.ActivityBalanceRecharge"></activity><!--余额充值-->
-        <activity android:name=".model.mine.ActivityRechargeSuccess"></activity><!--充值成功-->
-        <activity android:name=".model.mine.ActivityBalanceWithdraw"></activity><!--余额提现-->
-        <activity android:name=".model.publish.ActivityXSBD_FXQ"></activity><!--新手必读-->
-        <activity android:name=".model.message.ActivityOrderdynamics" /><!--订单动态-->
-        <activity android:name=".model.mine.ActivityServiceOrder"></activity><!--订单详情-->
-        <activity android:name=".model.mine.ActivityWithdrawResult"></activity><!--体现结果-->
-        <activity android:name=".model.mine.ActivityPersonalCertification"></activity><!--个人认证-->
-        <activity android:name=".model.mine.ActivityCertification"></activity><!--实名认证-->
+        <activity android:name=".controller.mine.ActivityPhoneConfirm"></activity><!--手机认证-->
+        <activity android:name=".controller.mine.ActivityMyBalance"></activity><!--我的余额-->
+        <activity android:name=".controller.mine.ActivityPaymentsDetail"></activity><!--收支明细-->
+        <activity android:name=".controller.mine.ActivityBalanceRecharge"></activity><!--余额充值-->
+        <activity android:name=".controller.mine.ActivityRechargeSuccess"></activity><!--充值成功-->
+        <activity android:name=".controller.mine.ActivityBalanceWithdraw"></activity><!--余额提现-->
+        <activity android:name=".controller.publish.ActivityXSBD_FXQ"></activity><!--新手必读-->
+        <activity android:name=".controller.message.ActivityOrderdynamics" /><!--订单动态-->
+        <activity android:name=".controller.mine.ActivityServiceOrder"></activity><!--订单详情-->
+        <activity android:name=".controller.mine.ActivityWithdrawResult"></activity><!--体现结果-->
+        <activity android:name=".controller.mine.ActivityPersonalCertification"></activity><!--个人认证-->
+        <activity android:name=".controller.mine.ActivityCertification"></activity><!--实名认证-->
         <activity
-            android:name=".model.mine.ActivitySkillCertification"
+            android:name=".controller.mine.ActivitySkillCertification"
             android:windowSoftInputMode="adjustPan"></activity><!--技能认证-->
-        <activity android:name=".model.mine.ActivityAlreadyCertificationName"></activity><!--已实名认证-->
-        <activity android:name=".model.mine.ActivitySetting"></activity><!--我的设置-->
-        <activity android:name=".model.mine.ActivityNotificationMessage"></activity><!--通知与消息-->
+        <activity android:name=".controller.mine.ActivityAlreadyCertificationName"></activity><!--已实名认证-->
+        <activity android:name=".controller.mine.ActivitySetting"></activity><!--我的设置-->
+        <activity android:name=".controller.mine.ActivityNotificationMessage"></activity><!--通知与消息-->
         <activity
-            android:name=".model.mine.ActivitySettingConfirm"
+            android:name=".controller.mine.ActivitySettingConfirm"
             android:theme="@style/MyTransparent"></activity><!--清除缓存确认-->
-        <activity android:name=".model.mine.ActivityAbout"></activity><!--关于蚁帮-->
-        <activity android:name=".model.mine.ActivityFunctionIntroduction"></activity><!--功能介绍-->
-        <activity android:name=".model.mine.ActivityFeedback"></activity><!--意见反馈-->
-        <activity android:name=".model.mine.ActivityCollectionService" /><!--收藏服务-->
-        <activity android:name=".model.mine.ActivityManagementService" /><!--管理服务-->
-        <activity android:name=".model.mine.ActivityUserManagement" /><!--关注的人-->
+        <activity android:name=".controller.mine.ActivityAbout"></activity><!--关于蚁帮-->
+        <activity android:name=".controller.mine.ActivityFunctionIntroduction"></activity><!--功能介绍-->
+        <activity android:name=".controller.mine.ActivityFeedback"></activity><!--意见反馈-->
+        <activity android:name=".controller.mine.ActivityCollectionService" /><!--收藏服务-->
+        <activity android:name=".controller.mine.ActivityManagementService" /><!--管理服务-->
+        <activity android:name=".controller.mine.ActivityUserManagement" /><!--关注的人-->
         <activity
-            android:name=".model.publish.ActivityXSBD_FFW"
+            android:name=".controller.publish.ActivityXSBD_FFW"
             android:windowSoftInputMode="adjustResize" /><!--发服务-->
-        <activity android:name=".model.publish.ActivityPublish_FXQ" /><!--发需求-->
-        <activity android:name=".model.publish.ActivityPublish_FFW" /><!--发服务-->
-        <activity android:name=".model.homepage.ActivityAllKinds" /><!--全部分类-->
-        <activity android:name=".model.homepage.ActivityKindsDetail" /><!--分类详情-->
-        <activity android:name=".model.homepage.ActivityServiceDetail" /><!--服务详情-->
+        <activity android:name=".controller.publish.ActivityPublish_FXQ" /><!--发需求-->
+        <activity android:name=".controller.publish.ActivityPublish_FFW" /><!--发服务-->
+        <activity android:name=".controller.homepage.ActivityAllKinds" /><!--全部分类-->
+        <activity android:name=".controller.homepage.ActivityKindsDetail" /><!--分类详情-->
+        <activity android:name=".controller.homepage.ActivityServiceDetail" /><!--服务详情-->
         <activity
-            android:name=".model.homepage.ActivityConfirmOrder"
+            android:name=".controller.homepage.ActivityConfirmOrder"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".model.homepage.ActivityPayOrder" />
-        <activity android:name=".model.homepage.ActivityPayDetail" />
-        <activity android:name=".model.homepage.ActivityOrderDetail" />
-        <activity android:name=".model.homepage.ActivityAppraiseDetail" />
-        <activity android:name=".model.hall.ActivityService" />
-        <activity android:name=".model.hall.ActivityDemandDetail" />
-        <activity android:name=".model.homepage.ActivitySearch" /><!--支付订单-->
+        <activity android:name=".controller.homepage.ActivityPayOrder" />
+        <activity android:name=".controller.homepage.ActivityPayDetail" />
+        <activity android:name=".controller.homepage.ActivityOrderDetail" />
+        <activity android:name=".controller.homepage.ActivityAppraiseDetail" />
+        <activity android:name=".controller.hall.ActivityService" />
+        <activity android:name=".controller.hall.ActivityDemandDetail" />
+        <activity android:name=".controller.homepage.ActivitySearch" /><!--支付订单-->
 
         <!-- 融云 -->
         <meta-data

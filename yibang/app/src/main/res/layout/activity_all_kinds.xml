@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/fragment_right"
-        android:name="ag.yinglingedu.com.ag.model.homepage.FragmentAllKinds"
+        android:name="ag.yinglingedu.com.ag.controller.homepage.FragmentAllKinds"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></fragment>
 
