@@ -16,7 +16,7 @@ import ag.yinglingedu.com.ag.controller.hall.FragmentHall;
 import ag.yinglingedu.com.ag.controller.homepage.FragmentHomePage;
 import ag.yinglingedu.com.ag.controller.message.FragmentMyMessage;
 import ag.yinglingedu.com.ag.controller.mine.FragmentMine;
-import ag.yinglingedu.com.ag.controller.publish.ActivityPublish;
+import ag.yinglingedu.com.ag.controller.publish.ActivityPublishMain;
 import ag.yinglingedu.com.xlibrary.base.BaseFragmentActivity;
 import ag.yinglingedu.com.xlibrary.utils.ChangeUtil;
 import butterknife.BindView;
@@ -120,7 +120,7 @@ public class ActivityMain extends BaseFragmentActivity {
                 showFragment(fragmentHall);
                 break;
             case R.id.iv_add:
-                startActivity(new Intent(this, ActivityPublish.class));
+                startActivity(new Intent(this, ActivityPublishMain.class));
                 break;
             case R.id.ll_message:
                 changeTab(2, ivMessage, tvMessage);

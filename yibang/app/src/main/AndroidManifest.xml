@@ -74,7 +74,7 @@
             android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <activity android:name=".ActivityMain"></activity><!--主界面-->
-        <activity android:name=".controller.publish.ActivityPublish"></activity><!--发布-->
+        <activity android:name=".controller.publish.ActivityPublishMain"></activity><!--发布-->
         <activity
             android:name=".controller.mine.ActivityRegister"
             android:launchMode="singleTask"
@@ -110,7 +110,7 @@
             android:name=".controller.publish.ActivityXSBD_FFW"
             android:windowSoftInputMode="adjustResize" /><!--发服务-->
         <activity android:name=".controller.publish.ActivityPublish_FXQ" /><!--发需求-->
-        <activity android:name=".controller.publish.ActivityPublish_FFW" /><!--发服务-->
+        <activity android:name=".controller.publish.ActivityPublishDetail" /><!--发服务-->
         <activity android:name=".controller.homepage.ActivityAllKinds" /><!--全部分类-->
         <activity android:name=".controller.homepage.ActivityKindsDetail" /><!--分类详情-->
         <activity android:name=".controller.homepage.ActivityServiceDetail" /><!--服务详情-->

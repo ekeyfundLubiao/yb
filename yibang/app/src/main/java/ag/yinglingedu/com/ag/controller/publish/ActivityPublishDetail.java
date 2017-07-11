@@ -29,11 +29,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * 发服务
+ * 发详情
  * Created by M 4700 on 2017/6/8.
  */
 
-public class ActivityPublish_FFW extends BaseActivity {
+public class ActivityPublishDetail extends BaseActivity {
 
 
     @BindView(R.id.iv_back)
@@ -148,7 +148,7 @@ public class ActivityPublish_FFW extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == mList.size() - 1) {
-                    Intent intent = new Intent(ActivityPublish_FFW.this, PhotoSelectorActivity.class);
+                    Intent intent = new Intent(ActivityPublishDetail.this, PhotoSelectorActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     intent.putExtra("limit", 6);//number是选择图片的数量
                     startActivityForResult(intent, 0);
