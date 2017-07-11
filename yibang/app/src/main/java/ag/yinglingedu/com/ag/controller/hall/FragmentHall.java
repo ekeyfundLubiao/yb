@@ -179,7 +179,7 @@ public class FragmentHall extends BaseFragment {
                         serviceAdapter = new CommonAdapter<Hall_Service_Entry.ListBean>(getContext(), serviceEntry.getList(), R.layout.item_hall_fw) {
                             @Override
                             public void convert(ViewHolder helper, Hall_Service_Entry.ListBean item) {
-
+                                helper.getView(R.id.tv_fw);
                             }
                         };
                         if (type == 1) {
