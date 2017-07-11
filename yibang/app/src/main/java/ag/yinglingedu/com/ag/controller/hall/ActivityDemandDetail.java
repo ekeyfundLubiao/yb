@@ -16,7 +16,8 @@ import java.util.Map;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.Hall_Demand_Entry;
 import ag.yinglingedu.com.ag.bean.TestBean;
-import ag.yinglingedu.com.ag.util.HttpUtil;
+import ag.yinglingedu.com.ag.util.net.HttpUtil;
+import ag.yinglingedu.com.ag.util.net.NetBean;
 import ag.yinglingedu.com.xlibrary.adapter.CommonAdapter;
 import ag.yinglingedu.com.xlibrary.adapter.ViewHolder;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
@@ -113,9 +114,8 @@ public class ActivityDemandDetail extends BaseActivity {
     }
 
     private void getData() {
-        Map map = new HashMap();
-        map.put("","");
-        HttpUtil.post(map, new RequsetUtils.OnCompleteListener() {
+        NetBean netBean = new NetBean();
+        HttpUtil.post(netBean, new RequsetUtils.OnCompleteListener() {
             @Override
             public void success(String result, int line) {
 
