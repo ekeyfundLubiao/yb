@@ -43,20 +43,20 @@ public class RequsetUtils {
                     if (!TextUtils.isEmpty(result)) {
                         onCompleteListener.success(result, line);
                     }
-                    onCompleteListener.finish();
+                    onCompleteListener.onFinish();
                 }
 
                 @Override
                 public void onFailure(HttpException e, String s) {
                     ToastUtils.showLongToast("服务器故障" + e.toString());
                     onCompleteListener.failed(e, s, line);
-                    onCompleteListener.finish();
+                    onCompleteListener.onFinish();
                 }
             });
         } else {
             ToastUtils.showShortToast(NET_EXCEPTION);
             onCompleteListener.failed(new HttpException(NET_EXCEPTION), NET_EXCEPTION, line);
-            onCompleteListener.finish();
+            onCompleteListener.onFinish();
         }
     }
 
@@ -65,6 +65,6 @@ public class RequsetUtils {
 
         void failed(HttpException e, String s, int line);
 
-        void finish();
+        void onFinish();
     }
 }

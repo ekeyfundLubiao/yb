@@ -108,7 +108,7 @@ public class HeartBeatService extends Service implements Runnable, RequsetUtils.
     }
 
     @Override
-    public void finish() {
+    public void onFinish() {
 
     }
 }

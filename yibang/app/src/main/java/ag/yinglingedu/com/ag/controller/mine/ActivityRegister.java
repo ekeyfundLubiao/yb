@@ -256,4 +256,9 @@ public class ActivityRegister extends BaseActivity implements RequsetUtils.OnCom
                 break;
         }
     }
+
+    @Override
+    public void onFinish() {
+
+    }
 }

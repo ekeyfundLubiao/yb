@@ -20,7 +20,7 @@ public class ToastUtils {
     }
 
     private static Toast sToast;
-    private static Handler sHandler = new Handler(Looper.getMainLooper());
+    private static Handler sHandler = new Handler();
     private static boolean isJumpWhenMore;
 
     /**
@@ -269,6 +269,7 @@ public class ToastUtils {
         if (sToast == null) {
             sToast = Toast.makeText(Utils.getContext(), text, duration);
         } else {
+            sToast.cancel();
             sToast.setText(text);
             sToast.setDuration(duration);
         }

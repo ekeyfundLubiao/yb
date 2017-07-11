@@ -182,6 +182,11 @@ public class ActivityServiceDetail extends BaseActivity implements RequsetUtils.
     }
 
     @Override
+    public void onFinish() {
+
+    }
+
+    @Override
     public void onRefresh() {
         refresh.setRefreshing(false);
     }

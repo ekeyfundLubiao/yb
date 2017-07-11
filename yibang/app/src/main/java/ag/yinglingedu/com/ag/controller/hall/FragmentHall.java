@@ -152,7 +152,7 @@ public class FragmentHall extends BaseFragment {
             }
 
             @Override
-            public void finish() {
+            public void onFinish() {
                 refreshlayout.onFinishRefresh();
             }
         });
@@ -193,7 +193,7 @@ public class FragmentHall extends BaseFragment {
             }
 
             @Override
-            public void finish() {
+            public void onFinish() {
                 refreshlayout.onFinishRefresh();
             }
         });
@@ -224,6 +224,8 @@ public class FragmentHall extends BaseFragment {
                 type = 0;
                 if (demandAdapter != null) {
                     listView.setAdapter(demandAdapter);
+                } else {
+                    getDemand();
                 }
                 changeColor(0);//改变颜色
 //                changeData(entry.getList(), R.layout.item_hall_xq);
@@ -232,6 +234,8 @@ public class FragmentHall extends BaseFragment {
                 type = 1;
                 if (serviceAdapter != null) {
                     listView.setAdapter(serviceAdapter);
+                } else {
+                    getService();
                 }
                 changeColor(1);//改变颜色
 //                changeData(entry.getList(), R.layout.item_hall_fw);

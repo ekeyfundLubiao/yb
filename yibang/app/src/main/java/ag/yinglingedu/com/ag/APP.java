@@ -182,7 +182,7 @@ public class APP extends Application implements RequsetUtils.OnCompleteListener 
     }
 
     @Override
-    public void finish() {
+    public void onFinish() {
 
     }
 }

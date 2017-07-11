@@ -216,4 +216,9 @@ public class ActivityConfirmOrder extends BaseActivity implements RequsetUtils.O
     public void failed(HttpException e, String s, int line) {
 
     }
+
+    @Override
+    public void onFinish() {
+
+    }
 }

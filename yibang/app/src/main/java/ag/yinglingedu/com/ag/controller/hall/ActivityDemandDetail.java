@@ -136,7 +136,7 @@ public class ActivityDemandDetail extends BaseActivity {
             }
 
             @Override
-            public void finish() {
+            public void onFinish() {
 
             }
         });

@@ -517,7 +517,7 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
     }
 
     @Override
-    public void finish() {
+    public void onFinish() {
 
     }
 }

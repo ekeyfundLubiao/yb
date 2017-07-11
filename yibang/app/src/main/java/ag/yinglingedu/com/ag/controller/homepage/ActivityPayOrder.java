@@ -160,4 +160,9 @@ public class ActivityPayOrder extends BaseActivity implements RequsetUtils.OnCom
     public void failed(HttpException e, String s, int line) {
 
     }
+
+    @Override
+    public void onFinish() {
+
+    }
 }

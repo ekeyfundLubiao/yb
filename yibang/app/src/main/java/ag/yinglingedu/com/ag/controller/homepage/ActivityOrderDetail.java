@@ -183,4 +183,9 @@ public class ActivityOrderDetail extends BaseActivity implements RequsetUtils.On
     public void failed(HttpException e, String s, int line) {
 
     }
+
+    @Override
+    public void onFinish() {
+
+    }
 }
