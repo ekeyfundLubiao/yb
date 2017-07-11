@@ -41,4 +41,8 @@ dependencies {
     compile files('libs/AMap_Location_V3.4.0_20170427.jar')
     compile files('libs/fastjson-1.2.7.jar')
     compile files('libs/Rong_IMLib.jar')
+    /**
+     * 下拉刷新上拉加载
+     */
+    compile 'com.lcodecorex:tkrefreshlayout:1.0.7'
 }

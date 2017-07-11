@@ -17,56 +17,54 @@ import java.util.Map;
  */
 
 public class RequsetUtils {
-    private static OnCompleteListener mOnCompleteListener;
     private final static String NET_EXCEPTION = "网络异常，请检查网络！";
     private static Context mContext = Utils.getContext();
 
 
     /**
-     *
-     * @param url   请求地址
-     * @param map   请求参数
-     * @param line  请求线路
+     * @param url  请求地址
+     * @param map  请求参数
+     * @param line 请求线路
      */
-    public static void request(OnCompleteListener onCompleteListener,String url, Map<String,String> map, final int line) {
-        if(NetWorkUtils.isNetworkConnected(mContext)){//有网
-            setOnCompleteListener(onCompleteListener);
+    public static void request(final OnCompleteListener onCompleteListener, String url, Map<String, String> map, final int line) {
+        if (NetWorkUtils.isNetworkConnected(mContext)) {//有网
             HttpUtils httpUtils = new HttpUtils();
-            httpUtils.configCurrentHttpCacheExpiry(1000*10);//设置超时时间
+            httpUtils.configCurrentHttpCacheExpiry(1000 * 10);//设置超时时间
             RequestParams params = new RequestParams();
 
             for (Map.Entry entry : map.entrySet()) {
-                params.addBodyParameter(entry.getKey().toString(),entry.getValue().toString() );//请求参数
+                params.addBodyParameter(entry.getKey().toString(), entry.getValue().toString());//请求参数
             }
-            httpUtils.send(HttpRequest.HttpMethod.POST, url,params, new RequestCallBack<String>() {
+            httpUtils.send(HttpRequest.HttpMethod.POST, url, params, new RequestCallBack<String>() {
                 @Override
                 public void onSuccess(ResponseInfo<String> responseInfo) {
                     String result = responseInfo.result.toString();
-                    LogUtils.e("----------数据："+result);
-                    if(!TextUtils.isEmpty(result))
-                    {
-                        mOnCompleteListener.success(result,line);
+                    LogUtils.e("----------数据：" + result);
+                    if (!TextUtils.isEmpty(result)) {
+                        onCompleteListener.success(result, line);
                     }
+                    onCompleteListener.finish();
                 }
 
                 @Override
                 public void onFailure(HttpException e, String s) {
-                    ToastUtils.showLongToast("服务器故障"+e.toString());
-                    mOnCompleteListener.failed(e,s,line);
+                    ToastUtils.showLongToast("服务器故障" + e.toString());
+                    onCompleteListener.failed(e, s, line);
+                    onCompleteListener.finish();
                 }
             });
-        }else {
+        } else {
             ToastUtils.showShortToast(NET_EXCEPTION);
-            mOnCompleteListener.failed(new HttpException(NET_EXCEPTION),NET_EXCEPTION,line);
+            onCompleteListener.failed(new HttpException(NET_EXCEPTION), NET_EXCEPTION, line);
+            onCompleteListener.finish();
         }
     }
 
-    private static void setOnCompleteListener(OnCompleteListener onCompleteListener){
-        mOnCompleteListener = onCompleteListener;
-    }
+    public interface OnCompleteListener {
+        void success(String result, int line);
 
-    public  interface OnCompleteListener{
-        public void success(String result,int line);
-        public void failed(HttpException e,String s,int line);
+        void failed(HttpException e, String s, int line);
+
+        void finish();
     }
 }

@@ -349,7 +349,7 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
             title.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorBackgroundYellow));
             title.getBackground().mutate().setAlpha(scrollY * 2);
         } else {//到顶部
-            title.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.title));
+            title.setBackgroundResource(R.drawable.title);
             ivLocation.setBackgroundResource(R.mipmap.home_btn_location_disable);
         }
     }
@@ -513,6 +513,11 @@ public class FragmentHomePage extends BaseFragment implements SwipeRefreshLayout
 
     @Override
     public void failed(HttpException e, String s, int line) {
+
+    }
+
+    @Override
+    public void finish() {
 
     }
 }

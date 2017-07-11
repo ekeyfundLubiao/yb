@@ -7,12 +7,14 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.lidroid.xutils.exception.HttpException;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import ag.yinglingedu.com.ag.Config;
 import ag.yinglingedu.com.ag.R;
 import ag.yinglingedu.com.ag.bean.Hall_Demand_Entry;
 import ag.yinglingedu.com.ag.bean.TestBean;
@@ -22,6 +24,7 @@ import ag.yinglingedu.com.xlibrary.adapter.CommonAdapter;
 import ag.yinglingedu.com.xlibrary.adapter.ViewHolder;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.utils.RequsetUtils;
+import ag.yinglingedu.com.xlibrary.utils.Utils;
 import ag.yinglingedu.com.xlibrary.widget.SListView;
 import ag.yinglingedu.com.xlibrary.widget.StarBar;
 import butterknife.BindView;
@@ -115,14 +118,25 @@ public class ActivityDemandDetail extends BaseActivity {
 
     private void getData() {
         NetBean netBean = new NetBean();
+        netBean.setToken(Utils.getSpUtils().getString(Config.TOKEN, ""));
+        netBean.setUid(Utils.getSpUtils().getString(Config.USER_ID, ""));
+        netBean.setCmd("getuserdemand");
+        netBean.setPagesize("20");
+        netBean.setPageno("1");
+
         HttpUtil.post(netBean, new RequsetUtils.OnCompleteListener() {
             @Override
             public void success(String result, int line) {
-
+                entry = JSON.parseObject(result, Hall_Demand_Entry.class);
             }
 
             @Override
             public void failed(HttpException e, String s, int line) {
+
+            }
+
+            @Override
+            public void finish() {
 
             }
         });

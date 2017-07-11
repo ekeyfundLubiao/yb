@@ -180,4 +180,9 @@ public class APP extends Application implements RequsetUtils.OnCompleteListener 
     public void failed(HttpException e, String s, int line) {
 
     }
+
+    @Override
+    public void finish() {
+
+    }
 }

@@ -9,68 +9,66 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar"></include>
 
-    <ag.yinglingedu.com.xlibrary.widget.VPSwipeRefreshLayout
-        android:id="@+id/refresh"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar">
 
-        <RelativeLayout
+        <LinearLayout
+            android:id="@+id/ll_tag"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:paddingBottom="@dimen/px20dp"
+            android:paddingTop="@dimen/px20dp">
 
-            <LinearLayout
-                android:id="@+id/ll_tag"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
+            <TextView
+                android:id="@+id/tv_xq"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/px124dp"
+                android:layout_weight="1"
+                android:background="@drawable/left_round_button_yellow"
+                android:gravity="center"
                 android:paddingBottom="@dimen/px20dp"
-                android:paddingTop="@dimen/px20dp">
+                android:paddingTop="@dimen/px20dp"
+                android:text="需求"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/fontSize15" />
 
-                <TextView
-                    android:id="@+id/tv_xq"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/px124dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/left_round_button_yellow"
-                    android:gravity="center"
-                    android:paddingBottom="@dimen/px20dp"
-                    android:paddingTop="@dimen/px20dp"
-                    android:text="需求"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/fontSize15" />
+            <TextView
+                android:id="@+id/tv_fw"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/px124dp"
+                android:layout_weight="1"
+                android:background="@drawable/right_round_button_yellow_border"
+                android:gravity="center"
+                android:paddingBottom="@dimen/px20dp"
+                android:paddingTop="@dimen/px20dp"
+                android:text="服务"
+                android:textColor="@color/colorTextYellow"
+                android:textSize="@dimen/fontSize15" />
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tv_fw"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="@dimen/px124dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/right_round_button_yellow_border"
-                    android:gravity="center"
-                    android:paddingBottom="@dimen/px20dp"
-                    android:paddingTop="@dimen/px20dp"
-                    android:text="服务"
-                    android:textColor="@color/colorTextYellow"
-                    android:textSize="@dimen/fontSize15" />
-            </LinearLayout>
+        <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+            android:id="@+id/refreshlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ll_tag"
+            android:layout_marginTop="@dimen/px20dp">
 
             <ListView
-                android:id="@+id/lv_show"
+                android:id="@+id/listView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/ll_tag"
-                android:layout_marginTop="@dimen/px20dp"
-                android:background="@color/colorBackground"
                 android:dividerHeight="@dimen/px22dp"
-                android:listSelector="@android:color/transparent">
-                >
-            </ListView>
+                android:listSelector="@android:color/transparent"></ListView>
+
+        </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
 
 
-        </RelativeLayout>
+    </RelativeLayout>
 
-    </ag.yinglingedu.com.xlibrary.widget.VPSwipeRefreshLayout>
 
 </RelativeLayout>

@@ -106,5 +106,10 @@ public class HeartBeatService extends Service implements Runnable, RequsetUtils.
     public void failed(HttpException e, String s, int line) {
 
     }
+
+    @Override
+    public void finish() {
+
+    }
 }
 

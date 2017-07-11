@@ -61,6 +61,12 @@ public class NetBean {
     private String keyword;
     private String pagesize;
     private String pageno;
+    /**
+     * demand_id : 1
+     */
+
+    private String demand_id;
+
 
 
     public String getCmd() {
@@ -197,5 +203,13 @@ public class NetBean {
 
     public void setPageno(String pageno) {
         this.pageno = pageno;
+    }
+
+    public String getDemand_id() {
+        return demand_id;
+    }
+
+    public void setDemand_id(String demand_id) {
+        this.demand_id = demand_id;
     }
 }
