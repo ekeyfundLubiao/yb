@@ -61,6 +61,7 @@ public class FragmentFXQ_Right extends BaseFragment {
                         helper.setImageResource(R.id.iv_pic, item.intValue());
                     }
                 });
+
                 gvshow.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
