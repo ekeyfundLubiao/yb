@@ -134,7 +134,11 @@ public class FragmentHall extends BaseFragment {
                         demandAdapter = new CommonAdapter<Hall_Demand_Entry.ListBean>(getContext(), demandEntry.getList(), R.layout.item_hall_xq) {
                             @Override
                             public void convert(ViewHolder helper, Hall_Demand_Entry.ListBean item) {
+                                TextView title = helper.getView(R.id.title);
+                                title.setText(item.getDemand_title());
 
+                                TextView intro = helper.getView(R.id.intro);
+                                intro.setText(item.getDemand_intro());
                             }
                         };
                         if (type == 0) {
