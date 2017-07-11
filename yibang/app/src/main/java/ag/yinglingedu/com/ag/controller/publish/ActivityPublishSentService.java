@@ -47,7 +47,7 @@ public class ActivityPublishSentService extends BaseActivity {
     @Override
     public void init() {
         initStatus();
-        title.setText("发需求");
+        title.setText("发服务");
         ivBack.setVisibility(View.VISIBLE);
         ChangeUtil.initialize(this);
         ChangeUtil.setBasckgound(ivRight, R.mipmap.xx_search);

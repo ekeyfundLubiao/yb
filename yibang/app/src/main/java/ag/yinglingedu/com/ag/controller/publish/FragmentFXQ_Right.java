@@ -1,5 +1,6 @@
 package ag.yinglingedu.com.ag.controller.publish;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -51,13 +52,25 @@ public class FragmentFXQ_Right extends BaseFragment {
 
         lvShow.setAdapter(new CommonAdapter<BeanFXQ>(getContext(), mList, R.layout.item_fxq_right) {
             @Override
-            public void convert(ViewHolder helper, BeanFXQ item) {
+            public void convert(ViewHolder helper, final BeanFXQ item) {
                 helper.setText(R.id.tv_title, item.getType());//类型
                 SGridView gvshow = ((SGridView) helper.getView(R.id.gv_show));
                 gvshow.setAdapter(new CommonAdapter<Integer>(getContext(), item.getListBeen(), R.layout.item_fxq_right_gridview) {
                     @Override
-                    public void convert(ViewHolder helper, Integer item) {
-                        helper.setImageResource(R.id.iv_pic, item.intValue());
+                    public void convert(ViewHolder helper, Integer integer) {
+                        helper.setImageResource(R.id.iv_pic, integer.intValue());
+                        String firstTypeMeaning = item.getType();
+                        Item i = FragmentFXQ_Right.this.getItemByResourceId(integer.intValue());
+                        String secondTypeMeaning = i.getMeaning();
+                        String secondTypeCode = i.getCode();
+                        Intent intent = new Intent(FragmentFXQ_Right.this.getContext(), ActivityPublishDetail.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("firstTypeMeaning", firstTypeMeaning);
+                        bundle.putString("secondTypeMeaning", secondTypeMeaning);
+                        bundle.putString("secondTypeCode", secondTypeCode);
+                        intent.putExtras(bundle);
+                        FragmentFXQ_Right.this.startActivity(intent);
+
                     }
                 });
 
@@ -169,7 +182,7 @@ public class FragmentFXQ_Right extends BaseFragment {
         lvShow.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                ((ActivityPublish_FXQ) getActivity()).changeLeft(lvShow.getFirstVisiblePosition());
+                ((ActivityPublishSentNeed) getActivity()).changeLeft(lvShow.getFirstVisiblePosition());
             }
 
             @Override
@@ -187,5 +200,183 @@ public class FragmentFXQ_Right extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    // TODO:
+    // 根据资源id得到相应的描述
+    private Item getItemByResourceId(int resourceId) {
+        String meaning = null;
+        String code = null;
+        if (resourceId == R.mipmap.ltjy) {
+            meaning = "聊天交友";
+            code = "ltjy";
+        } else if (resourceId == R.mipmap.zbsm) {
+            meaning = "占卜算命";
+            code = "zbsm";
+        } else if (resourceId == R.mipmap.shqm) {
+            meaning = "手绘签名";
+            code = "shqm";
+        } else if (resourceId == R.mipmap.sxsy) {
+            meaning = "摄像摄影";
+            code = "sxsy";
+        } else if (resourceId == R.mipmap.yyyl) {
+            meaning = "语音娱乐";
+            code = "yyyl";
+        } else if (resourceId == R.mipmap.yxpw) {
+            meaning = "游戏陪玩";
+            code = "yxpw";
+        } else if (resourceId == R.mipmap.xxpw) {
+            meaning = "线下陪玩";
+            code = "xxpw";
+        } else if (resourceId == R.mipmap.zhsq) {
+            meaning = "智慧社区";
+            code = "zhsq";
+        } else if (resourceId == R.mipmap.jdwx) {
+            meaning = "家电维修";
+            code = "jdwx";
+        } else if (resourceId == R.mipmap.jzhl) {
+            meaning = "家政护理";
+            code = "jzhl";
+        } else if (resourceId == R.mipmap.mfzx) {
+            meaning = "买房装修";
+            code = "mfzx";
+        } else if (resourceId == R.mipmap.yhpd) {
+            meaning = "聚会派对";
+            code = "yhpd";
+        } else if (resourceId == R.mipmap.lyfw) {
+            meaning = "旅游服务";
+            code = "lyfw";
+        } else if (resourceId == R.mipmap.cw) {
+            meaning = "宠物";
+            code = "cw";
+        } else if (resourceId == R.mipmap.zlfw) {
+            meaning = "租赁服务";
+            code = "zlfw";
+        } else if (resourceId == R.mipmap.yd) {
+            meaning = "运动";
+            code = "yd";
+        } else if (resourceId == R.mipmap.js) {
+            meaning = "健身";
+            code = "js";
+        } else if (resourceId == R.mipmap.yyss) {
+            meaning = "营养膳食";
+            code = "yyss";
+        } else if (resourceId == R.mipmap.dpt) {
+            meaning = "代跑腿";
+            code = "dpt";
+        } else if (resourceId == R.mipmap.dbs) {
+            meaning = "代办事";
+            code = "dbs";
+        } else if (resourceId == R.mipmap.yq) {
+            meaning = "乐器";
+            code = "yq";
+        } else if (resourceId == R.mipmap.ky) {
+            meaning = "口语";
+            code = "ky";
+        } else if (resourceId == R.mipmap.wd) {
+            meaning = "舞蹈";
+            code = "wd";
+        } else if (resourceId == R.mipmap.jj) {
+            meaning = "家教";
+            code = "jj";
+        } else if (resourceId == R.mipmap.zj) {
+            meaning = "早教";
+            code = "zj";
+        } else if (resourceId == R.mipmap.hh) {
+            meaning = "绘画";
+            code = "hh";
+        } else if (resourceId == R.mipmap.sf) {
+            meaning = "书法";
+            code = "sf";
+        } else if (resourceId == R.mipmap.gcfw) {
+            meaning = "购车服务";
+            code = "gcfw";
+        } else if (resourceId == R.mipmap.escfw) {
+            meaning = "二手车服务";
+            code = "escfw";
+        } else if (resourceId == R.mipmap.clby) {
+            meaning = "车辆保养";
+            code = "clby";
+        } else if (resourceId == R.mipmap.cldb) {
+            meaning = "车辆代办";
+            code = "cldb";
+        } else if (resourceId == R.mipmap.pzcfw) {
+            meaning = "拼租车服务";
+            code = "pzcfw";
+        } else if (resourceId == R.mipmap.xysh) {
+            meaning = "校园生活";
+            code = "xysh";
+        } else if (resourceId == R.mipmap.qzjy) {
+            meaning = "求职就业";
+            code = "qzjy";
+        } else if (resourceId == R.mipmap.tsxy) {
+            meaning = "特色校园";
+            code = "tsxy";
+        } else if (resourceId == R.mipmap.smwx) {
+            meaning = "数码维修";
+            code = "smwx";
+        } else if (resourceId == R.mipmap.sjfw) {
+            meaning = "设计服务";
+            code = "sjfw";
+        } else if (resourceId == R.mipmap.yxtg) {
+            meaning = "营销推广";
+            code = "yxtg";
+        } else if (resourceId == R.mipmap.qtwbfw) {
+            meaning = "其他外包服务";
+            code = "qtwbfw";
+        } else if (resourceId == R.mipmap.mj) {
+            meaning = "美甲";
+            code = "mj";
+        } else if (resourceId == R.mipmap.mr) {
+            meaning = "美容";
+            code = "mr";
+        } else if (resourceId == R.mipmap.mf) {
+            meaning = "美发";
+            code = "mf";
+        } else if (resourceId == R.mipmap.zyzx) {
+            meaning = "专业咨询";
+            code = "zyzx";
+        } else if (resourceId == R.mipmap.qgzx) {
+            meaning = "情感咨询";
+            code = "qgzx";
+        } else if (resourceId == R.mipmap.flzx) {
+            meaning = "法律咨询";
+            code = "flzx";
+        } else if (resourceId == R.mipmap.zyzx) {
+            meaning = "职业咨询";
+            code = "zyzx";
+        } else if (resourceId == R.mipmap.lyzx) {
+            meaning = "旅游咨询";
+            code = "lyzx";
+        } else if (resourceId == R.mipmap.jrlczx) {
+            meaning = "金融理财咨询";
+            code = "jrlczx";
+        }
+
+        Item item = new Item();
+        item.setCode(code);
+        item.setMeaning(meaning);
+        return item;
+    }
+
+    class Item {
+        private String code;
+        private String meaning;
+
+        public String getCode() {
+            return code;
+        }
+
+        public void setCode(String code) {
+            this.code = code;
+        }
+
+        public String getMeaning() {
+            return meaning;
+        }
+
+        public void setMeaning(String meaning) {
+            this.meaning = meaning;
+        }
     }
 }

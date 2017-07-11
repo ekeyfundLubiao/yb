@@ -40,11 +40,11 @@
                 android:background="@drawable/round_button_border_gray2">
 
                 <TextView
+                    android:id="@+id/tv_leimu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/px20dp"
                     android:text="教育培训>乐器教学>小提琴教学"
-
                     android:textColor="@color/colorText333333"
                     android:textSize="@dimen/fontSize12" />
 

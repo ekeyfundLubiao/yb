@@ -65,10 +65,10 @@ public class ActivityPublishMain extends BaseActivity {
                 finish();
                 break;
             case R.id.iv_fxq://发需求
-                startActivity(new Intent(this, ActivityPublish_FXQ.class));
+                startActivity(new Intent(this, ActivityPublishSentNeed.class));
                 break;
             case R.id.iv_ffw://发服务
-                startActivity(new Intent(this, ActivityPublishDetail.class));
+                startActivity(new Intent(this, ActivityPublishSentService.class));
                 break;
             case R.id.rl_btn_l://新手必读
                 startActivity(new Intent(this, ActivityXSBD_FXQ.class));

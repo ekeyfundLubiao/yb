@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/8.
  */
 
-public class ActivityPublish_FXQ extends BaseActivity {
+public class ActivityPublishSentNeed extends BaseActivity {
 
 
     @BindView(R.id.iv_back)

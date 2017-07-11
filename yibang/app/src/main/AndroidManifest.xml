@@ -45,8 +45,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".controller.mine.ActivityLogin"
-            android:theme="@style/AppTheme"
             android:launchMode="singleTask"
+            android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateVisible|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,8 +69,8 @@
         <!--城市选择-->
         <activity
             android:name="com.zaaach.citypicker.CityPickerActivity"
-            android:theme="@style/CityPicker.NoActionBar"
             android:screenOrientation="portrait"
+            android:theme="@style/CityPicker.NoActionBar"
             android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <activity android:name=".ActivityMain"></activity><!--主界面-->
@@ -108,8 +108,9 @@
         <activity android:name=".controller.mine.ActivityUserManagement" /><!--关注的人-->
         <activity
             android:name=".controller.publish.ActivityXSBD_FFW"
-            android:windowSoftInputMode="adjustResize" /><!--发服务-->
-        <activity android:name=".controller.publish.ActivityPublish_FXQ" /><!--发需求-->
+            android:windowSoftInputMode="adjustResize" /><!--发服务新手必读-->
+        <activity android:name=".controller.publish.ActivityPublishSentNeed" /><!--发需求-->
+        <activity android:name=".controller.publish.ActivityPublishSentService" /><!--发服务-->
         <activity android:name=".controller.publish.ActivityPublishDetail" /><!--发服务-->
         <activity android:name=".controller.homepage.ActivityAllKinds" /><!--全部分类-->
         <activity android:name=".controller.homepage.ActivityKindsDetail" /><!--分类详情-->

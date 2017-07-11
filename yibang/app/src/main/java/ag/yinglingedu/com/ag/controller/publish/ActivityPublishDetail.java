@@ -94,9 +94,17 @@ public class ActivityPublishDetail extends BaseActivity {
     TextView tvXxfw;
     @BindView(R.id.btn_submit)
     Button btnSubmit;
+    @BindView(R.id.tv_leimu)
+    TextView tv_leimu;
+
     private int type = 0;//线下服务:1、线上服务：0
     private List<String> mList;
     private CommonAdapter<String> mAdapter;
+
+
+    private String firstTypeMeaning;
+    private String secondTypeCode;
+    private String secondTypeMeaning;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -107,9 +115,11 @@ public class ActivityPublishDetail extends BaseActivity {
         setListener();
     }
 
+
     @Override
     public void init() {
         initStatus();
+        getDataFromBundle(getIntent().getExtras());
         ChangeUtil.initialize(this);
         title.setText("发服务");
         ivBack.setVisibility(View.VISIBLE);
@@ -135,7 +145,15 @@ public class ActivityPublishDetail extends BaseActivity {
                 }*/
             }
         });
+        tv_leimu.setText(firstTypeMeaning + " > " + secondTypeMeaning);
     }
+
+    private void getDataFromBundle(Bundle bundle) {
+        this.firstTypeMeaning = bundle.getString("firstTypeMeaning");
+        this.secondTypeMeaning = bundle.getString("secondTypeMeaning");
+        this.secondTypeCode = bundle.getString("secondTypeCode");
+    }
+
 
     @Override
     public void setListener() {

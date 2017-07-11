@@ -81,7 +81,7 @@ public class FragmentFXQ_Left extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 changeColor(view, position);//改变选中及清除未选中的颜色
-                ((ActivityPublish_FXQ) getActivity()).changeRight(position);
+                ((ActivityPublishSentNeed) getActivity()).changeRight(position);
             }
         });
     }
