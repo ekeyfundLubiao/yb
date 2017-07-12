@@ -1,4 +1,4 @@
-package ag.yinglingedu.com.ag.controller.publish;
+package ag.yinglingedu.com.ag.controller.publish.service;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,17 +8,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import ag.yinglingedu.com.ag.R;
+import ag.yinglingedu.com.ag.controller.publish.need.FragmentFXQ_Left;
+import ag.yinglingedu.com.ag.controller.publish.need.FragmentFXQ_Right;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.utils.ChangeUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * 发需求
+ * 发服务
  * Created by M 4700 on 2017/6/8.
  */
 
-public class ActivityPublishSentNeed extends BaseActivity {
+public class ActivityPublishSentService extends BaseActivity {
 
 
     @BindView(R.id.iv_back)
@@ -31,14 +33,14 @@ public class ActivityPublishSentNeed extends BaseActivity {
     TextView tvRight;
     @BindView(R.id.toolbar)
     RelativeLayout toolbar;
-    private FragmentFXQ_Left fragmentLeft;
-    private FragmentFXQ_Right fragmentRight;
+    private FragmentService_Left fragmentLeft;
+    private FragmentService_Right fragmentRight;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_publish_fxq);
+        setContentView(R.layout.activity_publish_sentservice);
         ButterKnife.bind(this);
         init();
         setListener();
@@ -47,12 +49,12 @@ public class ActivityPublishSentNeed extends BaseActivity {
     @Override
     public void init() {
         initStatus();
-        title.setText("发需求");
+        title.setText("发服务");
         ivBack.setVisibility(View.VISIBLE);
         ChangeUtil.initialize(this);
         ChangeUtil.setBasckgound(ivRight, R.mipmap.xx_search);
-        fragmentLeft = (FragmentFXQ_Left) getSupportFragmentManager().findFragmentById(R.id.fragment_left);
-        fragmentRight = (FragmentFXQ_Right) getSupportFragmentManager().findFragmentById(R.id.fragment_right);
+        fragmentLeft = (FragmentService_Left) getSupportFragmentManager().findFragmentById(R.id.fragment_left);
+        fragmentRight = (FragmentService_Right) getSupportFragmentManager().findFragmentById(R.id.fragment_right);
     }
 
     @Override

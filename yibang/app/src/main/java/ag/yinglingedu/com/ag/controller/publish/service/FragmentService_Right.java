@@ -1,4 +1,4 @@
-package ag.yinglingedu.com.ag.controller.publish;
+package ag.yinglingedu.com.ag.controller.publish.service;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -28,7 +29,7 @@ import butterknife.Unbinder;
  * Created by M 4700 on 2017/6/8.
  */
 
-public class FragmentFXQ_Right extends BaseFragment {
+public class FragmentService_Right extends BaseFragment {
 
     @BindView(R.id.lv_show)
     ListView lvShow;
@@ -57,19 +58,27 @@ public class FragmentFXQ_Right extends BaseFragment {
                 SGridView gvshow = ((SGridView) helper.getView(R.id.gv_show));
                 gvshow.setAdapter(new CommonAdapter<Integer>(getContext(), item.getListBeen(), R.layout.item_fxq_right_gridview) {
                     @Override
-                    public void convert(ViewHolder helper, Integer integer) {
+                    public void convert(ViewHolder helper, final Integer integer) {
                         helper.setImageResource(R.id.iv_pic, integer.intValue());
-                        String firstTypeMeaning = item.getType();
-                        Item i = FragmentFXQ_Right.this.getItemByResourceId(integer.intValue());
-                        String secondTypeMeaning = i.getMeaning();
-                        String secondTypeCode = i.getCode();
-                        Intent intent = new Intent(FragmentFXQ_Right.this.getContext(), ActivityPublishDetail.class);
-                        Bundle bundle = new Bundle();
-                        bundle.putString("firstTypeMeaning", firstTypeMeaning);
-                        bundle.putString("secondTypeMeaning", secondTypeMeaning);
-                        bundle.putString("secondTypeCode", secondTypeCode);
-                        intent.putExtras(bundle);
-                        FragmentFXQ_Right.this.startActivity(intent);
+
+                        ImageView iv = helper.getView(R.id.iv_pic);
+                        iv.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                String firstTypeMeaning = item.getType();
+                                Item i = FragmentService_Right.this.getItemByResourceId(integer.intValue());
+                                String secondTypeMeaning = i.getMeaning();
+                                String secondTypeCode = i.getCode();
+                                Intent intent = new Intent(FragmentService_Right.this.getContext(), ActivityPublishServiceDetail.class);
+                                Bundle bundle = new Bundle();
+                                bundle.putString("firstTypeMeaning", firstTypeMeaning);
+                                bundle.putString("secondTypeMeaning", secondTypeMeaning);
+                                bundle.putString("secondTypeCode", secondTypeCode);
+                                intent.putExtras(bundle);
+                                FragmentService_Right.this.startActivity(intent);
+                            }
+                        });
+
 
                     }
                 });
@@ -78,7 +87,7 @@ public class FragmentFXQ_Right extends BaseFragment {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 //                        ToastUtils.showShortToast("111"+view.getId()+"::"+position);
-                        Toast.makeText(mContext,"111"+view.getId()+"::"+position,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, "111" + view.getId() + "::" + position, Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -182,7 +191,7 @@ public class FragmentFXQ_Right extends BaseFragment {
         lvShow.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                ((ActivityPublishSentNeed) getActivity()).changeLeft(lvShow.getFirstVisiblePosition());
+                ((ActivityPublishSentService) getActivity()).changeLeft(lvShow.getFirstVisiblePosition());
             }
 
             @Override

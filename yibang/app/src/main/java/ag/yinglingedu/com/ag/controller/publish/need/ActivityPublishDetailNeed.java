@@ -1,4 +1,4 @@
-package ag.yinglingedu.com.ag.controller.publish;
+package ag.yinglingedu.com.ag.controller.publish.need;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -33,7 +33,7 @@ import butterknife.ButterKnife;
  * Created by M 4700 on 2017/6/8.
  */
 
-public class ActivityPublishDetail extends BaseActivity {
+public class ActivityPublishDetailNeed extends BaseActivity {
 
 
     @BindView(R.id.iv_back)
@@ -166,7 +166,7 @@ public class ActivityPublishDetail extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == mList.size() - 1) {
-                    Intent intent = new Intent(ActivityPublishDetail.this, PhotoSelectorActivity.class);
+                    Intent intent = new Intent(ActivityPublishDetailNeed.this, PhotoSelectorActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     intent.putExtra("limit", 6);//number是选择图片的数量
                     startActivityForResult(intent, 0);

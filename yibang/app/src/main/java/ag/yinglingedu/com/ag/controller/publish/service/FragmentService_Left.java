@@ -1,4 +1,4 @@
-package ag.yinglingedu.com.ag.controller.publish;
+package ag.yinglingedu.com.ag.controller.publish.service;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -26,7 +26,7 @@ import butterknife.Unbinder;
  * Created by M 4700 on 2017/6/8.
  */
 
-public class FragmentFXQ_Left extends BaseFragment {
+public class FragmentService_Left extends BaseFragment {
 
     @BindView(R.id.lv_show)
     ListView lvShow;
@@ -81,7 +81,7 @@ public class FragmentFXQ_Left extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 changeColor(view, position);//改变选中及清除未选中的颜色
-                ((ActivityPublishSentNeed) getActivity()).changeRight(position);
+                ((ActivityPublishSentService) getActivity()).changeRight(position);
             }
         });
     }

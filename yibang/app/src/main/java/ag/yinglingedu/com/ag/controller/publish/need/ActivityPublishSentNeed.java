@@ -1,4 +1,4 @@
-package ag.yinglingedu.com.ag.controller.publish;
+package ag.yinglingedu.com.ag.controller.publish.need;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,17 +8,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import ag.yinglingedu.com.ag.R;
+import ag.yinglingedu.com.ag.controller.publish.need.FragmentFXQ_Left;
+import ag.yinglingedu.com.ag.controller.publish.need.FragmentFXQ_Right;
 import ag.yinglingedu.com.xlibrary.base.BaseActivity;
 import ag.yinglingedu.com.xlibrary.utils.ChangeUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * 发服务
+ * 发需求
  * Created by M 4700 on 2017/6/8.
  */
 
-public class ActivityPublishSentService extends BaseActivity {
+public class ActivityPublishSentNeed extends BaseActivity {
 
 
     @BindView(R.id.iv_back)
@@ -47,7 +49,7 @@ public class ActivityPublishSentService extends BaseActivity {
     @Override
     public void init() {
         initStatus();
-        title.setText("发服务");
+        title.setText("发需求");
         ivBack.setVisibility(View.VISIBLE);
         ChangeUtil.initialize(this);
         ChangeUtil.setBasckgound(ivRight, R.mipmap.xx_search);
