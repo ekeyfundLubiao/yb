@@ -7,7 +7,7 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar2"></include>
+        layout="@layout/toolbar2"/>
 
     <RelativeLayout
         android:id="@+id/rl_tag"
