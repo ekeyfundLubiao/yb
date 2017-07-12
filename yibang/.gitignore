@@ -10,3 +10,16 @@
 /.idea/markdown-navigator/
 /.idea/misc.xml
 /.idea/vcs.xml
+/build.gradle
+/gradle.properties
+/gradlew
+/gradlew.bat
+/settings.gradle
+/gradle/wrapper/
+/citypicker/build.gradle
+/citypicker/proguard-rules.pro
+/citypicker/.gitignore
+/app/proguard-rules.pro
+/app/.gitignore
+/app/build.gradle
+/.idea/
