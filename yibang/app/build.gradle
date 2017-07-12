@@ -38,7 +38,6 @@ dependencies {
     compile project(':citypicker')
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-    compile files('libs/AMap_Location_V3.4.0_20170427.jar')
     compile files('libs/fastjson-1.2.7.jar')
     compile files('libs/Rong_IMLib.jar')
     /**
