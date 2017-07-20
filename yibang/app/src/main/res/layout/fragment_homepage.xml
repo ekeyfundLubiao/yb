@@ -21,7 +21,7 @@
                 <com.youth.banner.Banner
                     android:id="@+id/banner"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/px328dp"></com.youth.banner.Banner>
+                    android:layout_height="@dimen/px328dp"/>
 
                 <ag.yinglingedu.com.xlibrary.widget.SGridView
                     android:id="@+id/gv_show"
@@ -31,7 +31,7 @@
                     android:background="@color/colorWhite"
                     android:numColumns="5"
                     android:padding="@dimen/px30dp"
-                    android:scrollbars="none"></ag.yinglingedu.com.xlibrary.widget.SGridView>
+                    android:scrollbars="none"/>
 
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/sdv_ads"
@@ -45,21 +45,21 @@
                     layout="@layout/navigation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/sdv_ads"></include>
+                    android:layout_below="@+id/sdv_ads"/>
 
                 <View
                     android:id="@+id/line"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/ll_choose"
-                    android:background="@color/colorBackgroundeaeaea"></View>
+                    android:background="@color/colorBackgroundeaeaea"/>
 
                 <ag.yinglingedu.com.xlibrary.widget.SListView
                     android:id="@+id/lv_show"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/line"
-                    android:dividerHeight="@dimen/px30dp"></ag.yinglingedu.com.xlibrary.widget.SListView>
+                    android:dividerHeight="@dimen/px30dp"/>
             </RelativeLayout>
 
         </ag.yinglingedu.com.xlibrary.widget.SScrollView>
