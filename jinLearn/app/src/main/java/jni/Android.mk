@@ -12,11 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+
 LOCAL_PATH := $(call my-dir)
-
 include $(CLEAR_VARS)
-
 LOCAL_MODULE    := hello
+LOCAL_lDlIBS    :=-llogs -lGLESv2
 LOCAL_SRC_FILES := hello.c
-
 include $(BUILD_SHARED_LIBRARY)
